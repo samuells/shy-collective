@@ -1,0 +1,40 @@
+{
+  "name": "shy-collective",
+  "version": "1.0.0",
+  "description": "Website of the Shy Collective",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuells/shy-collective.git"
+  },
+  "keywords": [
+    "html",
+    "web",
+    "design",
+    "sass",
+    "css"
+  ],
+  "author": "Samuel Snopko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuells/shy-collective/issues"
+  },
+  "homepage": "https://github.com/samuells/shy-collective#readme",
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "cssnano": "^3.10.0",
+    "foundation-sites": "6.3.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "node-sass": "^4.5.1",
+    "require-dir": "^0.3.1",
+    "run-sequence": "^1.2.2"
+  }
+}

@@ -1,0 +1,68 @@
+// =======================
+// Headline LvL3
+// =======================
+$font-style-name: "headline-lvl3";
+$default-h3-font-family: $header-font-family;
+$default-h3-font-size: 22px;
+$default-h3-line-height: 1.125;
+$default-h3-margin-top: 0.5;
+$default-h3-margin-bottom: 0.5;
+$default-h3-font-weight: 700;
+$default-h3-font-style: normal;
+$default-h3-text-rendering: optimizeLegibility;
+$default-h3-color: $primary-headline-color;
+
+$default-h3: (font-family: $default-h3-font-family, font-size: $default-h3-font-size, line-height: $default-h3-line-height, margin-top: $default-h3-margin-top, margin-bottom: $default-h3-margin-bottom, color: $default-h3-color, font-weight: $default-h3-font-weight, font-style: $default-h3-font-style, text-rendering: $default-h3-text-rendering);
+$font-style-map: (default: $default-h3);
+$font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+
+// Which styles are used for header lvl1 - based on breakpoints
+// If you use special style for breakpoint, than you must uncoment the apropriate section
+// You can add own "custom" style for any breakpoint. Just define media query range above in Media Query section and copy paste
+// the custom variables and section down. Same as medium section ;)
+$use-medium-h3-styles: true;
+$use-large-h3-styles: true;
+
+// Medium h3 Styles
+@if $use-medium-h3-styles {
+  $map: (); // init of styles map
+  // define breakpoint for the style
+  $breakpoint-name: "medium";
+  // font-size in px(without unit means px) or rem
+  $font-size: 24px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "min"
+  $line-height: 1.5;
+  $map: add-node($map, "line-height", $line-height);
+  // margin-top defined in baselines
+  $margin-top: 1.5;
+  $map: add-node($map, "margin-top", $margin-top);
+  // margin-bottom defined in baselines
+  $margin-bottom: 0.5;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+}
+
+// Large h3 Styles
+@if $use-large-h3-styles {
+  $map: (); // init of styles map
+  // define breakpoint for the style
+  $breakpoint-name: "xlarge";
+  // font-size in px(without unit means px) or rem
+  $font-size: 28px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "min"
+  $line-height: 1.5;
+  $map: add-node($map, "line-height", $line-height);
+  // margin-top defined in baselines
+  $margin-top: 2.5;
+  $map: add-node($map, "margin-top", $margin-top);
+  // margin-bottom defined in baselines
+  $margin-bottom: 1.5;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+}

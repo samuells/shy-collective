@@ -1,0 +1,25 @@
+// =======================
+// Project Mixins & Functions
+//
+// In this section you can find all project specific mixins, which were created only for this project.
+// =======================
+
+
+// *********************
+// @m ps-transition
+//
+// This is the most common transition of the project. As the arguments it takes only
+// the atributes that should be transited.
+//
+// - __$proterty__ - any number of properties (no default)
+//
+// __Samples:__
+// * <code>@include ps-transition(color);</code>
+// * <code>@include ps-transition(background-color, color);</code>
+$ps-transition-duration: 200ms !default;
+
+@mixin ps-transition($property...) {
+  @include transition-property($property);
+  @include transition-duration($ps-transition-duration);
+  @include transition-timing-function(ease-out);
+}

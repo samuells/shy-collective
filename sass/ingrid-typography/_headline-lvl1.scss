@@ -1,0 +1,60 @@
+// =======================
+// Headline LvL1
+// =======================
+$font-style-name: "headline-lvl1";
+$default-h1-font-family: $header-font-family;
+$default-h1-font-size: 34px;
+$default-h1-line-height: "calc";
+$default-h1-margin-top: 0.5;
+$default-h1-margin-bottom: 1;
+$default-h1-font-weight: 900;
+$default-h1-font-style: normal;
+$default-h1-text-rendering: optimizeLegibility;
+$default-h1-color: $primary-headline-color;
+
+$default-h1: (font-family: $default-h1-font-family, font-size: $default-h1-font-size, line-height: $default-h1-line-height, margin-top: $default-h1-margin-top, margin-bottom: $default-h1-margin-bottom, color: $default-h1-color, font-weight: $default-h1-font-weight, font-style: $default-h1-font-style, text-rendering: $default-h1-text-rendering);
+$font-style-map: (default: $default-h1);
+$font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+
+// Which styles are used for header lvl1 - based on breakpoints
+// If you use special style for breakpoint, than you must uncoment the apropriate section
+// You can add own "custom" style for any breakpoint. Just define media query range above in Media Query section and copy paste
+// the custom variables and section down. Same as medium section ;)
+$use-medium-h1-styles: true;
+$use-large-h1-styles: true;
+
+// Medium h1 Styles
+@if $use-medium-h1-styles {
+  $map: (); // init of styles map
+  $breakpoint-name: "medium"; // define breakpoint for the style
+  // font-size in px(without unit means px) or rem
+  $font-size: 40px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "calc"
+  $line-height: "calc";
+  $map: add-node($map, "line-height", $line-height);
+  // margin-top defined in baselines
+  $margin-bottom: 1.5;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+}
+
+// Medium h1 Styles
+@if $use-large-h1-styles {
+  $map: (); // init of styles map
+  $breakpoint-name: "xlarge"; // define breakpoint for the style
+  // font-size in px(without unit means px) or rem
+  $font-size: 44px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "calc"
+  $line-height: "calc";
+  $map: add-node($map, "line-height", $line-height);
+  // margin-top defined in baselines
+  $margin-bottom: 2;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+}

@@ -1,0 +1,57 @@
+// =======================
+// Paragraph Intro
+// =======================
+$custom-font-style-name: "paragraph-intro";
+$custom-font-font-family: $header-font-family;
+$custom-font-font-size: 22px;
+$custom-font-line-height: "calc"; // number of baselines or "calc"
+$custom-font-padding-top: 0;
+$custom-font-padding-bottom: 0.5;
+$custom-font-margin-top: 0;
+$custom-font-margin-bottom: 0.5;
+$custom-font-font-weight: 300;
+$custom-font-font-style: normal;
+$custom-font-text-rendering: optimizeLegibility;
+$custom-font-color: $primary-font-color;
+
+$custom-font: (font-family: $custom-font-font-family, font-size: $custom-font-font-size, line-height: $custom-font-line-height, padding-top: $custom-font-padding-top, padding-bottom: $custom-font-padding-bottom, margin-top: $custom-font-margin-top, margin-bottom: $custom-font-margin-bottom, color: $custom-font-color, font-weight: $custom-font-font-weight, font-style: $custom-font-font-style, text-rendering: $custom-font-text-rendering);
+$custom-font-style-map: (default: $custom-font);
+$font-styles-map: add-node($font-styles-map, $custom-font-style-name, $custom-font-style-map);
+
+// Which styles are used for font - based on breakpoints
+$use-custom-font-medium-styles: true;
+$use-custom-font-xlarge-styles: true;
+
+// Medium Font Style
+@if $use-custom-font-medium-styles {
+  $map: (); // init of styles map
+  $breakpoint-name: "medium"; // define breakpoint for the style - name is used in the breakpoint mixin
+  $font-size: 24px; // font-size in px(without unit means px) or rem
+  $map: add-node($map, "font-size", $font-size);
+  $line-height: 1.5;
+  // number of baselines or "calc"
+  $map: add-node($map, "line-height", $line-height);
+  $margin-bottom: 0.75; // margin-bottom defined in baselines
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $custom-font-style-map: add-node($custom-font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $custom-font-style-name, $custom-font-style-map);
+}
+
+// XLarge Font Style
+@if $use-custom-font-xlarge-styles {
+  $map: (); // init of styles map
+  $breakpoint-name: "xlarge"; // define breakpoint for the style - name is used in the breakpoint mixin
+  // font-size in px(without unit means px) or rem
+  $font-size: 28px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "calc"
+  $line-height: "calc";
+  $map: add-node($map, "line-height", $line-height);
+  // margin-bottom defined in baselines
+  $margin-bottom: 1;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $custom-font-style-map: add-node($custom-font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $custom-font-style-name, $custom-font-style-map);
+}

@@ -1,0 +1,38 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// INGRID THE WONDROUS © WONDROUS LLC (www.wearewondrous.com)
+// Licensed under MIT Open Source
+// =================================================
+//
+// This files imports the mixins, function and settings from Foundation.
+// All files are imported from Node Modules folder.
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Foundation default settings and util dependencies
+// - override by project settings
+
+// Foundation Dependencies
+@import "foundation-sites/_vendor/normalize-scss/sass/normalize";
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
+
+// Foundation global settings
+@import "foundation-sites/scss/_global.scss";
+
+// Foundation Grid System
+@import "foundation-sites/scss/grid/_grid.scss";
+
+// Foundation Components
+// @import "foundation-sites/scss/components/_table.scss";
+@import "foundation-sites/scss/components/_visibility.scss";
+
+// Foundation Global Styles
+$generate-styleguide-classes: true !default;
+
+@if $generate-styleguide-classes {
+  @include foundation-global-styles;
+}

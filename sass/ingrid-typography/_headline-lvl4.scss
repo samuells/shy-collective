@@ -1,0 +1,68 @@
+// =======================
+// Headline LvL4
+// =======================
+$font-style-name: "headline-lvl4";
+$default-h4-font-family: $header-font-family;
+$default-h4-font-size: 20px;
+$default-h4-line-height: "calc";
+$default-h4-margin-top: 0.5;
+$default-h4-margin-bottom: 0.5;
+$default-h4-font-weight: 300;
+$default-h4-font-style: normal;
+$default-h4-text-rendering: optimizeLegibility;
+$default-h4-color: $primary-headline-color;
+
+$default-h4: (font-family: $default-h4-font-family, font-size: $default-h4-font-size, line-height: $default-h4-line-height, margin-top: $default-h4-margin-top, margin-bottom: $default-h4-margin-bottom, color: $default-h4-color, font-weight: $default-h4-font-weight, font-style: $default-h4-font-style, text-rendering: $default-h4-text-rendering);
+$font-style-map: (default: $default-h4);
+$font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+
+// Which styles are used for header lvl1 - based on breakpoints
+// If you use special style for breakpoint, than you must uncoment the apropriate section
+// You can add own "custom" style for any breakpoint. Just define media query range above in Media Query section and copy paste
+// the custom variables and section down. Same as medium section ;)
+$use-medium-h4-styles: true;
+$use-large-h4-styles: true;
+
+// Medium h4 Styles
+@if $use-medium-h4-styles {
+  $map: (); // init of styles map
+  // define breakpoint for the style
+  $breakpoint-name: "medium";
+  // font-size in px(without unit means px) or rem
+  $font-size: 22px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "min"
+  $line-height: "calc";
+  $map: add-node($map, "line-height", $line-height);
+  // margin-top defined in baselines
+  $margin-top: 1.5;
+  $map: add-node($map, "margin-top", $margin-top);
+  // margin-bottom defined in baselines
+  $margin-bottom: 0.5;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+}
+
+// Large h4 Styles
+@if $use-large-h4-styles {
+  $map: (); // init of styles map
+  // define breakpoint for the style
+  $breakpoint-name: "large";
+  // font-size in px(without unit means px) or rem
+  $font-size: 24px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "min"
+  $line-height: "calc";
+  $map: add-node($map, "line-height", $line-height);
+  // margin-top defined in baselines
+  $margin-top: 2;
+  $map: add-node($map, "margin-top", $margin-top);
+  // margin-bottom defined in baselines
+  $margin-bottom: 1;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+}

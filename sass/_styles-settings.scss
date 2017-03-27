@@ -1,0 +1,291 @@
+// Settings of the Project
+// -----------------------------
+//
+// Table of Contents:
+//
+// Imports
+// Global Project Variables
+// Global Settings
+// Breakpoints & Media Queries
+// Rhythm settings
+// Base Grid Settings & Panel
+// Typography Settings
+// Table
+// Flex Video
+// Z-Index Dependencies
+
+// Imports
+//
+// We are using mixins and function from the Foundation and also our own.
+//
+// Styleguide 1.1
+
+// NOTE: No need to change here something.
+@import "foundation-sites/scss/util/util"; // Foundation mixins and functions
+@import "ingrid/ingrid-helpers"; // Added ingrid mixins and functions
+@import "custom/ps-colors"; // Project Color Palette
+@import "custom/ps-z-index"; // Project Z-Indexes Structure
+@import "custom/ps-fonts"; // Project Fonts
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Rhythm
+//
+// This section contains information about the rhythm used by Ingrid.
+// * depandency on the zurb.foundation function rem-calc()
+// * edited original rhythm from: https://gist.github.com/ry5n/2026666
+//
+// Variables:
+// * $base-font-size - Absolute height of body text, in pixels
+// * $base-line-height - Absolute height of one line of type, in pixels
+// * $round-to-nearest-half-line - Allows the `adjust-font-size-to` mixin and the `lines-for-font-size` function
+//  to round the line height to the nearest half line height instead of the
+//  nearest integral line height to avoid large spacing between lines.
+// * $min-line-padding - Ensure there is minimal padding defined in pixels
+// * $browser-default-font-size - Define default browser font size
+//
+// Styleguide 1.2
+$base-font-size: 16px;
+$base-line-height: 24px;
+$round-to-nearest-half-line: true;
+$min-line-padding: 2px;
+$browser-default-font-size: 16px;
+
+@import "ingrid/vertical-rhythm";
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Breakpoints & Media Queries
+//
+// Ingrid used the new 'breakpoint' mixin of Foundation to generate media queries.
+// There also exist special breakpoint 'maxed-breakpoint', aftet wich one has the site fixed width and
+// only the margin left and right grow.
+// **In this section should be found all the media queries used by the project.**
+//
+// Used media queries:
+// * $default-range: [0px, 360px]
+// * $small-range: [361px, 540px]
+// * $medium-range: [541px, 740px]
+// * $large-range: [741px, 1024px]
+// * $xlarge-range: [1025px, 1440px]
+// * $xxlarge-range: [1441px, ...]
+//
+// $maxed-breakpoint is equal to 'xxlarge' breakpoint
+//
+// __Use in code:__
+// * <code>@include breakpoint(medium){ STYLES }</code>
+// * <code>@include breakpoint(medium only){ STYLES }</code>
+// * <code>@include breakpoint(default only){ STYLES }</code>
+// * <code>@include breakpoint(small down){ STYLES }</code>
+//
+// Styleguide 1.3
+$breakpoints: ( default: 0, small: 360px, medium: 540px, large: 740px, xlarge: 1024px, xxlarge: 1400px, maxed: 1600px);
+$adaptive-breakpoint: map-get($breakpoints, xxlarge); // Get the breakpoint after which has the content max width
+$maxed-breakpoint: map-get($breakpoints, maxed); // Get the breakpoint after which has the content max width
+$maxed-row-width: 1400px; // max width of the content
+// $breakpoint-classes: (small medium large); // didn't used NOTE: maybe to delete
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Global Project Variables
+//
+// Global variables used in different scss files to achieve dependencies between different files.
+// Please write here the variables, which are used across whole project. As height of the menu, footer, etc.
+//
+// Styleguide 1.4
+$topbar-height--default--ingrid: calc-rem(60);
+$topbar-height--desktop--ingrid: calc-rem(90);
+$navigation-breakpoint: 1241px; // Sample value - it's
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Global Settings
+//
+// Global settings for the Foundation and Ingrid
+//
+// Styleguide 1.5
+$global-font-size: 100%;
+$global-width: calc-rem($maxed-row-width);
+$global-lineheight: 1.4;
+$body-background: $body-color;
+$body-font-color: $primary-font-color;
+$body-antialiased: true;
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: 0;
+$global-text-direction: ltr;
+$global-flexbox: false;
+$print-transparent-backgrounds: true;
+@include add-foundation-colors;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Base Grid Settings
+//
+// Basic settings for the grid system and panel settings.
+//
+// Styleguide 1.6
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: ( default: 30px, medium: 30px );
+$grid-column-align-edge: true;
+$block-grid-max: 8;
+
+// Panel Settings
+$panel-bgc: transparent;
+$panel-border-style: solid;
+$panel-border-size: 0;
+$panel-border-color: transparent;
+$panel-margin-bottom: rhythm();
+$panel-padding: 0;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Typography Settings
+//
+// This section sepecifies the typography. We are using RWF - Responsive Web Fonts.
+// That means yout can here specify different style for paragraph, headers for different media query ranges.
+//
+// __Font Types:__
+// * <code>$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;</code>
+// * <code>$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;</code>
+// * <code>$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;</code>
+//
+// __How are the fonts used:__
+// * <code>$body-font-family: $font-family-sans-serif;</code>
+// * <code>$header-font-family: $body-font-family;</code>
+//
+// Styleguide 1.7
+$font-family-sans-serif: "VoltaModernText", Arial, "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, sans-serif;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+
+$body-font-family: $font-family-sans-serif;
+$header-font-family: "VoltaModernDisplay", $font-family-sans-serif;
+
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+
+// Import of RWD fonts styles
+@import "ingrid-typography/paragraph";
+@import "ingrid-typography/paragraph-small";
+@import "ingrid-typography/paragraph-intro";
+@import "ingrid-typography/headline-mood";
+@import "ingrid-typography/headline-lvl1";
+@import "ingrid-typography/headline-lvl2";
+@import "ingrid-typography/headline-lvl3";
+@import "ingrid-typography/headline-lvl4";
+@import "ingrid-typography/headline-lvl5";
+
+
+// Base Typography - from Foundation
+// ------------------
+// NOTE: Not used at the moment - need to find out more (sas)
+// $header-font-family: $body-font-family;
+// $header-font-weight: $global-weight-normal;
+// $header-font-style: normal;
+// $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+// $header-sizes: ( small: ( 'h1': 24, 'h2': 20, 'h3': 19, 'h4': 18, 'h5': 17, 'h6': 16, ), medium: ( 'h1': 48, 'h2': 40, 'h3': 31, 'h4': 25, 'h5': 20, 'h6': 16, ), );
+// $header-color: inherit;
+// $header-lineheight: 1.4;
+// $header-margin-bottom: 0.5rem;
+// $header-text-rendering: optimizeLegibility;
+// $small-font-size: 80%;
+// $header-small-font-color: $medium-gray;
+// $paragraph-lineheight: 1.6;
+// $paragraph-margin-bottom: 1rem;
+// $paragraph-text-rendering: optimizeLegibility;
+// $code-color: $black;
+// $code-font-family: $font-family-monospace;
+// $code-font-weight: $global-weight-normal;
+// $code-background: $light-gray;
+// $code-border: 1px solid $medium-gray;
+// $code-padding: rem-calc(2 5 1);
+$anchor-font-color: $primary-link-color;
+$anchor-font-color-hover: $primary-link-color;
+// $anchor-text-decoration: none;
+// $anchor-text-decoration-hover: none;
+// $hr-width: $global-width;
+// $hr-border: 1px solid $medium-gray;
+// $hr-margin: rem-calc(20) auto;
+// $list-lineheight: $paragraph-lineheight;
+// $list-margin-bottom: $paragraph-margin-bottom;
+// $list-style-type: disc;
+// $list-style-position: outside;
+// $list-side-margin: 1.25rem;
+// $list-nested-side-margin: 1.25rem;
+// $defnlist-margin-bottom: 1rem;
+// $defnlist-term-weight: $global-weight-bold;
+// $defnlist-term-margin-bottom: 0.3rem;
+// $blockquote-color: $dark-gray;
+// $blockquote-padding: rem-calc(9 20 0 19);
+// $blockquote-border: 1px solid $medium-gray;
+// $cite-font-size: rem-calc(13);
+// $cite-color: $dark-gray;
+// $keystroke-font: $font-family-monospace;
+// $keystroke-color: $black;
+// $keystroke-background: $light-gray;
+// $keystroke-padding: rem-calc(2 4 0);
+// $keystroke-radius: $global-radius;
+// $abbr-underline: 1px dotted $black;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Table Settings
+//
+// Basic settings for tables.
+// Find more about the table mixins on [here](http://foundation.zurb.com/sites/docs/table.html).
+//
+// Styleguide 1.8
+
+// NOTE: Default from Foundation 6
+$table-background: $white;
+$table-color-scale: 5%;
+$table-border: 1px solid smart-scale($table-background, $table-color-scale);
+$table-padding: rem-calc(8 10 10);
+$table-hover-scale: 2%;
+$table-row-hover: darken($table-background, $table-hover-scale);
+$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
+$table-striped-background: smart-scale($table-background, $table-color-scale);
+$table-stripe: even;
+$table-head-background: smart-scale($table-background, $table-color-scale / 2);
+$table-foot-background: smart-scale($table-background, $table-color-scale);
+$table-head-font-color: $body-font-color;
+$show-header-for-stacked: false;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// List Settings
+//
+// Basic settings for the lists.
+//
+// Styleguide 1.9
+
+// NOTE: Settings from Foundation 5 used in typography reset
+$list-font-size: $base-font-size;
+$list-font-weight: 300;
+$list-font-color: $default-list-color;
+$list-line-height: rhythm();
+$list-default-float: left;
+$list-nested-margin: rhythm();
+$list-side-margin: rhythm();
+$list-margin-bottom: rhythm(0.25);
+$list-style-position: outside;
+$list-font-family: $body-font-family;
+$definition-list-header-margin-bottom: 0;
+$definition-list-header-weight: 700;
+$definition-list-margin-bottom: 0;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Flex Video
+//
+// NOTE:Under Consideration.
+//
+// Styleguide 1.10
+
+// $flexvideo-margin-bottom: rem-calc(16);
+// $flexvideo-ratio: 4 by 3;
+// $flexvideo-ratio-widescreen: 16 by 9;

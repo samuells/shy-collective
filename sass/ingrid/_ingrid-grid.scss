@@ -1,0 +1,207 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// INGRID THE WONDROUS © WONDROUS LLC (www.wearewondrous.com)
+// Licensed under MIT Open Source
+// =================================================
+//
+// These mixins are used to create a grid system in Wondrous Projects.
+// Mixin are built on the grid system from FOUNDATION (foundation.zurb.com).
+// inGrid System extends the original grid system of FOUNDATION.
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// inGrid System
+//
+// Here you can find all the base mixins of inGrid System.
+//
+// Styleguide 1.20
+
+// @m ingrid-panel($bgc, $padding, $margin-bottom)
+//
+// **Alias:** @m in-panel(parameters)
+//
+// We use this mixin to create panels.
+// - **$bgc** [transparent] - Sets the panel background color.
+// - **$padding** [20px] - Sets the panel padding amount.
+// - **$margin-bottom** [20px] - Sets the the bottom margin of the panel
+//
+// Styleguide 1.20.1
+
+// We use these to control the background and border styles
+$panel-bgc: transparent !default;
+$panel-border-style: solid !default;
+$panel-border-size: 0 !default;
+$panel-border-color: transparent !default;
+// We use these to set default inner padding and bottom margin
+$panel-margin-bottom: rem-calc(20) !default;
+$panel-padding: rem-calc(20) !default;
+// mixin
+@mixin ingrid-panel($bgc: $panel-bgc, $padding: $panel-padding, $margin-bottom: $panel-margin-bottom) {
+  box-sizing: border-box;
+  padding: calc-rem($padding);
+  @if $panel-border-size != 0 {
+    border: $panel-border-size $panel-border-style $panel-border-color;
+  }
+  margin-bottom: calc-rem($margin-bottom);
+  background-color: $bgc;
+
+  // Respect the padding, fool.
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+// Alias
+@mixin in-panel($bgc: $panel-bgc, $padding: $panel-padding, $margin-bottom: $panel-margin-bottom) {
+  @include ingrid-panel($bgc: $bgc, $padding: $padding, $margin-bottom: $margin-bottom);
+}
+
+// @m ingrid-row($behaviour, $outer)
+//
+// **Alias:** @m in-row(parameters)
+//
+// Generates inGrid row.
+// - **$behaviour** {Keywords} [null] - modifications to the default grid styles. `nest` indicates the row will be placed inside another row. `collapse` indicates that the columns inside this row will not have padding. `nest collapse` combines both behaviors.
+// - **$outer** {Boolean} [false] - adaptive width of the outer row.
+//
+// Styleguide 1.20.2
+@mixin ingrid-row($behaviour: null, $outer: false) {
+   @include grid-row($behavior: $behaviour);
+  @if $outer {
+    @include breakpoint($adaptive-breakpoint) {
+      max-width: percentage($maxed-row-width / $maxed-breakpoint);
+    }
+  }
+  @include breakpoint($maxed-breakpoint) {
+    max-width: calc-rem($maxed-row-width);
+  }
+};
+// Alias
+@mixin in-row($behaviour: null, $outer: false) {
+  @include ingrid-row($behaviour: $behaviour, $outer: $outer);
+}
+
+// @m ingrid-column($columns, $position, $offset, $gutter, $last-column, $width, $distance)
+//
+// **Alias:** @m in-column(parameters);
+//
+// Generates inGrid column.
+// - **$columns** {Number|List} - Width of the column. Accepts multiple values:
+//   - A percentage value will make the column that exact size.
+//   - A single digit will make the column span that number of columns wide, taking into account the column count of the parent row.
+//   - A string of the format "x of y" will make a column that is **x** columns wide, assuming **y** total columns for the parent.
+// - **$position** {Number|Keyword} - Direction and amount to move. The column will move equal to the width of the column count specified. A positive number will push the column to the right, while a negative number will pull it to the left. Set to center to center the column.
+// - **$offset** {Number|List} - Width to offset by. You can pass in any value accepted by the `grid-column()` mixin, such as `6`, `50%`, or `1 of 2`.
+// - **$gutter** {Number} - Spacing between columns.
+// - **$last-column** {Boolean} [false] - If 'true', than disable the default behaviour of the last column in a row aligning to the opposite edge.
+// - **$width** {Number|Boolean} [false] - It can be positive or negative number, which represents the number of pixel added or extracted from column width of column. Works together with $columns parameter. SAMPLE: Width of the column is equal to $columns + $width.
+// - **$distance** {Number|Boolean} [false] - It can be positive or negative number, which represents the number of pixels added or extracted to the position of the column. Works together with $position parameter. SAMPLE: Position of the column is equal to $position + $distance
+//
+// Styleguide 1.20.3
+@mixin ingrid-column($columns:default, $position: default, $offset: default, $gutter: default, $last-column: false, $width: false, $distance: false) {
+  @if $columns == default {
+    $columns: $grid-column-count;
+  }
+  @if $gutter != default{
+    @include grid-column($columns, $gutters: $gutter);
+  }
+  @else{
+     @include grid-column($columns);
+  }
+  // override width if is the static size defined
+  @if $width {
+    @include ingrid-column-size($width, $columns);
+  }
+  // set position of the column
+  @if $distance {
+    @if type-of($position) == 'number' {
+      @include ingrid-column-position($distance, $position: $position);
+    } @else if $position == default {
+      @include ingrid-column-position($distance);
+    }
+  } @else if $position != default {
+     @include grid-column-position($position);
+  }
+  // added offset to the column
+  @if $offset != default {
+     @include grid-column-offset($offset);
+  }
+  // it's last column
+  @if $last-column {
+     @include grid-column-end();
+  }
+};
+// Alias
+@mixin in-column($columns, $position: default, $offset: default, $gutter: default, $last-column: false, $width: false, $distance: false) {
+  @include ingrid-column($columns, $position: $position, $offset: $offset, $gutter: $gutter, $last-column: $last-column, $width: $width, $distance: $distance);
+}
+
+// @m ingrid-column-size($width, $columns)
+//
+// **Alias:** @m in-colsize(parameters);
+//
+// Generates inGrid column.
+// - **$width** {Number} - It can be positive or negative number, which represents the number of pixel added or extracted from column width of column. Works together with $columns parameter. SAMPLE: Width of the column is equal to $columns + $width.
+// - **$columns** {Number|List} [0] - Width of the column. Accepts multiple values:
+//   - A percentage value will make the column that exact size.
+//   - A single digit will make the column span that number of columns wide, taking into account the column count of the parent row.
+//   - A string of the format "x of y" will make a column that is **x** columns wide, assuming **y** total columns for the parent.
+//
+// Styleguide 1.20.3.1
+@mixin ingrid-column-size($width, $columns: 0){
+  @if type-of($width) == 'number' {
+    $temp-width-percentage: grid-column($columns);
+    $temp-width-rem: calc-rem($width);
+
+    width: calc(#{$temp-width-percentage} + #{$temp-width-rem});
+  } @else {
+    @error 'Wrong syntax for width parameter ';
+  }
+}
+// Alias
+@mixin in-colsize($width, $columns: 0){
+  @include ingrid-column-size($width, $columns);
+}
+
+// @m ingrid-column-position($distance, $columns)
+//
+// **Alias:** @m in-colpos(parameters);
+//
+// Generates inGrid column.
+// - **$distance** {Number} - It can be positive or negative number, which represents the number of pixels added or extracted to the position of the column. Works together with $position parameter. SAMPLE: Position of the column is equal to $position + $distance
+// - **$position** {Number} [0] - Number of columns, of which should be column moved. Positive or negative number.
+//
+// Styleguide 1.20.3.2
+@mixin ingrid-column-position($distance, $position: 0){
+  @if type-of($distance) == 'number' {
+    $offset: percentage($position / $grid-column-count);
+    $offset-in-rem: calc-rem($distance);
+
+    position: relative;
+    #{$global-left}: calc(#{$offset} + #{$offset-in-rem});
+  } @else {
+    @error 'Wrong syntax for distance parameter ';
+  }
+}
+// Alias
+@mixin in-colpos($distance, $position: 0){
+  @include ingrid-column-position($distance: $distance, $position: $position);
+}
+
+// @m ingrid-rowcol()
+//
+// **Alias:** @m in-rowcol();
+//
+// Shorthand mixin to generate style for the element, which is at same time row and column.
+//
+// Styleguide 1.20.4
+@mixin ingrid-rowcol() {
+   @include grid-column-row();
+};
+// Alias
+@mixin in-rowcol(){
+  @include ingrid-colrow();
+}
