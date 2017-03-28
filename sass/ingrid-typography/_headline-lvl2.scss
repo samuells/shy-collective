@@ -3,11 +3,11 @@
 // =======================
 $font-style-name: "headline-lvl2";
 $default-h2-font-family: $header-font-family;
-$default-h2-font-size: 28px;
-$default-h2-line-height: 1.25;
-$default-h2-margin-top: 0.5;
-$default-h2-margin-bottom: 0.5;
-$default-h2-font-weight: 900;
+$default-h2-font-size: 20px;
+$default-h2-line-height: "calc";
+$default-h2-margin-top: 0;
+$default-h2-margin-bottom: 0;
+$default-h2-font-weight: 300;
 $default-h2-font-style: normal;
 $default-h2-text-rendering: optimizeLegibility;
 $default-h2-color: $primary-headline-color;
@@ -29,16 +29,16 @@ $use-large-h2-styles: true;
   // define breakpoint for the style
   $breakpoint-name: "medium";
   // font-size in px(without unit means px) or rem
-  $font-size: 34px;
+  $font-size: 22px;
   $map: add-node($map, "font-size", $font-size);
   // number of baselines or "min"
   $line-height: "calc";
   $map: add-node($map, "line-height", $line-height);
   // margin-top defined in baselines
-  $margin-top: 1.5;
+  $margin-top: 0;
   $map: add-node($map, "margin-top", $margin-top);
   // margin-top defined in baselines
-  $margin-bottom: 0.75;
+  $margin-bottom: 0;
   $map: add-node($map, "margin-bottom", $margin-bottom);
   // defined map is added to the right styling map
   $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
@@ -51,16 +51,16 @@ $use-large-h2-styles: true;
   // define breakpoint for the style
   $breakpoint-name: "xlarge";
   // font-size in px(without unit means px) or rem
-  $font-size: 36px;
+  $font-size: 26px;
   $map: add-node($map, "font-size", $font-size);
   // number of baselines or "min"
   $line-height: "calc";
   $map: add-node($map, "line-height", $line-height);
   // margin-top defined in baselines
-  $margin-top: 3;
+  $margin-top: 0;
   $map: add-node($map, "margin-top", $margin-top);
   // margin-top defined in baselines
-  $margin-bottom: 1.5;
+  $margin-bottom: 0;
   $map: add-node($map, "margin-bottom", $margin-bottom);
   // defined map is added to the right styling map
   $font-style-map: add-node($font-style-map, $breakpoint-name, $map);

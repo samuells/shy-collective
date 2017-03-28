@@ -3,11 +3,11 @@
 // =======================
 $font-style-name: "headline-lvl1";
 $default-h1-font-family: $header-font-family;
-$default-h1-font-size: 34px;
+$default-h1-font-size: 14px;
 $default-h1-line-height: "calc";
-$default-h1-margin-top: 0.5;
-$default-h1-margin-bottom: 1;
-$default-h1-font-weight: 900;
+$default-h1-margin-top: 0;
+$default-h1-margin-bottom: 0;
+$default-h1-font-weight: 300;
 $default-h1-font-style: normal;
 $default-h1-text-rendering: optimizeLegibility;
 $default-h1-color: $primary-headline-color;
@@ -28,13 +28,13 @@ $use-large-h1-styles: true;
   $map: (); // init of styles map
   $breakpoint-name: "medium"; // define breakpoint for the style
   // font-size in px(without unit means px) or rem
-  $font-size: 40px;
+  $font-size: 16px;
   $map: add-node($map, "font-size", $font-size);
   // number of baselines or "calc"
   $line-height: "calc";
   $map: add-node($map, "line-height", $line-height);
   // margin-top defined in baselines
-  $margin-bottom: 1.5;
+  $margin-bottom: 0;
   $map: add-node($map, "margin-bottom", $margin-bottom);
   // defined map is added to the right styling map
   $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
@@ -46,13 +46,13 @@ $use-large-h1-styles: true;
   $map: (); // init of styles map
   $breakpoint-name: "xlarge"; // define breakpoint for the style
   // font-size in px(without unit means px) or rem
-  $font-size: 44px;
+  $font-size: 20px;
   $map: add-node($map, "font-size", $font-size);
   // number of baselines or "calc"
   $line-height: "calc";
   $map: add-node($map, "line-height", $line-height);
   // margin-top defined in baselines
-  $margin-bottom: 2;
+  $margin-bottom: 0;
   $map: add-node($map, "margin-bottom", $margin-bottom);
   // defined map is added to the right styling map
   $font-style-map: add-node($font-style-map, $breakpoint-name, $map);

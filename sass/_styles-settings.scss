@@ -158,12 +158,12 @@ $panel-padding: 0;
 // * <code>$header-font-family: $body-font-family;</code>
 //
 // Styleguide 1.7
-$font-family-sans-serif: "VoltaModernText", Arial, "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, sans-serif;
+$font-family-sans-serif: "Helvetica Neue", Arial, "Source Sans Pro", Helvetica, Roboto, sans-serif;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 $body-font-family: $font-family-sans-serif;
-$header-font-family: "VoltaModernDisplay", $font-family-sans-serif;
+$header-font-family: $font-family-sans-serif;
 
 $font-weight-normal: normal;
 $font-weight-bold: bold;
@@ -265,7 +265,7 @@ $show-header-for-stacked: false;
 
 // NOTE: Settings from Foundation 5 used in typography reset
 $list-font-size: $base-font-size;
-$list-font-weight: 300;
+$list-font-weight: 400;
 $list-font-color: $default-list-color;
 $list-line-height: rhythm();
 $list-default-float: left;

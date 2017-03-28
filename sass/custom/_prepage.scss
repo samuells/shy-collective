@@ -1,0 +1,213 @@
+// --------------
+// Header
+@keyframes header-fadeout {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 calc-rem(20);
+  z-index: 10;
+  transform: translateY(-100%);
+
+  animation-name: header-fadeout;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+
+  ul {
+    @include reset-ul(true);
+  }
+
+  li {
+    width: 50%;
+    float: left;
+
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  a,
+  p {
+    @include create-rwd-font("paragraph");
+    display: inline-block;
+    padding-top: rh(0.5)
+  }
+  @include breakpoint(large) {
+    padding: 0 5%;
+    a,
+    p {
+      padding-top: rh(1)
+    }
+  }
+}
+
+// --------------
+// Content Overlay
+main {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/fire-bgc.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// --------------
+// Content Overlay
+@keyframes overlay-bg-fadeout {
+  0% {
+    background-color: $body-color;
+  }
+
+  100% {
+    background-color: rgba($body-color, 0.5);
+  }
+}
+
+.content-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include clearfix;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $body-color;
+
+    animation-name: overlay-bg-fadeout;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.75s;
+  }
+}
+// --------------
+// Introduction
+@keyframes introduction-flyout {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%) translateX(-50%);
+  }
+
+  30% {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-80%) translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.introduction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translateY(-50%) translateX(-50%);
+
+  animation-name: introduction-flyout;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+
+// --------------
+// Coming soon
+@keyframes coming-soon-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.coming-soon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 60%;
+  padding: calc-rem(20);
+  transform: translateY(100%);
+
+  animation-name: coming-soon-slide-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+
+  p {
+    font-size: calc-rem(20);
+    line-height: (28 / 20);
+  }
+  @include breakpoint(large) {
+    padding: 0 0 rh(1) 5%;
+    p {
+      font-size: calc-rem(32);
+      line-height: (42 / 32);
+    }
+  }
+}
+
+// --------------
+// Video
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-image: url('http://placehold.it/1200x800');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateX(-50%) translateY(-50%);
+  @include breakpoint(large) {
+    display: block;
+  }
+}

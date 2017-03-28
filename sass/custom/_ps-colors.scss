@@ -15,12 +15,9 @@ $gray-silver: #C6C6C6;
 $gray-dust: #9D9D9C;
 $gray-dove: #6D6D6D;
 $gray-emperor: #555555;
+$black-cod: #1A1A1A;
 $black-mine: #221F1F;
 $black: #000000;
-
-$red-persian: #D13A32;
-$blue-haveloc: #5291DD;
-$blue-novartis: #0460A9;
 
 $blue-twitter: #55ACEE;
 $blue-facebook: #3B5998;
@@ -47,81 +44,9 @@ $medium-gray: $gray-alto;
 $dark-gray: $gray-emperor;
 
 // Primary colors
-$body-color: $white;
-$primary-font-color: $black-mine;
-$primary-headline-color: $black-mine;
-$primary-link-color: $blue-novartis;
-$primary-link-color--active: darken($blue-novartis, 10%);
+$body-color: $black-cod;
+$primary-font-color: $white;
+$primary-headline-color: $white;
+$primary-link-color: $white;
+$primary-link-color--active: darken($white, 10%);
 $default-list-color: $primary-font-color;
-
-// Links
-$link-in-paragraph-bgc--hover: $gray-sand;
-$link-in-paragraph-bgc--active: darken($gray-sand, 10%);
-
-// Buttons
-$button-bc: rgba($black-mine, 0.5);
-$button-fc: rgba($black-mine, 0.5);
-$button-bgc: $white;
-$button-fc--hover: $white;
-$button-bgc--hover: rgba($black-mine, 0.5);
-$button-bc--active: rgba($black-mine, 0.75);
-
-$button-load-fc: rgba($black-mine, 0.5);
-$button-load-bc: rgba($black-mine, 0.5);
-$button-load-bgc: $transparent;
-$button-load-fc--hover: $gray-sand;
-$button-load-bgc--hover: rgba($black-mine, 0.5);
-$button-load-bc--active: darken($button-load-bc, 10%);
-
-// Figure
-$figure-bgc: $gray-sand;
-
-// Page Header && Navigation
-$header-page-bgc: $white;
-$header-page-ic: $primary-font-color;
-$nav-bgc--mobile: $gray-mercury;
-$nav-link-fc: $primary-font-color;
-$nav-link-bgc--hover: $gray-sand;
-$nav-link-bgc--active: darken($gray-sand, 10%);
-
-// Footer
-$footer-copyright-fc: $gray-dove;
-$footer-link-fc: $primary-font-color;
-
-// Hero Areas
-$hero-article-bgc: $white;
-$hero-article-link-fc: $primary-font-color;
-
-$hero-homepage-fc: $white;
-$hero-homepage-content-bgc--mobile: $white;
-$hero-homepage-button-fc: $primary-font-color;
-$hero-homepage-button-bc: $primary-font-color;
-$hero-homepage-button-fc--desktop: $white;
-$hero-homepage-button-bc--desktop: $white;
-$hero-owl-dots-bc: rgba($white, 0.5);
-$hero-owl-dots-bc--active: $white;
-
-// Teasers
-$teaser-footer-bgc: $white;
-$teaser-footer-link-fc: $black-mine;
-$teaser-footer-link-bc: $gray-sand;
-$teaser-footer-play-fc: $white;
-$teaser-footer-play-bgc: $blue-novartis;
-
-$teaser-article-bgc: $white;
-$teaser-article-bc: $black-mine;
-$teaser-article-bc--external: $red-persian;
-$teaser-article-link-fc: $black-mine;
-
-// Bridges
-$bridge-engagement-bgc: $gray-sand;
-
-$bridge-pagination-bgc: $blue-novartis;
-$bridge-pagination-fc: $white;
-
-$bridge-comments-bgc: $gray-sand;
-$bridge-comment-box-bgc: $white;
-$bridge-comment-box-bc: rgba($gray-dust, 0.25);;
-$bridge-comment-text-bc: rgba($gray-dust, 0.1);;
-$bridge-comment-fc--date: rgba($black-mine, 0.5);
-$bridge-comment-form-bc--active: $blue-novartis;
