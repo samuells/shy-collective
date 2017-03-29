@@ -5,6 +5,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
   <title>Shy Collective</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="img/favicons/manifest.json">
+  <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#555555">
+  <link rel="shortcut icon" href="img/favicons/favicon.ico">
+  <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="css/styles.min.css" />
   <!-- <script src="js/dist/modernizr.min.js"></script> -->
@@ -24,14 +32,15 @@
         <p>shy collective</p>
       </li>
       <li>
-        <a href="#">kontakt</a>
+        <a href="#" id="js-show-contact">kontakt</a>
+        <a href="#" id="js-hide-contact">zurück</a>
       </li>
     </ul>
   </header>
   <main>
     <video autoplay loop poster="img/using-ipad.jpeg" id="bgvid">
-      <source src="video/shy-fire-small.mp4" type="video/mp4">
-      <source src="video/using-ipad.mov" type="video/mov">
+      <source src="video/shy-grass.mp4" type="video/mp4">
+      <!-- <source src="video/using-ipad.mov" type="video/mov"> -->
     </video>
     <div class="content-overlay">
       <div class="introduction">
@@ -41,18 +50,32 @@
       <div class="coming-soon">
         <p>new website coming soon ...</p>
       </div>
-      <!-- <div class="contact-info">
+      <div class="contact-info">
         <address>
           <p>
-            shy collective GmbH <br/>
-            Fronhof 6, 79346 Endingen <br/>
+            shy collective GmbH<br/>
+            Fronhof 6, 79346 Endingen<br/>
             <a href="tel:+4976429279003">+49 (0) 7642 92 79 003</a>
           </p>
           <a href="mailto:hello@shycollective.com">hello@shycollective.com</a>
         </address>
-      </div> -->
+      </div>
     </div>
   </main>
 </body>
+<script>
+  var showContact = document.getElementById("js-show-contact");;
+  showContact.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelectorAll('body')[0].classList.remove('contact-hidden');
+    document.querySelectorAll('body')[0].classList.add('contact-shown');
+  });
+  var hideContact = document.getElementById("js-hide-contact");;
+  hideContact.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelectorAll('body')[0].classList.remove('contact-shown');
+    document.querySelectorAll('body')[0].classList.add('contact-hidden');
+  });
+</script>
 
 </html>

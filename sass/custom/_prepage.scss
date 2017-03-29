@@ -15,6 +15,50 @@
     transform: translateY(0%);
   }
 }
+@keyframes trigger-slide-in-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+@keyframes trigger-slide-in-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+@keyframes trigger-slide-back {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 
 header {
   position: fixed;
@@ -36,6 +80,7 @@ header {
   }
 
   li {
+    position: relative;
     width: 50%;
     float: left;
 
@@ -48,13 +93,59 @@ header {
   p {
     @include create-rwd-font("paragraph");
     display: inline-block;
-    padding-top: rh(0.5)
+    padding-top: rh(0.5);
+  }
+
+  a {
+    position: absolute;
+    right: 0;
+    transition-duration: 300ms;
+    transition-property: transform, opacity;
+    transition-timing-function: ease-in-out;
+
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    &#js-hide-contact {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    .contact-shown & {
+      &#js-hide-contact {
+        transform: translateX(100%);
+        opacity: 0;
+        animation-name: trigger-slide-back;
+      }
+
+      &#js-show-contact {
+        transform: translateX(0%);
+        opacity: 1;
+        animation-name: trigger-slide-in-left;
+      }
+    }
+
+    .contact-hidden & {
+      &#js-hide-contact {
+        transform: translateX(0%);
+        opacity: 1;
+        animation-name: trigger-slide-in-right;
+      }
+
+      &#js-show-contact {
+        transform: translateX(-100%);
+        opacity: 0;
+        animation-name: trigger-slide-back;
+      }
+    }
   }
   @include breakpoint(large) {
     padding: 0 5%;
+
     a,
     p {
-      padding-top: rh(1)
+      padding-top: rh(1);
     }
   }
 }
@@ -164,6 +255,35 @@ main {
     transform: translateY(0%);
   }
 }
+@keyframes comin-soon-slide-in-side {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes comin-soon-slide-from-side {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 
 .coming-soon {
   position: absolute;
@@ -185,9 +305,120 @@ main {
   }
   @include breakpoint(large) {
     padding: 0 0 rh(1) 5%;
+
     p {
       font-size: calc-rem(32);
       line-height: (42 / 32);
+    }
+  }
+  @include breakpoint(xlarge) {
+    p {
+      font-size: calc-rem(44);
+      line-height: (54 / 44);
+    }
+  }
+
+  .contact-shown & {
+    opacity: 1;
+    transform: translateX(0%);
+    animation-name: comin-soon-slide-in-side;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+  }
+
+  .contact-hidden & {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation-name: comin-soon-slide-from-side;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+  }
+}
+// --------------
+// Contact Info
+@keyframes contact-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes contact-slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.contact-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: calc-rem(20);
+  text-align: right;
+  transform: translateX(100%);
+
+  address {
+    margin-bottom: rh(.5);
+    font-size: calc-rem(20);
+    line-height: (28 / 20);
+
+    a,
+    p {
+      font-size: inherit;
+      line-height: inherit;
+      font-style: normal;
+    }
+  }
+
+  .contact-shown & {
+    animation-name: contact-slide-in;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .contact-hidden & {
+    opacity: 1;
+    transform: translateX(0%);
+    animation-name: contact-slide-out;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  @include breakpoint(large) {
+    padding: 0 5% rh(1) 0;
+    max-width: 70%;
+
+    address {
+      font-size: calc-rem(32);
+      line-height: (42 / 32);
+    }
+  }
+  @include breakpoint(xlarge) {
+    address {
+      font-size: calc-rem(44);
+      line-height: (54 / 44);
     }
   }
 }

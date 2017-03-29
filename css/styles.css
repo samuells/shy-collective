@@ -554,7 +554,7 @@ p {
       margin-bottom: 0.75rem; } }
   @media screen and (min-width: 64em) {
     p {
-      font-size: 1.25rem;
+      font-size: 1.375rem;
       line-height: 2.0625rem; } }
 
 h1 {
@@ -699,6 +699,35 @@ dl dd {
     opacity: 1;
     transform: translateY(0%); } }
 
+@keyframes trigger-slide-in-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0%); }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 0;
+    transform: translateX(100%); } }
+
+@keyframes trigger-slide-in-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0%); }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%); } }
+
+@keyframes trigger-slide-back {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateX(0%); } }
+
 header {
   position: fixed;
   top: 0;
@@ -719,6 +748,7 @@ header {
     header ul > li {
       display: inline-block; }
   header li {
+    position: relative;
     width: 50%;
     float: left; }
     header li:nth-child(2) {
@@ -748,8 +778,36 @@ header {
     @media screen and (min-width: 64em) {
       header a,
       header p {
-        font-size: 1.25rem;
+        font-size: 1.375rem;
         line-height: 2.0625rem; } }
+  header a {
+    position: absolute;
+    right: 0;
+    transition-duration: 300ms;
+    transition-property: transform, opacity;
+    transition-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; }
+    header a#js-hide-contact {
+      transform: translateX(100%);
+      opacity: 0; }
+    .contact-shown header a#js-hide-contact {
+      transform: translateX(100%);
+      opacity: 0;
+      animation-name: trigger-slide-back; }
+    .contact-shown header a#js-show-contact {
+      transform: translateX(0%);
+      opacity: 1;
+      animation-name: trigger-slide-in-left; }
+    .contact-hidden header a#js-hide-contact {
+      transform: translateX(0%);
+      opacity: 1;
+      animation-name: trigger-slide-in-right; }
+    .contact-hidden header a#js-show-contact {
+      transform: translateX(-100%);
+      opacity: 0;
+      animation-name: trigger-slide-back; }
   @media print, screen and (min-width: 46.25em) {
     header {
       padding: 0 5%; }
@@ -833,6 +891,25 @@ main {
     opacity: 1;
     transform: translateY(0%); } }
 
+@keyframes comin-soon-slide-in-side {
+  0% {
+    opacity: 1;
+    transform: translateX(0%); }
+  75% {
+    opacity: 0; }
+  100% {
+    transform: translateX(-100%); } }
+
+@keyframes comin-soon-slide-from-side {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateX(0%); } }
+
 .coming-soon {
   position: absolute;
   bottom: 0;
@@ -854,6 +931,85 @@ main {
       .coming-soon p {
         font-size: 2rem;
         line-height: 1.3125; } }
+  @media screen and (min-width: 64em) {
+    .coming-soon p {
+      font-size: 2.75rem;
+      line-height: 1.22727; } }
+  .contact-shown .coming-soon {
+    opacity: 1;
+    transform: translateX(0%);
+    animation-name: comin-soon-slide-in-side;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s; }
+  .contact-hidden .coming-soon {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation-name: comin-soon-slide-from-side;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s; }
+
+@keyframes contact-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateX(0%); } }
+
+@keyframes contact-slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0%); }
+  75% {
+    opacity: 0; }
+  100% {
+    transform: translateX(100%); } }
+
+.contact-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1.25rem;
+  text-align: right;
+  transform: translateX(100%); }
+  .contact-info address {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.4; }
+    .contact-info address a,
+    .contact-info address p {
+      font-size: inherit;
+      line-height: inherit;
+      font-style: normal; }
+  .contact-shown .contact-info {
+    animation-name: contact-slide-in;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; }
+  .contact-hidden .contact-info {
+    opacity: 1;
+    transform: translateX(0%);
+    animation-name: contact-slide-out;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; }
+  @media print, screen and (min-width: 46.25em) {
+    .contact-info {
+      padding: 0 5% 1.5rem 0;
+      max-width: 70%; }
+      .contact-info address {
+        font-size: 2rem;
+        line-height: 1.3125; } }
+  @media screen and (min-width: 64em) {
+    .contact-info address {
+      font-size: 2.75rem;
+      line-height: 1.22727; } }
 
 video {
   position: fixed;
