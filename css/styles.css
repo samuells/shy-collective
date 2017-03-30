@@ -832,7 +832,8 @@ main {
 .content-overlay {
   position: relative;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
   .content-overlay::before, .content-overlay::after {
     display: table;
     content: ' '; }
