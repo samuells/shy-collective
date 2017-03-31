@@ -1,3 +1,85 @@
+/*
+ * Legal Disclaimer
+ *
+ * These Fonts are licensed only for use on these domains and their subdomains:
+ * shycollective.com
+ *
+ * It is illegal to download or use them on other websites.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2017
+ */
+
+
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The fonts folder(s) should be placed relative to the regular CSS file.
+ *
+ * You can use either the complete or subsetted fonts:
+ * If you don’t require the entire range of characters, you can use the smaller, subsetted webfonts instead.
+ * See "Glyphs & Languages" for an overview of the characters in the *_subsetted.html file in the root directory of this package.
+ *
+ */
+
+
+/* Complete */
+
+@font-face {
+    font-family: "Brown-Bold";
+    src:url("../fonts/lineto-brown-bold.eot");
+    src:url("../fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-bold.woff2") format("woff2"),
+        url("../fonts/lineto-brown-bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Boldalt";
+    src:url("../fonts/lineto-brown-boldalt.eot");
+    src:url("../fonts/lineto-brown-boldalt.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-boldalt.woff2") format("woff2"),
+        url("../fonts/lineto-brown-boldalt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Reclinbold";
+    src:url("../fonts/lineto-brown-reclinbold.eot");
+    src:url("../fonts/lineto-brown-reclinbold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-reclinbold.woff2") format("woff2"),
+        url("../fonts/lineto-brown-reclinbold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Reclinboldalt";
+    src:url("../fonts/lineto-brown-reclinboldalt.eot");
+    src:url("../fonts/lineto-brown-reclinboldalt.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-reclinboldalt.woff2") format("woff2"),
+        url("../fonts/lineto-brown-reclinboldalt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+// --------------
+// Anchor Link -global
+a {
+  @include ps-transition(color);
+  &:hover,
+  &:active,
+  &:focus {
+    color: $yellow-turbo;
+  }
+}
+
 // --------------
 // Header
 @keyframes header-fadeout {
@@ -18,7 +100,7 @@
 @keyframes trigger-slide-in-right {
   0% {
     opacity: 1;
-    transform: translateX(0%);
+    z-index: 10;
   }
 
   75% {
@@ -27,13 +109,13 @@
 
   100% {
     opacity: 0;
-    transform: translateX(100%);
+    z-index: 0;
   }
 }
 @keyframes trigger-slide-in-left {
   0% {
     opacity: 1;
-    transform: translateX(0%);
+    z-index: 10;
   }
 
   75% {
@@ -42,12 +124,13 @@
 
   100% {
     opacity: 0;
-    transform: translateX(-100%);
+    z-index: 0;
   }
 }
 @keyframes trigger-slide-back {
   0% {
     opacity: 0;
+    z-index: 0;
   }
 
   50% {
@@ -56,7 +139,7 @@
 
   100% {
     opacity: 1;
-    transform: translateX(0%);
+    z-index: 10;
   }
 }
 
@@ -107,20 +190,23 @@ header {
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
 
+    &#js-show-contact {
+      z-index: 10;
+    }
+
     &#js-hide-contact {
-      transform: translateX(100%);
+      z-index: 0;
       opacity: 0;
     }
 
+
     .contact-shown & {
       &#js-hide-contact {
-        transform: translateX(100%);
         opacity: 0;
         animation-name: trigger-slide-back;
       }
 
       &#js-show-contact {
-        transform: translateX(0%);
         opacity: 1;
         animation-name: trigger-slide-in-left;
       }
@@ -128,13 +214,12 @@ header {
 
     .contact-hidden & {
       &#js-hide-contact {
-        transform: translateX(0%);
         opacity: 1;
         animation-name: trigger-slide-in-right;
       }
 
       &#js-show-contact {
-        transform: translateX(-100%);
+        // transform: translateX(-100%);
         opacity: 0;
         animation-name: trigger-slide-back;
       }
@@ -237,6 +322,13 @@ main {
   h2 {
     text-align: center;
   }
+
+  img {
+    display: block;
+    width: 80%;
+    max-width: calc-rem(450);
+    margin: 0 auto;
+  }
 }
 
 // --------------
@@ -244,7 +336,7 @@ main {
 @keyframes coming-soon-slide-in {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    // transform: translateY(100%);
   }
 
   30% {
@@ -253,13 +345,13 @@ main {
 
   100% {
     opacity: 1;
-    transform: translateY(0%);
+    // transform: translateY(0%);
   }
 }
 @keyframes comin-soon-slide-in-side {
   0% {
     opacity: 1;
-    transform: translateX(0%);
+    // transform: translateX(0%);
   }
 
   75% {
@@ -267,13 +359,14 @@ main {
   }
 
   100% {
-    transform: translateX(-100%);
+    opacity: 0;
+    // transform: translateX(-100%);
   }
 }
 @keyframes comin-soon-slide-from-side {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    // transform: translateX(-100%);
   }
 
   50% {
@@ -282,7 +375,7 @@ main {
 
   100% {
     opacity: 1;
-    transform: translateX(0%);
+    // transform: translateX(0%);
   }
 }
 
@@ -292,7 +385,8 @@ main {
   left: 0;
   max-width: 60%;
   padding: calc-rem(20);
-  transform: translateY(100%);
+  opacity: 0;
+  // transform: translateY(100%);
 
   animation-name: coming-soon-slide-in;
   animation-duration: 1.5s;
@@ -321,7 +415,7 @@ main {
 
   .contact-shown & {
     opacity: 1;
-    transform: translateX(0%);
+    // transform: translateX(0%);
     animation-name: comin-soon-slide-in-side;
     animation-duration: 2s;
     animation-timing-function: ease-out;
@@ -331,7 +425,7 @@ main {
 
   .contact-hidden & {
     opacity: 0;
-    transform: translateX(-100%);
+    // transform: translateX(-100%);
     animation-name: comin-soon-slide-from-side;
     animation-duration: 2s;
     animation-timing-function: ease-out;
