@@ -879,7 +879,7 @@ header {
 main {
   width: 100vw;
   height: 100vh;
-  background-image: url("../img/fire-bgc.jpg");
+  background-image: url("../img/grass-bgi.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
@@ -1080,7 +1080,7 @@ video {
   min-height: 100%;
   width: auto;
   height: auto;
-  background-image: url("http://placehold.it/1200x800");
+  background-image: url("../img/grass-bgi.png");
   background-repeat: no-repeat;
   background-size: cover;
   transform: translateX(-50%) translateY(-50%); }
