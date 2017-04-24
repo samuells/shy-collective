@@ -23,3 +23,9 @@ $ps-transition-duration: 200ms !default;
   @include transition-duration($ps-transition-duration);
   @include transition-timing-function(ease-out);
 }
+
+@mixin center-horizontal {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

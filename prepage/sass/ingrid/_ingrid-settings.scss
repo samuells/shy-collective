@@ -1,0 +1,56 @@
+// Ingrid Settings - Default
+// -----------------------------
+//
+// Table of Contents:
+//
+// Media Queries
+// Rhythm settings
+// Typography
+// List Settings
+
+// Media Queries
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$breakpoints: ( default: 0, small: 360px, medium: 540px, large: 740px, xlarge: 1024px, xxlarge: 1440px) !default;
+$maxed-breakpoint: breakpoint(xxlarge) !default;
+$maxed-row-width: rem-calc(1200) !default;
+
+// Rhythm settings
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$base-font-size: 16px !default;
+$base-line-height: 24px !default;
+$round-to-nearest-half-line: true !default;
+$min-line-padding: 2px !default;
+$browser-default-font-size: 16px !default;
+
+// Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace !default;
+
+$body-font-family: $font-family-sans-serif !default;
+$header-font-family: $body-font-family !default;
+$button-font-family: $body-font-family !default;
+
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+// NOTE: Here come another imports of the paragraph styles
+//       You can use the custom font template as the sample for these font/paragraph styles
+// @import "typography/custom-font-template"
+
+// Lists Settings
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$list-font-size: $base-font-size !default;
+$list-font-weight: 300 !default;
+$list-font-color: $primary-font-color !default;
+$list-line-height: rhythm() !default;
+$list-default-float: left !default;
+$list-nested-margin: rhythm() !default;
+$list-side-margin: rh(1) !default;
+$list-margin-bottom: rhythm(0.25) !default;
+$list-style-position: outside !default;
+$list-font-family: $body-font-family !default;
+$definition-list-header-margin-bottom: 0 !default;
+$definition-list-header-weight: 700 !default;
+$definition-list-margin-bottom: 0 !default;

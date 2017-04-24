@@ -1,0 +1,149 @@
+.introduction-flyout {
+  display: none; // NOTE: TEMP
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  img {
+    position: relative;
+    top: 50%;
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+  }
+}
+
+.home-offer {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  ul {
+    @include reset-ul;
+    flex: 1 1 100%;
+  }
+
+  span {
+    display: none;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: rh(0.5) 0;
+    font-size: calc-rem(30);
+    line-height: (36 / 30);
+    text-align: center;
+    @include ps-transition(color);
+  }
+
+  .manifest-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('http://placehold.it/1200x800/040402/&text=unique');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    @include ps-transition(opacity);
+
+    &.focused {
+      background-image: url('http://placehold.it/1200x800/454783/&text=focused');
+    }
+
+    &.craft {
+      background-image: url('http://placehold.it/1200x800/a4c5c7/&text=craft');
+    }
+  }
+
+  &.unique .unique {
+    opacity: 1;
+  }
+
+  &.craft .craft {
+    opacity: 1;
+  }
+
+  &.focused .focused {
+    opacity: 1;
+  }
+  @include breakpoint(medium) {
+    a {
+      font-size: calc-rem(50);
+      line-height: (56 / 50);
+    }
+  }
+  @include breakpoint(large) {
+    ul {
+      @include in-row($outer: true);
+    }
+
+    .choose {
+      position: absolute;
+      display: block;
+      top: 50%;
+      font-size: 0.4em;
+      color: $home-offer-fc;
+      transform: translateY(-50%);
+      opacity: 0;
+      @include ps-transition(opacity);
+    }
+
+    .play {
+      position: relative;
+      display: inline-block;
+      padding-right: calc-rem(140);
+      font-size: 0.4em;
+      line-height: calc-rem(78);
+      color: $home-offer-fc;
+      vertical-align: bottom;
+      opacity: 0;
+      @include ps-transition(opacity);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: inline-block;
+        width: calc-rem(100);
+        border: calc-rem(1) solid currentColor;
+        margin: 0 calc-rem(20);
+        transform: rotateY(-50%);
+      }
+    }
+
+    a {
+      font-size: calc-rem(78);
+      line-height: 1;
+      text-align: right;
+
+      &:not(.choosed) {
+        &:active,
+        &:focus,
+        &:hover {
+          color: $home-offer-fc--hover;
+
+          .choose {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.choosed {
+        color: $home-offer-fc--choosed;
+
+        .play {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

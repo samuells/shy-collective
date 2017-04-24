@@ -1,0 +1,53 @@
+// =======================
+// Colors Variables
+//
+// Naming convention - base color + the name of the color base
+// on the project http://chir.ag/projects/name-that-color/
+// =======================
+
+// Project Palette
+$transparent: rgba(255,255,255,0);
+$white: #FFFFFF;
+$gray-sand: #F5F5F5;
+$gray-mercury: #E6E6E6;
+$gray-alto: #D5D5D5;
+$gray-silver: #C6C6C6;
+$gray-dust: #9D9D9C;
+$gray-dove: #6D6D6D;
+$gray-emperor: #555555;
+$black-cod: #1A1A1A;
+$black-mine: #221F1F;
+$black: #000000;
+$yellow-turbo: #FFE300;
+
+$blue-twitter: #55ACEE;
+$blue-facebook: #3B5998;
+$blue-linkedin: #5291DD;
+
+// Foundation Color Palette
+$yellow-sea: #FFAE00;
+$orange-flamingo: #EC5840;
+$green-shamrock: #3ADB76;
+$blue-curious: #2199E8;
+
+
+// =======================
+// Colors Constants
+//
+// In this section are defined color constants for various elements of web.
+// **To define color use only variables from above section**
+// =======================
+
+// Foundation Color Paletee
+$foundation-palette: ( primary: $blue-curious, secondary: $gray-emperor, success: $green-shamrock, warning: $yellow-sea, alert: $orange-flamingo);
+$light-gray: $gray-mercury;
+$medium-gray: $gray-alto;
+$dark-gray: $gray-emperor;
+
+// Primary colors
+$body-color: $black-cod;
+$primary-font-color: $white;
+$primary-headline-color: $white;
+$primary-link-color: $white;
+$primary-link-color--active: darken($white, 10%);
+$default-list-color: $primary-font-color;

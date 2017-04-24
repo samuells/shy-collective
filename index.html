@@ -15,52 +15,50 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="css/styles.min.css" />
-  <!-- <script src="js/dist/modernizr.min.js"></script> -->
-  <!--[if lt IE 9]>
-  <script>
-  document.createElement('video');
-  </script>
-  <![endif]-->
-  <!--[if lte IE 9]>
-  <![endif]-->
 </head>
 
 <body>
-  <header>
-    <ul>
-      <li>
-        <p>shy collective</p>
-      </li>
-      <li>
-        <a href="#" id="js-show-contact">kontakt</a>
-        <a href="#" id="js-hide-contact">zurück</a>
-      </li>
-    </ul>
+  <header class="nav-header">
+    <div class="logo-wrapper">
+      <a href="#">shy collective</a>
+    </div>
+    <div class="menu-wrapper">
+      <a href="#" class="menu-trigger">menu</a>
+      <div class="overlay-menu">
+        <ul>
+          <li><a href="#">manifest</a></li>
+          <li><a href="#">showreel</a></li>
+          <li><a href="#">projects</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="quick-menu-wrapper">
+      <ul>
+        <li>
+          <a href="#">projects</a>
+        </li>
+        <li>
+          <a href="#">contact</a>
+        </li>
+      </ul>
+    </div>
   </header>
   <main>
-    <video autoplay loop poster="img/grass-bgi.png" id="bgvid">
-      <source src="video/shy-grass.mp4" type="video/mp4">
-      <!-- <source src="video/using-ipad.mov" type="video/mov"> -->
-    </video>
-    <div class="content-overlay">
-      <div class="introduction">
-        <img src="img/shy-logo.svg" alt="">
-        <!-- <h1>shy collective</h1>
-        <h2>DIE BEWEGTBILD MANUFAKTUR</h2> -->
-      </div>
-      <div class="coming-soon">
-        <p>new website coming soon ...</p>
-      </div>
-      <div class="contact-info">
-        <address>
-          <p>
-            shy collective GmbH<br/>
-            Fronhof 6, 79346 Endingen<br/>
-            <a href="tel:+4976429279003">+49 (0) 7642 92 79 003</a>
-          </p>
-          <a href="mailto:hello@shycollective.com">hello@shycollective.com</a>
-        </address>
-      </div>
+    <div class="introduction-flyout">
+      <img src="img/shy-logo.svg" alt="">
+    </div>
+    <div class="home-offer">
+      <div class="manifest-img unique"><span>Manifest image for Unique value</span></div>
+      <div class="manifest-img focused"><span>Manifest image for Unique value</span></div>
+      <div class="manifest-img craft"><span>Manifest image for Unique value</span></div>
+      <ul>
+        <li><a class="choosed" href=""><span class="choose">choose</span><span class="play">play</span>UNIQUE</a></li>
+        <li><a href=""><span class="choose">choose</span><span class="play">play</span>FOCUSED</a></li>
+        <li><a href=""><span class="choose">choose</span><span class="play">play</span>CRAFT</a></li>
+        <li><a href=""><span class="choose">choose</span><span class="play">play</span>PASSION</a></li>
+        <li><a href=""><span class="choose">choose</span><span class="play">play</span>CARE</a></li>
+      </ul>
     </div>
   </main>
 </body>

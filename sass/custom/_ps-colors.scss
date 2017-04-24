@@ -51,3 +51,11 @@ $primary-headline-color: $white;
 $primary-link-color: $white;
 $primary-link-color--active: darken($white, 10%);
 $default-list-color: $primary-font-color;
+
+// Navigation Header
+$menu-trigger-bc: $white;
+
+// Home offer
+$home-offer-fc: $white;
+$home-offer-fc--hover: $yellow-turbo;
+$home-offer-fc--choosed: $yellow-turbo;

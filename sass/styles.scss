@@ -25,5 +25,7 @@
 // - icons classes and variables
 @import "custom/ps-mixins"; // project specific mixins (ussually for style - as skew, border-radius...)
 
-// Video
-@import "custom/_prepage.scss";
+//Pages
+@import "custom/fonts";
+@import "custom/navigation";
+@import "custom/page-home";

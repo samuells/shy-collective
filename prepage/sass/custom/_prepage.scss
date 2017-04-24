@@ -1,0 +1,539 @@
+/*
+ * Legal Disclaimer
+ *
+ * These Fonts are licensed only for use on these domains and their subdomains:
+ * shycollective.com
+ *
+ * It is illegal to download or use them on other websites.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2017
+ */
+
+
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The fonts folder(s) should be placed relative to the regular CSS file.
+ *
+ * You can use either the complete or subsetted fonts:
+ * If you don’t require the entire range of characters, you can use the smaller, subsetted webfonts instead.
+ * See "Glyphs & Languages" for an overview of the characters in the *_subsetted.html file in the root directory of this package.
+ *
+ */
+
+
+/* Complete */
+
+@font-face {
+    font-family: "Brown-Bold";
+    src:url("../fonts/lineto-brown-bold.eot");
+    src:url("../fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-bold.woff2") format("woff2"),
+        url("../fonts/lineto-brown-bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Boldalt";
+    src:url("../fonts/lineto-brown-boldalt.eot");
+    src:url("../fonts/lineto-brown-boldalt.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-boldalt.woff2") format("woff2"),
+        url("../fonts/lineto-brown-boldalt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Reclinbold";
+    src:url("../fonts/lineto-brown-reclinbold.eot");
+    src:url("../fonts/lineto-brown-reclinbold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-reclinbold.woff2") format("woff2"),
+        url("../fonts/lineto-brown-reclinbold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Reclinboldalt";
+    src:url("../fonts/lineto-brown-reclinboldalt.eot");
+    src:url("../fonts/lineto-brown-reclinboldalt.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-reclinboldalt.woff2") format("woff2"),
+        url("../fonts/lineto-brown-reclinboldalt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+// --------------
+// Anchor Link -global
+a {
+  @include ps-transition(color);
+  &:hover,
+  &:active,
+  &:focus {
+    color: $yellow-turbo;
+  }
+}
+
+// --------------
+// Header
+@keyframes header-fadeout {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes trigger-slide-in-right {
+  0% {
+    opacity: 1;
+    z-index: 10;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes trigger-slide-in-left {
+  0% {
+    opacity: 1;
+    z-index: 10;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes trigger-slide-back {
+  0% {
+    opacity: 0;
+    z-index: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 10;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 calc-rem(20);
+  z-index: 10;
+  transform: translateY(-100%);
+
+  animation-name: header-fadeout;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+
+  ul {
+    @include reset-ul(true);
+  }
+
+  li {
+    position: relative;
+    width: 50%;
+    float: left;
+
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  a,
+  p {
+    @include create-rwd-font("paragraph");
+    display: inline-block;
+    padding-top: rh(0.5);
+  }
+
+  a {
+    position: absolute;
+    right: 0;
+    transition-duration: 300ms;
+    transition-property: transform, opacity;
+    transition-timing-function: ease-in-out;
+
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    &#js-show-contact {
+      z-index: 10;
+    }
+
+    &#js-hide-contact {
+      z-index: 0;
+      opacity: 0;
+    }
+
+
+    .contact-shown & {
+      &#js-hide-contact {
+        opacity: 0;
+        animation-name: trigger-slide-back;
+      }
+
+      &#js-show-contact {
+        opacity: 1;
+        animation-name: trigger-slide-in-left;
+      }
+    }
+
+    .contact-hidden & {
+      &#js-hide-contact {
+        opacity: 1;
+        animation-name: trigger-slide-in-right;
+      }
+
+      &#js-show-contact {
+        // transform: translateX(-100%);
+        opacity: 0;
+        animation-name: trigger-slide-back;
+      }
+    }
+  }
+  @include breakpoint(large) {
+    padding: 0 5%;
+
+    a,
+    p {
+      padding-top: rh(1);
+    }
+  }
+}
+
+// --------------
+// Content Overlay
+main {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/grass-bgi.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// --------------
+// Content Overlay
+@keyframes overlay-bg-fadeout {
+  0% {
+    background-color: $body-color;
+  }
+
+  100% {
+    background-color: rgba($body-color, 0.5);
+  }
+}
+
+.content-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include clearfix;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $body-color;
+
+    animation-name: overlay-bg-fadeout;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.75s;
+  }
+}
+// --------------
+// Introduction
+@keyframes introduction-flyout {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%) translateX(-50%);
+  }
+
+  30% {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-80%) translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.introduction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translateY(-50%) translateX(-50%);
+
+  animation-name: introduction-flyout;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    width: 80%;
+    max-width: calc-rem(450);
+    margin: 0 auto;
+  }
+}
+
+// --------------
+// Coming soon
+@keyframes coming-soon-slide-in {
+  0% {
+    opacity: 0;
+    // transform: translateY(100%);
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    // transform: translateY(0%);
+  }
+}
+@keyframes comin-soon-slide-in-side {
+  0% {
+    opacity: 1;
+    // transform: translateX(0%);
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    // transform: translateX(-100%);
+  }
+}
+@keyframes comin-soon-slide-from-side {
+  0% {
+    opacity: 0;
+    // transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    // transform: translateX(0%);
+  }
+}
+
+.coming-soon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 60%;
+  padding: calc-rem(20);
+  opacity: 0;
+  // transform: translateY(100%);
+
+  animation-name: coming-soon-slide-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+
+  p {
+    font-size: calc-rem(20);
+    line-height: (28 / 20);
+  }
+  @include breakpoint(large) {
+    padding: 0 0 rh(1) 5%;
+
+    p {
+      font-size: calc-rem(32);
+      line-height: (42 / 32);
+    }
+  }
+  @include breakpoint(xlarge) {
+    p {
+      font-size: calc-rem(44);
+      line-height: (54 / 44);
+    }
+  }
+
+  .contact-shown & {
+    opacity: 1;
+    // transform: translateX(0%);
+    animation-name: comin-soon-slide-in-side;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+  }
+
+  .contact-hidden & {
+    opacity: 0;
+    // transform: translateX(-100%);
+    animation-name: comin-soon-slide-from-side;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+  }
+}
+// --------------
+// Contact Info
+@keyframes contact-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes contact-slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.contact-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: calc-rem(20);
+  text-align: right;
+  transform: translateX(100%);
+
+  address {
+    margin-bottom: rh(.5);
+    font-size: calc-rem(20);
+    line-height: (28 / 20);
+
+    a,
+    p {
+      font-size: inherit;
+      line-height: inherit;
+      font-style: normal;
+    }
+  }
+
+  .contact-shown & {
+    animation-name: contact-slide-in;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .contact-hidden & {
+    opacity: 1;
+    transform: translateX(0%);
+    animation-name: contact-slide-out;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  @include breakpoint(large) {
+    padding: 0 5% rh(1) 0;
+    max-width: 70%;
+
+    address {
+      font-size: calc-rem(32);
+      line-height: (42 / 32);
+    }
+  }
+  @include breakpoint(xlarge) {
+    address {
+      font-size: calc-rem(44);
+      line-height: (54 / 44);
+    }
+  }
+}
+
+// --------------
+// Video
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-image: url('../img/grass-bgi.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateX(-50%) translateY(-50%);
+  @include breakpoint(large) {
+    display: block;
+  }
+}
