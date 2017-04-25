@@ -30,7 +30,7 @@ gulp.task('watch:dev', function() {
 // MAIN TASKS
 // ==================
 gulp.task('dev', function(){
-  return runSequence('sass', 'css:min', 'watch:dev');
+  return runSequence('sass', ['css:min', 'js:min'], 'watch:dev');
 });
 
 gulp.task('default', ['dev']);
