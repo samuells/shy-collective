@@ -719,19 +719,24 @@ dl dd {
   font-style: normal; }
 
 .nav-header {
-  max-width: 75rem;
-  margin-right: auto;
-  margin-left: auto;
   position: fixed;
-  width: 100%; }
-  .nav-header::before, .nav-header::after {
-    display: table;
-    content: ' '; }
-  .nav-header::after {
-    clear: both; }
-  @media screen and (min-width: 100em) {
-    .nav-header {
-      max-width: 75rem; } }
+  width: 100%;
+  z-index: 10; }
+  .nav-header .header-row {
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto; }
+    .nav-header .header-row::before, .nav-header .header-row::after {
+      display: table;
+      content: ' '; }
+    .nav-header .header-row::after {
+      clear: both; }
+    @media screen and (min-width: 87.5em) {
+      .nav-header .header-row {
+        max-width: 75%; } }
+    @media screen and (min-width: 100em) {
+      .nav-header .header-row {
+        max-width: 75rem; } }
   .nav-header .logo-wrapper,
   .nav-header .menu-wrapper {
     width: 50%;

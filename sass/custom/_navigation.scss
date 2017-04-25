@@ -1,7 +1,11 @@
 .nav-header {
-  @include in-row();
   position: fixed;
   width: 100%;
+  z-index: $header-page-zi;
+
+  .header-row {
+    @include in-row($outer: true);
+  }
 
   .logo-wrapper,
   .menu-wrapper {
@@ -35,6 +39,7 @@
       top: 50%;
       transform: translateY(-50%);
     }
+
     a {
       display: block;
       text-align: center;
