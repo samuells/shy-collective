@@ -58,23 +58,23 @@
     }
 
     &.unique {
-      background-image: url('http://lorempixel.com/1200/800/abstract');
+      background-image: url('../img/home-unique.jpg');
     }
 
     &.focused {
-      background-image: url('http://lorempixel.com/1200/800/city');
+      background-image: url('../img/home-focused.jpg');
     }
 
     &.craft {
-      background-image: url('http://lorempixel.com/1200/800/technics');
+      background-image: url('../img/home-craft.jpg');
     }
 
     &.passion {
-      background-image: url('http://lorempixel.com/1200/800/people');
+      background-image: url('../img/home-passion.jpg');
     }
 
     &.care {
-      background-image: url('http://lorempixel.com/1200/800/nature');
+      background-image: url('../img/home-care.jpg');
     }
   }
 

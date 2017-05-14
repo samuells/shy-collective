@@ -442,7 +442,7 @@ template {
   display: none; }
 
 .foundation-mq {
-  font-family: "default=0em&small=22.5em&medium=33.75em&large=46.25em&xlarge=64em&xxlarge=87.5em&maxed=100em"; }
+  font-family: "default=0em&small=22.5em&medium=33.75em&large=46.25em&xlarge=64em&xxlarge=87.5em&maxed=120em"; }
 
 html {
   box-sizing: border-box;
@@ -723,7 +723,7 @@ dl dd {
   width: 100%;
   z-index: 10; }
   .nav-header .header-row {
-    max-width: 75rem;
+    max-width: 100rem;
     margin-right: auto;
     margin-left: auto; }
     .nav-header .header-row::before, .nav-header .header-row::after {
@@ -733,10 +733,10 @@ dl dd {
       clear: both; }
     @media screen and (min-width: 87.5em) {
       .nav-header .header-row {
-        max-width: 75%; } }
-    @media screen and (min-width: 100em) {
+        max-width: 83.33333%; } }
+    @media screen and (min-width: 120em) {
       .nav-header .header-row {
-        max-width: 75rem; } }
+        max-width: 100rem; } }
   .nav-header .logo-wrapper,
   .nav-header .menu-wrapper {
     width: 50%;
@@ -865,22 +865,22 @@ dl dd {
     .home-offer .manifest-img.showed {
       opacity: 1; }
     .home-offer .manifest-img.unique {
-      background-image: url("http://lorempixel.com/1200/800/abstract"); }
+      background-image: url("../img/home-unique.jpg"); }
     .home-offer .manifest-img.focused {
-      background-image: url("http://lorempixel.com/1200/800/city"); }
+      background-image: url("../img/home-focused.jpg"); }
     .home-offer .manifest-img.craft {
-      background-image: url("http://lorempixel.com/1200/800/technics"); }
+      background-image: url("../img/home-craft.jpg"); }
     .home-offer .manifest-img.passion {
-      background-image: url("http://lorempixel.com/1200/800/people"); }
+      background-image: url("../img/home-passion.jpg"); }
     .home-offer .manifest-img.care {
-      background-image: url("http://lorempixel.com/1200/800/nature"); }
+      background-image: url("../img/home-care.jpg"); }
   @media print, screen and (min-width: 33.75em) {
     .home-offer a {
       font-size: 3.125rem;
       line-height: 1.12; } }
   @media print, screen and (min-width: 46.25em) {
     .home-offer ul {
-      max-width: 75rem;
+      max-width: 100rem;
       margin-right: auto;
       margin-left: auto; }
       .home-offer ul::before, .home-offer ul::after {
@@ -890,10 +890,10 @@ dl dd {
         clear: both; } }
   @media screen and (min-width: 46.25em) and (min-width: 87.5em) {
     .home-offer ul {
-      max-width: 75%; } }
-  @media screen and (min-width: 46.25em) and (min-width: 100em) {
+      max-width: 83.33333%; } }
+  @media screen and (min-width: 46.25em) and (min-width: 120em) {
     .home-offer ul {
-      max-width: 75rem; } }
+      max-width: 100rem; } }
   @media print, screen and (min-width: 46.25em) {
     .home-offer .choose {
       position: absolute;
