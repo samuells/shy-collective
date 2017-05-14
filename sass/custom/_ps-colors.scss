@@ -52,6 +52,10 @@ $primary-link-color: $white;
 $primary-link-color--active: darken($white, 10%);
 $default-list-color: $primary-font-color;
 
+// Anchor links
+$anchor-link-fc--hover: $yellow-turbo;
+$anchor-link-fc--active: darken($yellow-turbo, 10%);
+
 // Navigation Header
 $menu-fc: $white;
 $menu-overlay-bgc: rgba($black-cod, 0.95);

@@ -1,3 +1,15 @@
+.page--home main {
+  @include in-row($outer: true);
+  padding: 0 $side-padding--mobile;
+
+  @include breakpoint(xlarge) {
+    padding: 0 $side-padding--xlarge;
+  }
+  @include breakpoint(maxed) {
+    padding: 0 $side-padding--maxed;
+  }
+}
+
 .introduction-flyout {
   display: none; // NOTE: TEMP
   position: fixed;
@@ -77,7 +89,6 @@
       background-image: url('../img/home-care.jpg');
     }
   }
-
   @include breakpoint(medium) {
     a {
       font-size: calc-rem(50);
@@ -85,10 +96,6 @@
     }
   }
   @include breakpoint(large) {
-    ul {
-      @include in-row($outer: true);
-    }
-
     .choose {
       position: absolute;
       display: block;

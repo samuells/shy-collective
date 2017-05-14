@@ -1,36 +1,43 @@
 $generate-styleguide-classes: true !default;
 
 @if $generate-styleguide-classes {
-  // Volta Text
   @font-face {
-    font-family: VoltaModernText;
-    src: url("../../fonts/VoltaModernText-55Roman.otf") format("opentype");
-    font-weight: 400;
+      font-family: "Brown-Bold";
+      src:url("../fonts/lineto-brown-bold.eot");
+      src:url("../fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"),
+          url("../fonts/lineto-brown-bold.woff2") format("woff2"),
+          url("../fonts/lineto-brown-bold.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
   }
+
   @font-face {
-    font-family: VoltaModernText;
-    src: url("../../fonts/VoltaModernText-75Bold.otf") format("opentype");
-    font-weight: 700;
+      font-family: "Brown-Boldalt";
+      src:url("../fonts/lineto-brown-boldalt.eot");
+      src:url("../fonts/lineto-brown-boldalt.eot?#iefix") format("embedded-opentype"),
+          url("../fonts/lineto-brown-boldalt.woff2") format("woff2"),
+          url("../fonts/lineto-brown-boldalt.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
   }
-  // Volta Modern
+
   @font-face {
-    font-family: VoltaModernDisplay;
-    src: url("../../fonts/VoltaModernDisplay-45Light.otf") format("opentype");
-    font-weight: 300;
+      font-family: "Brown-Reclinbold";
+      src:url("../fonts/lineto-brown-reclinbold.eot");
+      src:url("../fonts/lineto-brown-reclinbold.eot?#iefix") format("embedded-opentype"),
+          url("../fonts/lineto-brown-reclinbold.woff2") format("woff2"),
+          url("../fonts/lineto-brown-reclinbold.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
   }
-  // @font-face {
-  //   font-family: VoltaModernDisplay;
-  //   src: url("../../fonts/VoltaModernDisplay-65Medium.otf") format("opentype");
-  //   font-weight: 600;
-  // }
+
   @font-face {
-    font-family: VoltaModernDisplay;
-    src: url("../../fonts/VoltaModernDisplay-75Bold.otf") format("opentype");
-    font-weight: 700;
-  }
-  @font-face {
-    font-family: VoltaModernDisplay;
-    src: url("../../fonts/VoltaModernDisplay-95Black.otf") format("opentype");
-    font-weight: 900;
+      font-family: "Brown-Reclinboldalt";
+      src:url("../fonts/lineto-brown-reclinboldalt.eot");
+      src:url("../fonts/lineto-brown-reclinboldalt.eot?#iefix") format("embedded-opentype"),
+          url("../fonts/lineto-brown-reclinboldalt.woff2") format("woff2"),
+          url("../fonts/lineto-brown-reclinboldalt.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
   }
 }

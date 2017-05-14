@@ -1,3 +1,5 @@
+
+// Navigation header
 .nav-header {
   position: fixed;
   width: 100%;
@@ -5,11 +7,12 @@
 
   .header-row {
     @include in-row($outer: true);
+    padding: 0 $side-padding--mobile;
   }
 
   .logo-wrapper,
   .menu-wrapper {
-    @include in-column(6);
+    @include in-column(6, $gutter: 0);
 
     a {
       display: inline-block;
@@ -25,6 +28,17 @@
     display: none;
   }
 
+  .menu-trigger {
+    position: relative;
+    margin: rem(3) 0;
+    @include ps-transition(color);
+
+    & > span {
+      @include element-invisible;
+    }
+
+  }
+  // Overlay Menu
   .overlay-menu {
     position: fixed;
     top: 0;
@@ -36,7 +50,7 @@
     z-index: -1;
     transform: translateY(-100%);
     transition-property: transform, opacity;
-    transition-delay: 300ms, 0;
+    transition-delay: 300ms, 0s;
     transition-duration: 300ms;
     transition-timing-function: step-start, ease-out;
 
@@ -49,40 +63,180 @@
 
     a {
       display: block;
+      font-size: rem(22);
       text-align: center;
-    }
-  }
-
-  .menu-trigger {
-    position: relative;
-    @include ps-transition(color);
-
-    span {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      color: $menu-fc;
       opacity: 0;
-      transform: translateY(-50%);
-      @include ps-transition(opacity);
+      transform: translateY(-1rem);
+      @include ps-transition(opacity, transform);
     }
   }
-
+  // Opened Overlay Menu
   &.menu-showed {
     .overlay-menu {
       opacity: 1;
       transform: translateY(0%);
-      transition-delay: 0ms, 0;
+      transition-delay: 0ms, 0ms;
       transition-duration: 300ms;
       transition-timing-function: step-start, ease-out;
+
+      a {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @for $i from 1 through 5 {
+        li:nth-child(#{$i}) a {
+          transition-delay: $i * 0.1s;
+        }
+      }
     }
 
     .menu-trigger {
       color: $transparent;
+    }
+  }
+  @include breakpoint(xlarge) {
+    margin-top: rh(0.5);
 
-      span {
-        opacity: 1;
+    .header-row {
+      padding: 0 $side-padding--xlarge;
+    }
+
+    .logo-wrapper,
+    .quick-menu-wrapper {
+      @include in-column(5, $gutter: 0);
+
+      a {
+        display: inline-block;
+        padding: rh(0.75) 0;
+        font-size: rem(18);
       }
+    }
+
+    .menu-wrapper {
+      @include in-column(2);
+      text-align: center;
+
+      a {
+        padding: rh(0.75) 0;
+      }
+    }
+
+    .quick-menu-wrapper {
+      display: block;
+
+      ul {
+        @include reset-ul(true);
+        text-align: right;
+      }
+
+      li {
+        padding-left: rem(40);
+      }
+    }
+
+    .menu-trigger {
+      margin: 0;
+    }
+    // Overlay menu
+    .overlay-menu {
+      a {
+        padding: rh(1) 0;
+        font-size: rem(35);
+      }
+    }
+  }
+  @include breakpoint(maxed) {
+    margin-top: rh(1.5);
+    .header-row {
+      padding: 0 $side-padding--maxed;
+    }
+
+    .logo-wrapper,
+    .quick-menu-wrapper {
+      a {
+        font-size: rem(22);
+      }
+    }
+    // Overlay menu
+    .overlay-menu {
+      a {
+        padding: rh(1.5) 0;
+        font-size: rem(50);
+      }
+    }
+  }
+}
+
+// Hamburger icon and the animation
+.icon-hamburger {
+  $line-height: 2;
+  position: relative;
+  width: rem(40);
+  height: rem(16);
+  @include ps-transition(transform);
+  transition-duration: 500ms;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: rem($line-height);
+    background-color: $menu-fc;
+  }
+
+  &:before {
+    top: 0;
+    @include ps-transition(transform, top);
+  }
+
+  &:after {
+    bottom: 0;
+    @include ps-transition(transform, bottom);
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: rem($line-height);
+    background-color: $menu-fc;
+    transform: translateY(-50%);
+    @include ps-transition(opacity);
+  }
+
+  .menu-showed & {
+    transform: rotateZ(180deg);
+
+    &:before {
+      top: 50%;
+      transform: translateY(-50%) rotateZ(45deg);
+    }
+
+    &:after {
+      bottom: 50%;
+      transform: translateY(50%) rotateZ(-45deg);
+    }
+
+    span {
+      opacity: 0;
+    }
+  }
+  @include breakpoint(xlarge) {
+    $line-height: 2;
+    width: rem(50);
+    height: rem(22);
+
+    &:after,
+    &:before {
+      height: rem($line-height);
+    }
+
+    span {
+      height: rem($line-height);
     }
   }
 }

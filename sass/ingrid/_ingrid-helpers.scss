@@ -17,6 +17,10 @@
   @return rem-calc($value);
 }
 
+@function rem($value) {
+  @return rem-calc($value);
+}
+
 @function get-gutter($breakpoint) {
   @return rem-calc(map-get($grid-column-gutter, "#{$breakpoint}"));
 }

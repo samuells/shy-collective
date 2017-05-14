@@ -1,0 +1,12 @@
+a {
+  @include ps-transition(color);
+
+  &:focus,
+  &:hover {
+    color: $anchor-link-fc--hover;
+  }
+
+  &:active {
+    color: $anchor-link-fc--active;
+  }
+}
