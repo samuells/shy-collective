@@ -15,6 +15,7 @@ gulp.task("js:min", function() {
   return gulp.src([
     "./node_modules/jquery/dist/jquery.min.js",
     "./node_modules/lity/dist/lity.min.js",
+    "./js/navbar.script.js",
     "./js/home.script.js"
   ])
   .on('error', console.log)

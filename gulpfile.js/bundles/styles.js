@@ -33,7 +33,7 @@ gulp.task('sass', function() {
 gulp.task('css:min', function() {
   var processors = [
     autoprefixer({
-      browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+      browsers: ['last 2 version']
     }),
     cssnano({
       options: {

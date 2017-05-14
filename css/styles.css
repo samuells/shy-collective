@@ -765,7 +765,14 @@ dl dd {
     left: 0;
     width: 100vw;
     height: 100vh;
-    transform: translateY(-100%); }
+    background-color: rgba(26, 26, 26, 0.95);
+    opacity: 0;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition-property: transform, opacity;
+    transition-delay: 300ms, 0;
+    transition-duration: 300ms;
+    transition-timing-function: step-start, ease-out; }
     .nav-header .overlay-menu ul {
       list-style: none;
       padding: 0;
@@ -776,6 +783,31 @@ dl dd {
     .nav-header .overlay-menu a {
       display: block;
       text-align: center; }
+  .nav-header .menu-trigger {
+    position: relative;
+    transition-property: color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out; }
+    .nav-header .menu-trigger span {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      color: #FFFFFF;
+      opacity: 0;
+      transform: translateY(-50%);
+      transition-property: opacity;
+      transition-duration: 200ms;
+      transition-timing-function: ease-out; }
+  .nav-header.menu-showed .overlay-menu {
+    opacity: 1;
+    transform: translateY(0%);
+    transition-delay: 0ms, 0;
+    transition-duration: 300ms;
+    transition-timing-function: step-start, ease-out; }
+  .nav-header.menu-showed .menu-trigger {
+    color: rgba(255, 255, 255, 0); }
+    .nav-header.menu-showed .menu-trigger span {
+      opacity: 1; }
 
 .lity-vimeo .lity-container {
   max-width: 90vw; }

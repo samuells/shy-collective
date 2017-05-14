@@ -10,6 +10,18 @@ void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!=
 jQuery(function($) {
   'user strict';
 
+  if (document.querySelector('.nav-header')) {
+    var $navHeader = $('.nav-header');
+    $navHeader.on('click', 'a#js-toggle-menu', function(event) {
+      event.preventDefault();
+      $navHeader.toggleClass('menu-showed');
+    });
+  }
+});
+
+jQuery(function($) {
+  'user strict';
+
   if (document.querySelector('.home-offer')) {
     var $homeOffer = $('.home-offer');
     $homeOffer.on('click', 'a:not(.choosed)', function(event) {

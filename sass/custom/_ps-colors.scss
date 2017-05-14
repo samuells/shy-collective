@@ -53,7 +53,8 @@ $primary-link-color--active: darken($white, 10%);
 $default-list-color: $primary-font-color;
 
 // Navigation Header
-$menu-trigger-bc: $white;
+$menu-fc: $white;
+$menu-overlay-bgc: rgba($black-cod, 0.95);
 
 // Home offer
 $home-offer-fc: $white;
