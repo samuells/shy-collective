@@ -29,3 +29,11 @@ $ps-transition-duration: 200ms !default;
   top: 50%;
   transform: translateY(-50%);
 }
+
+@mixin ps-animate($name, $dur: 2s, $delay: 0s, $tf: ease-out, $fm: forwards) {
+  animation-name: $name;
+  animation-duration: $dur;
+  animation-timing-function: $tf;
+  animation-fill-mode: $fm;
+  animation-delay: $delay;
+}

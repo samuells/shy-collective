@@ -25,10 +25,13 @@
 // - usually style mixins used only in this project
 // - icons classes and variables
 @import "custom/ps-mixins"; // project specific mixins (ussually for style - as skew, border-radius...)
+@import "iconfont/iconfont"; // mixins of the icons
 
-//Pages
+// Styles
 @import "custom/fonts";
 @import "custom/typography";
 @import "custom/navigation";
 @import "custom/lity-override";
+
+// Pages
 @import "custom/page-home";

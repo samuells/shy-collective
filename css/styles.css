@@ -951,6 +951,44 @@ a {
 .lity-vimeo .lity-container {
   max-width: 90vw; }
 
+@keyframes anim-intro-flyout {
+  80% {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    z-index: -1; } }
+
+@keyframes anim-intro-logo {
+  30%,
+  60% {
+    opacity: 1;
+    transform: translateY(-50%); }
+  to {
+    opacity: 0;
+    transform: translateY(-70%); } }
+
+@keyframes anim-nav-header {
+  from,
+  80% {
+    opacity: 0;
+    transform: translateY(-100%); }
+  to {
+    opacity: 1;
+    transform: translateY(0%); } }
+
+@keyframes anim-home-offer {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.page--home .nav-header {
+  animation-name: anim-nav-header;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s; }
+
 .page--home main {
   max-width: 106.25rem;
   margin-right: auto;
@@ -975,19 +1013,32 @@ a {
       padding: 0 5rem; } }
 
 .introduction-flyout {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  background-color: #1A1A1A;
+  z-index: 9;
+  animation-name: anim-intro-flyout;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s; }
   .introduction-flyout img {
     position: relative;
     top: 50%;
     display: block;
-    max-width: 90%;
+    width: 90%;
+    max-width: 25rem;
     margin: 0 auto;
-    transform: translateY(-50%); }
+    opacity: 0;
+    transform: translateY(0%);
+    animation-name: anim-intro-logo;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s; }
 
 .home-offer {
   height: 100vh;
@@ -999,6 +1050,38 @@ a {
     padding: 0;
     margin: 0;
     flex: 1 1 100%; }
+  .home-offer li {
+    opacity: 0; }
+    .home-offer li:nth-child(1) {
+      animation-name: anim-home-offer;
+      animation-duration: 800ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 3.3s; }
+    .home-offer li:nth-child(2) {
+      animation-name: anim-home-offer;
+      animation-duration: 800ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 3.6s; }
+    .home-offer li:nth-child(3) {
+      animation-name: anim-home-offer;
+      animation-duration: 800ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 3.9s; }
+    .home-offer li:nth-child(4) {
+      animation-name: anim-home-offer;
+      animation-duration: 800ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 4.2s; }
+    .home-offer li:nth-child(5) {
+      animation-name: anim-home-offer;
+      animation-duration: 800ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 4.5s; }
   .home-offer span {
     display: none; }
   .home-offer a {
@@ -1086,3 +1169,15 @@ a {
         color: #FFE300; }
         .home-offer a.choosed .play {
           opacity: 1; } }
+  @media screen and (min-width: 64em) {
+    .home-offer a {
+      font-size: 4.75rem;
+      line-height: 1.10526; } }
+  @media screen and (min-width: 87.5em) {
+    .home-offer a {
+      font-size: 5.25rem;
+      line-height: 1.14286; } }
+  @media screen and (min-width: 120em) {
+    .home-offer a {
+      font-size: 6.875rem;
+      line-height: 1.09091; } }

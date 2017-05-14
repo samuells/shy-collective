@@ -1,0 +1,41 @@
+$generate-styleguide-classes: true !default;
+
+@if $generate-styleguide-classes {
+  @font-face {
+    font-family: "iconfont";
+    src: url('../fonts/iconfont.eot');
+    src: url('../fonts/iconfont.eot?#iefix') format('eot'),
+    url('../fonts/iconfont.woff') format('woff2'),
+    url('../fonts/iconfont.woff') format('woff'),
+    url('../fonts/iconfont.ttf') format('truetype'),
+    url('../fonts/iconfont.svg#iconfont') format('svg');
+  }
+}
+
+@mixin icon--default {
+  display: inline-block;
+  font-family: "iconfont";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  vertical-align: middle;
+  speak: none;
+}
+
+@mixin icon--facebook {
+  @include icon--default;
+  content: "\E001";
+}
+@mixin icon--instagram {
+  @include icon--default;
+  content: "\E002";
+}
+@mixin icon--vimeo {
+  @include icon--default;
+  content: "\E003";
+}

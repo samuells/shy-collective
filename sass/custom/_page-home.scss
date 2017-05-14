@@ -1,30 +1,42 @@
-.page--home main {
-  @include in-row($outer: true);
-  padding: 0 $side-padding--mobile;
+@import "anim-home"; // animations
 
-  @include breakpoint(xlarge) {
-    padding: 0 $side-padding--xlarge;
+.page--home {
+  .nav-header {
+    @include ps-animate(anim-nav-header, 3s);
   }
-  @include breakpoint(maxed) {
-    padding: 0 $side-padding--maxed;
+
+  main {
+    @include in-row($outer: true);
+    padding: 0 $side-padding--mobile;
+    @include breakpoint(xlarge) {
+      padding: 0 $side-padding--xlarge;
+    }
+    @include breakpoint(maxed) {
+      padding: 0 $side-padding--maxed;
+    }
   }
 }
 
 .introduction-flyout {
-  display: none; // NOTE: TEMP
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: $intro-bgc;
+  z-index: $intro-zi;
+  @include ps-animate(anim-intro-flyout, 2.5s);
 
   img {
     position: relative;
     top: 50%;
     display: block;
-    max-width: 90%;
+    width: 90%;
+    max-width: rem(400);
     margin: 0 auto;
-    transform: translateY(-50%);
+    opacity: 0;
+    transform: translateY(0%);
+    @include ps-animate(anim-intro-logo, 2.5s);
   }
 }
 
@@ -37,6 +49,16 @@
   ul {
     @include reset-ul;
     flex: 1 1 100%;
+  }
+
+  li {
+    opacity: 0;
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        $temp: (3 + 0.3 * $i) * 1s;
+        @include ps-animate(anim-home-offer, 800ms, $temp);
+      }
+    }
   }
 
   span {
@@ -155,6 +177,24 @@
           opacity: 1;
         }
       }
+    }
+  }
+  @include breakpoint(xlarge) {
+    a {
+      font-size: calc-rem(76);
+      line-height: (84 / 76);
+    }
+  }
+  @include breakpoint(xxlarge) {
+    a {
+      font-size: calc-rem(84);
+      line-height: (96 / 84);
+    }
+  }
+  @include breakpoint(maxed) {
+    a {
+      font-size: calc-rem(110);
+      line-height: (120 / 110);
     }
   }
 }

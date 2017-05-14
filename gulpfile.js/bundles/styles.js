@@ -44,6 +44,7 @@ gulp.task('css:min', function() {
         removeAll: true
       },
       colormin: true,
+      zindex: false
     })
   ];
   return gulp.src('./css/styles.css')
