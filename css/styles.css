@@ -694,6 +694,11 @@ dl dd {
   margin-bottom: 0; }
 
 @font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot");
+  src: url("../fonts/iconfont.eot?#iefix") format("eot"), url("../fonts/iconfont.woff") format("woff2"), url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg"); }
+
+@font-face {
   font-family: "Brown-Bold";
   src: url("../fonts/lineto-brown-bold.eot");
   src: url("../fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/lineto-brown-bold.woff2") format("woff2"), url("../fonts/lineto-brown-bold.woff") format("woff");
@@ -830,9 +835,13 @@ a {
       transition-delay: 0.5s; }
   .nav-header.menu-showed .menu-trigger {
     color: rgba(255, 255, 255, 0); }
+  @media print, screen and (min-width: 46.25em) {
+    .nav-header .overlay-menu a {
+      padding: 1.125rem 0;
+      font-size: 1.75rem; } }
   @media screen and (min-width: 64em) {
     .nav-header {
-      margin-top: 0.75rem; }
+      padding-top: 0.75rem; }
       .nav-header .header-row {
         padding: 0 2.5rem; }
       .nav-header .logo-wrapper,
@@ -882,7 +891,7 @@ a {
         font-size: 2.1875rem; } }
   @media screen and (min-width: 120em) {
     .nav-header {
-      margin-top: 2.25rem; }
+      padding-top: 2.25rem; }
       .nav-header .header-row {
         padding: 0 5rem; }
       .nav-header .logo-wrapper a,
@@ -981,6 +990,15 @@ a {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+@keyframes anim-social-bar {
+  from,
+  80% {
+    opacity: 0;
+    transform: translateY(100%); }
+  to {
+    opacity: 1;
+    transform: translateY(0%); } }
 
 .page--home .nav-header {
   animation-name: anim-nav-header;
@@ -1181,3 +1199,94 @@ a {
     .home-offer a {
       font-size: 6.875rem;
       line-height: 1.09091; } }
+
+.social-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 0.75rem;
+  opacity: 0;
+  animation-name: anim-social-bar;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s; }
+  .social-bar nav {
+    max-width: 106.25rem;
+    margin-right: auto;
+    margin-left: auto; }
+    .social-bar nav::before, .social-bar nav::after {
+      display: table;
+      content: ' '; }
+    .social-bar nav::after {
+      clear: both; }
+    @media screen and (min-width: 87.5em) {
+      .social-bar nav {
+        max-width: 88.54167%; } }
+    @media screen and (min-width: 120em) {
+      .social-bar nav {
+        max-width: 106.25rem; } }
+  .social-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; }
+    .social-bar ul > li {
+      display: inline-block; }
+  .social-bar a {
+    display: block; }
+    .social-bar a:after {
+      padding: 0.625rem; }
+    .social-bar a.facebook:after {
+      display: inline-block;
+      font-family: "iconfont";
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-decoration: inherit;
+      text-rendering: optimizeLegibility;
+      text-transform: none;
+      vertical-align: middle;
+      speak: none;
+      content: "\E001"; }
+    .social-bar a.vimeo:after {
+      display: inline-block;
+      font-family: "iconfont";
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-decoration: inherit;
+      text-rendering: optimizeLegibility;
+      text-transform: none;
+      vertical-align: middle;
+      speak: none;
+      content: "\E003"; }
+    .social-bar a.instagram:after {
+      display: inline-block;
+      font-family: "iconfont";
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-decoration: inherit;
+      text-rendering: optimizeLegibility;
+      text-transform: none;
+      vertical-align: middle;
+      speak: none;
+      content: "\E002"; }
+    .social-bar a span {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0); }
+  @media screen and (min-width: 64em) {
+    .social-bar {
+      padding-bottom: 2.25rem; }
+      .social-bar a:after {
+        font-size: 1.375rem; } }

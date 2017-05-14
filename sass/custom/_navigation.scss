@@ -94,8 +94,17 @@
       color: $transparent;
     }
   }
+  @include breakpoint(large){
+    // Overlay menu
+    .overlay-menu {
+      a {
+        padding: rh(0.75) 0;
+        font-size: rem(28);
+      }
+    }
+  }
   @include breakpoint(xlarge) {
-    margin-top: rh(0.5);
+    padding-top: rh(0.5);
 
     .header-row {
       padding: 0 $side-padding--xlarge;
@@ -146,7 +155,7 @@
     }
   }
   @include breakpoint(maxed) {
-    margin-top: rh(1.5);
+    padding-top: rh(1.5);
     .header-row {
       padding: 0 $side-padding--maxed;
     }

@@ -198,3 +198,49 @@
     }
   }
 }
+
+// Social bar on the bottom of the hompage
+.social-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: rh(0.5);
+  opacity: 0;
+  @include ps-animate(anim-social-bar, 3s);
+
+  nav {
+    @include in-row($outer:true);
+  }
+
+  ul {
+    @include reset-ul(true);
+    text-align: center;
+  }
+
+  a {
+    display: block;
+
+    &:after {
+      padding: rem(10);
+    }
+    &.facebook:after {
+      @include icon--facebook;
+    }
+    &.vimeo:after {
+      @include icon--vimeo;
+    }
+    &.instagram:after {
+      @include icon--instagram;
+    }
+
+    span {
+      @include element-invisible();
+    }
+  }
+  @include breakpoint(xlarge){
+    padding-bottom: rh(1.5);
+    a:after {
+      font-size: rem(22);
+    }
+  }
+}

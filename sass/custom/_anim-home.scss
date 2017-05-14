@@ -23,7 +23,7 @@
   }
 }
 
-// 2.5s
+// 3s
 @keyframes anim-nav-header {
   from,
   80% {
@@ -45,5 +45,19 @@
 
   to {
     opacity: 1;
+  }
+}
+
+// 3s
+@keyframes anim-social-bar {
+  from,
+  80% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
