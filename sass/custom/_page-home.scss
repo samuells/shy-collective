@@ -1,10 +1,6 @@
-@import "anim-home"; // animations
+@import "keyframes-home"; // animations
 
 .page--home {
-  .nav-header {
-    @include ps-animate(anim-nav-header, 3s);
-  }
-
   main {
     @include in-row($outer: true);
     padding: 0 $side-padding--mobile;

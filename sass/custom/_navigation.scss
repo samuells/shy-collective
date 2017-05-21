@@ -1,9 +1,16 @@
+@import "keyframes-navigation";
 
 // Navigation header
 .nav-header {
   position: fixed;
   width: 100%;
   z-index: $header-page-zi;
+
+  @include ps-animate(anim-nav-header, 3s);
+
+  .is-exiting & {
+    @include ps-animate(anim-nav-header--out, 500ms);
+  }
 
   .header-row {
     @include in-row($outer: true);

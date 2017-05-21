@@ -18,6 +18,7 @@
 // - Upgraded Foundation Grid System
 // - Vertical-Rhythm, Reponsive Typography
 @import "ingrid/ingrid";
+@import "photoswipe/photoswipe";
 @import "../node_modules/lity/dist/lity.css";
 
 // 4.Custom project mixins and styles
@@ -28,10 +29,12 @@
 @import "iconfont/iconfont"; // mixins of the icons
 
 // Styles
-@import "custom/fonts";
+// @import "custom/fonts";
 @import "custom/typography";
 @import "custom/navigation";
 @import "custom/lity-override";
 
 // Pages
 @import "custom/page-home";
+@import "custom/page-projects";
+@import "custom/page-detail-v1";

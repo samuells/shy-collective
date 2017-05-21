@@ -1,0 +1,49 @@
+// 2.5s
+@keyframes anim-intro-flyout {
+  80% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    z-index: $intro-zi--after-anim;
+  }
+}
+// 2.5
+@keyframes anim-intro-logo {
+  30%,
+  60% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-70%);
+  }
+}
+
+// 500ms
+@keyframes anim-home-offer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// 3s
+@keyframes anim-social-bar {
+  from,
+  80% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

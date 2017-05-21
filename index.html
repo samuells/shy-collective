@@ -17,66 +17,71 @@
   <link rel="stylesheet" href="css/styles.min.css" />
 </head>
 
-<body class="page--home">
-  <header class="nav-header">
-    <div class="header-row">
-      <div class="logo-wrapper">
-        <a href="#">shy collective</a>
-      </div>
-      <div class="menu-wrapper">
-        <a href="#" class="menu-trigger" id="js-toggle-menu">
-          <span>toggle menu</span>
-          <div class="icon-hamburger"><span></span></div>
-        </a>
-        <div class="overlay-menu">
+<body>
+  <div class="m-scene" id="main">
+    <header class="nav-header">
+      <div class="header-row">
+        <div class="logo-wrapper">
+          <a class="js-smooth-link" href="#">shy collective</a>
+        </div>
+        <div class="menu-wrapper">
+          <a href="./index.html" class="menu-trigger" id="js-toggle-menu" data-lightbox>
+            <span>toggle menu</span>
+            <div class="icon-hamburger"><span></span></div>
+          </a>
+          <div class="overlay-menu">
+            <ul>
+              <li><a class="js-smooth-link" href="./manifest.html">manifest</a></li>
+              <li><a class="js-smooth-link" href="./showreel.html">showreel</a></li>
+              <li><a class="js-smooth-link" href="./projects.html">projects</a></li>
+              <li><a class="js-smooth-link" href="./contact.html">contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="quick-menu-wrapper">
           <ul>
-            <li><a href="#">manifest</a></li>
-            <li><a href="#">showreel</a></li>
-            <li><a href="#">projects</a></li>
-            <li><a href="#">contact</a></li>
+            <li>
+              <a class="js-smooth-link" href="./projects.html">projects</a>
+            </li>
+            <li>
+              <a class="js-smooth-link" href="./contact.html">contact</a>
+            </li>
           </ul>
         </div>
       </div>
-      <div class="quick-menu-wrapper">
-        <ul>
-          <li>
-            <a href="#">projects</a>
-          </li>
-          <li>
-            <a href="#">contact</a>
-          </li>
-        </ul>
-      </div>
+    </header>
+    <div class="page--home">
+      <main>
+        <div class="introduction-flyout">
+          <img src="img/shy-logo.svg" alt="">
+        </div>
+        <div class="home-offer">
+          <div class="manifest-img unique"><span>Manifest image for Unique value</span></div>
+          <div class="manifest-img focused"><span>Manifest image for Unique value</span></div>
+          <div class="manifest-img craft"><span>Manifest image for Unique value</span></div>
+          <div class="manifest-img passion"><span>Manifest image for Unique value</span></div>
+          <div class="manifest-img care"><span>Manifest image for Unique value</span></div>
+          <ul>
+            <li><a href="https://vimeo.com/211445039" data-lightbox="unique"><span class="choose">choose</span><span class="play">play</span>UNIQUE</a></li>
+            <li><a href="https://vimeo.com/179428109" data-lightbox="focused"><span class="choose">choose</span><span class="play">play</span>FOCUSED</a></li>
+            <li><a href="https://vimeo.com/161945017" data-lightbox="craft"><span class="choose">choose</span><span class="play">play</span>CRAFT</a></li>
+            <li><a href="https://vimeo.com/161921535" data-lightbox="passion"><span class="choose">choose</span><span class="play">play</span>PASSION</a></li>
+            <li><a href="https://vimeo.com/146482141" data-lightbox="care"><span class="choose">choose</span><span class="play">play</span>CARE</a></li>
+          </ul>
+        </div>
+      </main>
+      <aside class="social-bar">
+        <nav>
+          <ul>
+            <li><a href="#" class="facebook"><span>facebook</span></a></li>
+            <li><a href="#" class="vimeo"><span>vimeo</span></a></li>
+            <li><a href="#" class="instagram"><span>instagram</span></a></li>
+          </ul>
+        </nav>
+      </aside>
     </div>
-  </header>
-  <main>
-    <div class="introduction-flyout">
-      <img src="img/shy-logo.svg" alt="">
-    </div>
-    <div class="home-offer">
-      <div class="manifest-img unique"><span>Manifest image for Unique value</span></div>
-      <div class="manifest-img focused"><span>Manifest image for Unique value</span></div>
-      <div class="manifest-img craft"><span>Manifest image for Unique value</span></div>
-      <div class="manifest-img passion"><span>Manifest image for Unique value</span></div>
-      <div class="manifest-img care"><span>Manifest image for Unique value</span></div>
-      <ul>
-        <li><a href="https://vimeo.com/211445039" data-lightbox="unique"><span class="choose">choose</span><span class="play">play</span>UNIQUE</a></li>
-        <li><a href="https://vimeo.com/179428109" data-lightbox="focused"><span class="choose">choose</span><span class="play">play</span>FOCUSED</a></li>
-        <li><a href="https://vimeo.com/161945017" data-lightbox="craft"><span class="choose">choose</span><span class="play">play</span>CRAFT</a></li>
-        <li><a href="https://vimeo.com/161921535" data-lightbox="passion"><span class="choose">choose</span><span class="play">play</span>PASSION</a></li>
-        <li><a href="https://vimeo.com/146482141" data-lightbox="care"><span class="choose">choose</span><span class="play">play</span>CARE</a></li>
-      </ul>
-    </div>
-  </main>
-  <aside class="social-bar">
-    <nav>
-      <ul>
-        <li><a href="#" class="facebook"><span>facebook</span></a></li>
-        <li><a href="#" class="vimeo"><span>vimeo</span></a></li>
-        <li><a href="#" class="instagram"><span>instagram</span></a></li>
-      </ul>
-    </nav>
-  </aside>
+  </div>
+  <script src="js/scripts.all.min.js" charset="utf-8"></script>
 </body>
-<script src="js/scripts.all.min.js" charset="utf-8"></script>
+
 </html>

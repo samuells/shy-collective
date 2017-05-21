@@ -16,7 +16,9 @@ const sassFiles = [
 ];
 const jsFiles = [
   './js/**/*.js',
-  './components/**/*.js'
+  './components/**/*.js',
+  '!./js/scripts.all.js',
+  '!./js/scripts.all.min.js',
 ];
 
 gulp.task('watch:dev', function() {

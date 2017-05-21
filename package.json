@@ -39,6 +39,7 @@
     "gulp-uglify": "^2.1.2",
     "lity": "^2.2.2",
     "node-sass": "^4.5.1",
+    "photoswipe": "^4.1.2",
     "require-dir": "^0.3.1",
     "run-sequence": "^1.2.2"
   }
