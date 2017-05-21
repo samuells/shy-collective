@@ -1,7 +1,6 @@
-// 3s
+// 600ms and 2.4s delay on homepage
 @keyframes anim-nav-header {
-  from,
-  80% {
+  from{
     opacity: 0;
     transform: translateY(-100%);
   }

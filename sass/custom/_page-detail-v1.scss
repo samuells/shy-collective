@@ -1,8 +1,15 @@
+@import "keyframes-detail";
+
 .page--detail-v1 {
   // ------
   // Hero Area
   .hero-area {
     position: relative;
+    @include ps-animate(detail-hero-area-v1, 600ms);
+
+    .is-exiting &{
+      @include ps-animate(detail-hero-area-v1-out, 600ms);
+    }
 
     a {
       &:before {
@@ -60,6 +67,13 @@
   article {
     @include in-row($outer: true);
     padding: 0 $side-padding--mobile;
+    opacity: 0;
+    $tmp-dist: rem(80);
+    transform: translateY($tmp-dist);
+    @include ps-animate(detail-article-v1, 600ms, 300ms);
+    .is-exiting &{
+      @include ps-animate(detail-article-v1-out, 600ms, 100ms);
+    }
     @include breakpoint(xlarge) {
       padding: 0 $side-padding--xlarge;
     }

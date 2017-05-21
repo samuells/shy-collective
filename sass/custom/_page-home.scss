@@ -51,8 +51,20 @@
     opacity: 0;
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        $temp: (3 + 0.3 * $i) * 1s;
-        @include ps-animate(anim-home-offer, 800ms, $temp);
+        $tmp-delay: (3 + 0.3 * $i) * 1s;
+        @include ps-animate(anim-home-offer, 800ms, $tmp-delay);
+      }
+    }
+  }
+
+  .is-exiting & {
+    li {
+      opacity: 1;
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          $tmp-delay: (0.25 * (5 - $i)) * 1s;
+          @include ps-animate(anim-home-offer-out, 600ms, $tmp-delay);
+        }
       }
     }
   }
@@ -85,6 +97,10 @@
 
     &.showed {
       opacity: 1;
+
+      .is-exiting & {
+        @include ps-animate(anim-manifest-img-out, 1000ms, 500ms);
+      }
     }
 
     &.unique {
@@ -106,6 +122,7 @@
     &.care {
       background-image: url('../img/home-care.jpg');
     }
+
   }
   @include breakpoint(medium) {
     a {
@@ -204,6 +221,10 @@
   opacity: 0;
   @include ps-animate(anim-social-bar, 3s);
 
+  .is-exiting & {
+    @include ps-animate(anim-social-bar-out, 500ms);
+  }
+
   nav {
     @include in-row($outer:true);
   }
@@ -219,12 +240,15 @@
     &:after {
       padding: rem(10);
     }
+
     &.facebook:after {
       @include icon--facebook;
     }
+
     &.vimeo:after {
       @include icon--vimeo;
     }
+
     &.instagram:after {
       @include icon--instagram;
     }
@@ -233,8 +257,9 @@
       @include element-invisible();
     }
   }
-  @include breakpoint(xlarge){
+  @include breakpoint(xlarge) {
     padding-bottom: rh(1.5);
+
     a:after {
       font-size: rem(22);
     }

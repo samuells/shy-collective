@@ -40,6 +40,7 @@
       z-index: -1;
       opacity: 0;
       @include ps-transition(opacity);
+      transition-duration: 600ms;
 
       span {
         position: absolute;
@@ -50,12 +51,40 @@
       }
     }
 
-    a.choosed .project-thumbnail {
-      opacity: 1;
+    a.choosed {
+      z-index: 1;
+
+      .project-thumbnail {
+        opacity: 1;
+      }
     }
 
     li {
       padding: rh(0.5) 0;
+      opacity: 0;
+      $tmp-px: rem(20);
+      transform: translateY($tmp-px);
+      @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+          $tmp-delay: (0.3 * $i) * 1s;
+          @include ps-animate(anim-project-preview, 500ms, $tmp-delay);
+        }
+      }
+
+      .is-exiting & {
+        opacity: 1;
+        transform: translateX(0);
+        @for $i from 1 through 15 {
+          &:nth-child(#{$i}) {
+            $tmp-delay: (0.1 * ($i - 1)) * 1s;
+            @include ps-animate(anim-project-preview-out, 300ms, $tmp-delay);
+
+            .project-thumbnail {
+              @include ps-animate(anim-project-thumb-out, 300ms, $tmp-delay);
+            }
+          }
+        }
+      }
     }
     @include breakpoint(medium) {
       .project-thumbnail {
@@ -106,6 +135,7 @@
         font-size: rem(40);
         line-height: (48 / 40);
       }
+
       .project-thumbnail {
         max-width: rem(1000);
 

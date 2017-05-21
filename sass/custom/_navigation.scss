@@ -5,8 +5,13 @@
   position: fixed;
   width: 100%;
   z-index: $header-page-zi;
+  opacity: 0;
+  transform: translateY(-100%);
+  @include ps-animate(anim-nav-header, 600ms);
 
-  @include ps-animate(anim-nav-header, 3s);
+  &.on-home {
+    @include ps-animate(anim-nav-header, 600ms, 2400ms);
+  }
 
   .is-exiting & {
     @include ps-animate(anim-nav-header--out, 500ms);
@@ -82,7 +87,7 @@
     .overlay-menu {
       opacity: 1;
       transform: translateY(0%);
-      transition-delay: 0ms, 0ms;
+      transition-delay: 0ms, 0;
       transition-duration: 300ms;
       transition-timing-function: step-start, ease-out;
 
@@ -101,7 +106,7 @@
       color: $transparent;
     }
   }
-  @include breakpoint(large){
+  @include breakpoint(large) {
     // Overlay menu
     .overlay-menu {
       a {
@@ -163,6 +168,7 @@
   }
   @include breakpoint(maxed) {
     padding-top: rh(1.5);
+
     .header-row {
       padding: 0 $side-padding--maxed;
     }

@@ -26,6 +26,7 @@ const initSmoothState = function() {
       },
       onAfter: function() {
         console.log('onAfter');
+        initHome();
         initNavbar();
         initProjects();
         initDetail();

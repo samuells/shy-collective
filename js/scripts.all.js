@@ -861,9 +861,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
   }
 };
 
-jQuery(function($) {
-  'user strict';
-
+const initHome = function(){
   if (document.querySelector('.home-offer')) {
     var $homeOffer = $('.home-offer');
     $homeOffer.on('click', 'a:not(.choosed)', function(event) {
@@ -874,6 +872,10 @@ jQuery(function($) {
     });
     $homeOffer.on('click', 'a.choosed[data-lightbox]', lity);
   }
+}
+jQuery(function($) {
+  'user strict';
+  initHome();
 });
 
 const initProjects = function() {
@@ -949,6 +951,7 @@ const initSmoothState = function() {
       },
       onAfter: function() {
         console.log('onAfter');
+        initHome();
         initNavbar();
         initProjects();
         initDetail();

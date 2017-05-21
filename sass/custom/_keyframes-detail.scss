@@ -1,0 +1,52 @@
+@keyframes detail-hero-area-v1 {
+  from {
+    opacity: 0;
+    $tmp-dist: rem(80);
+    transform: translateY($tmp-dist);
+  }
+
+  60% {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes detail-article-v1 {
+  from {
+    opacity: 0;
+    $tmp-dist: rem(80);
+    transform: translateY($tmp-dist);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes detail-hero-area-v1-out {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    $tmp-dist: rem(-120);
+    transform: translateY($tmp-dist);
+  }
+}
+@keyframes detail-article-v1-out {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    $tmp-dist: rem(120);
+    transform: translateY($tmp-dist);
+  }
+}
