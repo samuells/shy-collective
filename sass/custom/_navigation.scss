@@ -88,16 +88,17 @@
       opacity: 1;
       transform: translateY(0%);
       transition-delay: 0ms, 0;
-      transition-duration: 300ms;
+      transition-duration: 600ms;
       transition-timing-function: step-start, ease-out;
 
       a {
         opacity: 1;
         transform: translateY(0);
+        transition-duration: 400ms;
       }
       @for $i from 1 through 5 {
         li:nth-child(#{$i}) a {
-          transition-delay: $i * 0.1s;
+          transition-delay: $i * 200ms;
         }
       }
     }
