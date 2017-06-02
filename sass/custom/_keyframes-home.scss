@@ -23,12 +23,28 @@
   }
 }
 
-@keyframes anim-home-offer {
+@keyframes anim-home-choose {
   from {
     opacity: 0;
   }
 
   to {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-home-offer {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(0%);
     opacity: 1;
   }
 }

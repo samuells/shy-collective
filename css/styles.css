@@ -1802,10 +1802,20 @@ a {
     opacity: 0;
     transform: translateY(-70%); } }
 
-@keyframes anim-home-offer {
+@keyframes anim-home-choose {
   from {
     opacity: 0; }
   to {
+    opacity: 1; } }
+
+@keyframes anim-home-offer {
+  from {
+    opacity: 0;
+    transform: translateX(-100%); }
+  50% {
+    opacity: 1; }
+  to {
+    transform: translateX(0%);
     opacity: 1; } }
 
 @keyframes anim-home-offer-out {
@@ -1898,38 +1908,36 @@ a {
     padding: 0;
     margin: 0;
     flex: 1 1 100%; }
-  .home-offer li {
-    opacity: 0; }
-    .home-offer li:nth-child(1) {
-      animation-name: anim-home-offer;
-      animation-duration: 800ms;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
-      animation-delay: 3.3s; }
-    .home-offer li:nth-child(2) {
-      animation-name: anim-home-offer;
-      animation-duration: 800ms;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
-      animation-delay: 3.6s; }
-    .home-offer li:nth-child(3) {
-      animation-name: anim-home-offer;
-      animation-duration: 800ms;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
-      animation-delay: 3.9s; }
-    .home-offer li:nth-child(4) {
-      animation-name: anim-home-offer;
-      animation-duration: 800ms;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
-      animation-delay: 4.2s; }
-    .home-offer li:nth-child(5) {
-      animation-name: anim-home-offer;
-      animation-duration: 800ms;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
-      animation-delay: 4.5s; }
+  .home-offer li:nth-child(1) .label span {
+    animation-name: anim-home-offer;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.25s; }
+  .home-offer li:nth-child(2) .label span {
+    animation-name: anim-home-offer;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s; }
+  .home-offer li:nth-child(3) .label span {
+    animation-name: anim-home-offer;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.75s; }
+  .home-offer li:nth-child(4) .label span {
+    animation-name: anim-home-offer;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 4s; }
+  .home-offer li:nth-child(5) .label span {
+    animation-name: anim-home-offer;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 4.25s; }
   .is-exiting .home-offer li {
     opacity: 1; }
     .is-exiting .home-offer li:nth-child(1) {
@@ -1962,8 +1970,6 @@ a {
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
       animation-delay: 0s; }
-  .home-offer span {
-    display: none; }
   .home-offer a {
     position: relative;
     display: block;
@@ -2005,6 +2011,32 @@ a {
       background-image: url("../img/home-passion.jpg"); }
     .home-offer .manifest-img.care {
       background-image: url("../img/home-care.jpg"); }
+  .home-offer .choose {
+    max-width: 118.75rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: none;
+    padding: 0 1.25rem; }
+    .home-offer .choose::before, .home-offer .choose::after {
+      display: table;
+      content: ' '; }
+    .home-offer .choose::after {
+      clear: both; }
+    @media screen and (min-width: 120em) {
+      .home-offer .choose {
+        max-width: 98.95833%; } }
+    @media screen and (min-width: 120em) {
+      .home-offer .choose {
+        max-width: 118.75rem; } }
+  .home-offer .play {
+    display: none; }
+  .home-offer .label {
+    display: block;
+    overflow: hidden; }
+    .home-offer .label span {
+      display: block;
+      transform: translateX(-100%);
+      opacity: 0; }
   @media print, screen and (min-width: 33.75em) {
     .home-offer a {
       font-size: 3.125rem;
@@ -2012,17 +2044,35 @@ a {
   @media print, screen and (min-width: 46.25em) {
     .home-offer .choose {
       position: absolute;
-      display: block;
       top: 50%;
-      font-size: 0.4em;
-      color: #FFFFFF;
+      left: 0;
+      display: block;
       transform: translateY(-50%);
       opacity: 0;
-      transition-property: opacity;
-      transition-duration: 200ms;
-      transition-timing-function: ease-out; }
-    .home-offer .play {
+      animation-name: anim-home-choose;
+      animation-duration: 300ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 4800ms; }
+      .home-offer .choose strong {
+        font-size: 3.125rem;
+        color: #FFFFFF; }
+    .home-offer li {
+      text-align: right; }
+    .home-offer a {
       position: relative;
+      display: inline-block;
+      font-size: 4.875rem;
+      line-height: 1; }
+      .home-offer a:not(.choosed):active, .home-offer a:not(.choosed):focus, .home-offer a:not(.choosed):hover {
+        color: #FFE300; }
+      .home-offer a.choosed {
+        color: #FFE300; }
+        .home-offer a.choosed .play {
+          opacity: 1; }
+    .home-offer .play {
+      position: absolute;
+      right: 100%;
       display: inline-block;
       padding-right: 8.75rem;
       font-size: 0.4em;
@@ -2042,31 +2092,22 @@ a {
         width: 6.25rem;
         border: 0.0625rem solid currentColor;
         margin: 0 1.25rem;
-        transform: rotateY(-50%); }
-    .home-offer a {
-      font-size: 4.875rem;
-      line-height: 1;
-      text-align: right; }
-      .home-offer a:not(.choosed):active, .home-offer a:not(.choosed):focus, .home-offer a:not(.choosed):hover {
-        color: #FFE300; }
-        .home-offer a:not(.choosed):active .choose, .home-offer a:not(.choosed):focus .choose, .home-offer a:not(.choosed):hover .choose {
-          opacity: 1; }
-      .home-offer a.choosed {
-        color: #FFE300; }
-        .home-offer a.choosed .play {
-          opacity: 1; } }
+        transform: rotateY(-50%); } }
   @media screen and (min-width: 64em) {
     .home-offer a {
       font-size: 4.75rem;
-      line-height: 1.10526; } }
+      line-height: 1.10526; }
+    .home-offer .choose {
+      padding: 0 2.5rem; } }
   @media screen and (min-width: 87.5em) {
     .home-offer a {
-      font-size: 5.25rem;
-      line-height: 1.14286; } }
+      font-size: 6.875rem;
+      line-height: 1; } }
   @media screen and (min-width: 120em) {
     .home-offer a {
-      font-size: 6.875rem;
-      line-height: 1.09091; } }
+      font-size: 8.75rem; }
+    .home-offer .choose {
+      padding: 0 5rem; } }
 
 .social-bar {
   position: fixed;
