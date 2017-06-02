@@ -1993,6 +1993,12 @@ a {
     transition-property: opacity;
     transition-duration: 200ms;
     transition-timing-function: ease-out; }
+    .home-offer .manifest-img span {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0); }
     .home-offer .manifest-img.showed {
       opacity: 1; }
       .is-exiting .home-offer .manifest-img.showed {

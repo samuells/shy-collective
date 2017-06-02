@@ -90,6 +90,10 @@
     opacity: 0;
     @include ps-transition(opacity);
 
+    span {
+      @include element-invisible;
+    }
+
     &.showed {
       opacity: 1;
 
