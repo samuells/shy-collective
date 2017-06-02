@@ -123,6 +123,10 @@
     @include in-row($outer: true);
     display: none;
     padding: 0 $side-padding--mobile;
+
+    &.visually-hidden {
+      @include element-invisible;
+    }
   }
 
   .play {
@@ -130,13 +134,37 @@
   }
 
   .label {
+    position: relative;
     display: block;
     overflow: hidden;
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $home-loading-bgc;
+      transform: translateX(-100%);
+      transition-property: transform;
+    }
+
+    &.loading {
+      &::before {
+        transform: translateX(0%);
+        transition-duration: 1000ms;
+        transition-timing-function: ease-in;
+      }
+    }
+
     span {
+      position: relative;
       display: block;
       transform: translateX(-100%);
       opacity: 0;
+      z-index: 1;
     }
   }
   @include breakpoint(medium) {

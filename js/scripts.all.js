@@ -861,7 +861,9 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
   }
 };
 
-const initHome = function(){
+const initHome = function() {
+  $(document).foundation();
+
   if (document.querySelector('.home-offer')) {
     var $homeOffer = $('.home-offer');
     $homeOffer.on('click', 'a:not(.choosed)', function(event) {
@@ -870,43 +872,33 @@ const initHome = function(){
       $(this).addClass('choosed');
       $homeOffer.children('.' + $(this).data('lightbox')).addClass('showed').siblings().removeClass('showed');
     });
-    $homeOffer.on('click', 'a.choosed[data-lightbox]', lity);
+    if (Foundation.MediaQuery.atLeast('large')) {
+      $homeOffer.on('mouseover', 'a:not(.choosed)', function(event) {
+        event.preventDefault();
+        $('a.choosed').removeClass('choosed');
+        $(this).addClass('choosed');
+        $('.choose').addClass('visually-hidden');
+        $homeOffer.children('.' + $(this).data('lightbox')).addClass('showed').siblings().removeClass('showed');
+      });
+    }
+    // $homeOffer.on('click', 'a.choosed[data-lightbox]', lity);
+    $homeOffer.on('click', 'a.choosed[data-lightbox]', function(event) {
+      event.preventDefault();
+      var $this= $(this);
+      $this.find('.label').addClass('loading');
+      setTimeout(function() {
+        lity($this.attr('href'));
+        $this.find('.label').removeClass('loading');
+      }, 1000);
+    });
+    console.log('Home ignited');
   }
 }
+
 jQuery(function($) {
   'user strict';
   initHome();
 });
-
-// const initProjects = function() {
-//   $(document).foundation();
-//
-//   if (document.querySelector('.page--projects')) {
-//     var $projectsList = $('.projects-list');
-//     $projectsList.on('click', 'a:not(.choosed)', function(event) {
-//       event.preventDefault();
-//       $('a.choosed').removeClass('choosed');
-//       $(this).addClass('choosed');
-//     });
-//     if (Foundation.MediaQuery.atLeast('large')) {
-//       $projectsList.on('mouseover', 'a:not(.choosed)', function(event) {
-//         event.preventDefault();
-//         $('a.choosed').removeClass('choosed');
-//         $(this).addClass('choosed');
-//       });
-//     }
-//     $projectsList.on('click', 'a.choosed', function(event) {
-//       event.preventDefault();
-//       smoothState.load('./niro-project-v1.html');
-//     });
-//     console.log('Projects ignited');
-//   }
-// }
-//
-// jQuery(function($) {
-//   'user strict';
-//   initProjects();
-// });
 
 const initProjects = function() {
   $(document).foundation();

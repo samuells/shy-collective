@@ -2028,15 +2028,39 @@ a {
     @media screen and (min-width: 120em) {
       .home-offer .choose {
         max-width: 118.75rem; } }
+    .home-offer .choose.visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0); }
   .home-offer .play {
     display: none; }
   .home-offer .label {
+    position: relative;
     display: block;
     overflow: hidden; }
+    .home-offer .label::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #FFFFFF;
+      transform: translateX(-100%);
+      transition-property: transform; }
+    .home-offer .label.loading::before {
+      transform: translateX(0%);
+      transition-duration: 1000ms;
+      transition-timing-function: ease-in; }
     .home-offer .label span {
+      position: relative;
       display: block;
       transform: translateX(-100%);
-      opacity: 0; }
+      opacity: 0;
+      z-index: 1; }
   @media print, screen and (min-width: 33.75em) {
     .home-offer a {
       font-size: 3.125rem;
