@@ -135,7 +135,8 @@
     }
   }
 
-  .play {
+  .play,
+  .loading-label {
     display: none;
   }
 
@@ -212,38 +213,124 @@
           color: $home-offer-fc--hover;
         }
       }
+    }
 
-      &.choosed {
+    .link-wrapper {
+      position: relative;
+      display: flex;
+      width: 100%;
+      margin-left: auto;
+
+      .play-line {
+        position: relative;
+        flex: 1 1 auto;
+        opacity: 0;
+        @include ps-transition(opacity);
+
+        &:after {
+          content: '';
+          $temp: rem(40);
+          position: absolute;
+          top: 50%;
+          left: $temp / 2;
+          display: inline-block;
+          width: calc(100% - #{$temp});
+          border: calc-rem(1) solid $home-offer-fc;
+          margin: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      .play,
+      a {
+        flex: 0 0 auto;
+      }
+
+      .play {
+        display: flex;
+        align-items: center;
+        font-size: rem(32);
+        line-height: 1;
+        color: $home-offer-fc;
+        vertical-align: bottom;
+        overflow: hidden;
+
+        span {
+          transform: translateX(-100%);
+          opacity: 0;
+          @include ps-transition(opacity, transform);
+        }
+      }
+
+      .loading-label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: flex;
+        font-size: rem(32);
+        transform: translateY(-50%);
+        overflow: hidden;
+
+        span {
+          line-height: 1.2;
+          color: $home-offer-fc--choosed;
+          opacity: 0;
+          transform: translateX(-100%);
+          @include ps-transition(transform, opacity);
+
+          i {
+            font-style: normal;
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    li.choosed {
+      a {
         color: $home-offer-fc--choosed;
+      }
 
-        .play {
+      .play-line {
+        opacity: 1;
+      }
+
+      .play {
+        span {
+          transform: translateX(0%);
           opacity: 1;
         }
       }
     }
 
-    .play {
-      position: absolute;
-      right: 100%;
-      display: inline-block;
-      padding-right: calc-rem(140);
-      font-size: 0.4em;
-      line-height: calc-rem(78);
-      color: $home-offer-fc;
-      vertical-align: bottom;
-      opacity: 0;
-      @include ps-transition(opacity);
+    li.loading {
+      .play-line {
+        opacity: 0;
+      }
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 0;
-        display: inline-block;
-        width: calc-rem(100);
-        border: calc-rem(1) solid currentColor;
-        margin: 0 calc-rem(20);
-        transform: rotateY(-50%);
+      .play {
+        span {
+          transform: translateX(100%);
+          opacity: 1;
+        }
+      }
+
+      .loading-label {
+        span {
+          opacity: 1;
+          transform: translateX(0%);
+
+          i {
+            @for $i from 1 through 3 {
+              &:nth-child(#{$i}) {
+                $tmp-delay: (125 + 300 * $i) * 1ms;
+                @include ps-animate(anim-loading-dots, 900ms, $tmp-delay);
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -253,6 +340,27 @@
       line-height: (84 / 76);
       @media (min-height: 680px) {
         padding: 1.5vh 0;
+      }
+    }
+
+    .link-wrapper {
+      width: 50%;
+
+      .play-line {
+        &:after {
+          width: 100%;
+          left: rem(-20);
+        }
+      }
+
+      .play {
+        font-size: rem(46);
+        transform: translateX(-50%);
+      }
+
+      .loading-label {
+        font-size: rem(46);
+        transform: translateX(-50%) translateY(-50%);
       }
     }
 
@@ -274,6 +382,16 @@
       @media (min-height: 781px) {
         padding: 1vh 0;
         font-size: calc-rem(140);
+      }
+    }
+
+    .link-wrapper {
+      .play {
+        font-size: rem(54);
+      }
+
+      .loading-label {
+        font-size: rem(54);
       }
     }
 

@@ -16,7 +16,7 @@
 // __Samples:__
 // * <code>@include ps-transition(color);</code>
 // * <code>@include ps-transition(background-color, color);</code>
-$ps-transition-duration: 200ms !default;
+$ps-transition-duration: 400ms !default;
 
 @mixin ps-transition($property...) {
   @include transition-property($property);

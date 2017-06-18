@@ -22,7 +22,6 @@
     transform: translateY(-70%);
   }
 }
-
 @keyframes anim-home-choose {
   from {
     opacity: 0;
@@ -32,7 +31,6 @@
     opacity: 1;
   }
 }
-
 @keyframes anim-home-offer {
   from {
     opacity: 0;
@@ -60,8 +58,8 @@
 
 // 3s
 @keyframes anim-social-bar {
-  from,
-  80% {
+  80%,
+  from {
     opacity: 0;
     transform: translateY(100%);
   }
@@ -89,6 +87,30 @@
 @keyframes anim-manifest-img-out {
   from {
     opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+// Loading dots 600ms
+@keyframes anim-loading-dots {
+  from {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40%,
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
   }
 
   to {
