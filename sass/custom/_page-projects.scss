@@ -3,22 +3,54 @@
 .page--projects {
   // --------
   // Layout of the page
-  @include in-row($outer: true);
-  padding: rh(4) $side-padding--mobile 0;
-  @include breakpoint(large) {
-    padding-top: rh(8);
-  }
-  @include breakpoint(xlarge) {
-    padding: rh(15) $side-padding--xlarge 0;
-  }
-  @include breakpoint(maxed) {
-    padding: rh(20) $side-padding--maxed 0;
+
+  // --------
+  // Thumbnails list
+  .thumbnails-list {
+    @include reset-ul;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+
+    .project-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      @include ps-transition(opacity);
+    }
+    .project-thumbnail.showed {
+      img {
+        opacity: 1;
+      }
+    }
   }
 
   // --------
-  // Elements of the page
+  // Projects List
   .projects-list {
     @include reset-ul;
+    @include in-row($outer: true);
+    padding: rh(3) $side-padding--mobile 0;
+    @include breakpoint(xlarge) {
+      padding: rh(4.5) $side-padding--xlarge 0;
+    }
+    @include breakpoint(maxed) {
+      padding: rh(5.5) $side-padding--maxed 0;
+    }
 
     a {
       position: relative;
