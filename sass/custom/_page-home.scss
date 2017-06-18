@@ -126,6 +126,7 @@
   .choose {
     @include in-row($outer: true);
     display: none;
+    width: 100%;
     padding: 0 $side-padding--mobile;
 
     &.visually-hidden {
@@ -143,7 +144,7 @@
     overflow: hidden;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -249,6 +250,9 @@
     a {
       font-size: calc-rem(76);
       line-height: (84 / 76);
+      @media (min-height: 680px) {
+        padding: 1.5vh 0;
+      }
     }
 
     .choose {
@@ -257,17 +261,23 @@
   }
   @include breakpoint(xxlarge) {
     a {
-      font-size: calc-rem(110);
-      line-height: 1;
+      @media (min-height: 680px) {
+        padding: 0.5vh 0;
+        font-size: calc-rem(110);
+        line-height: 1;
+      }
     }
   }
   @include breakpoint(maxed) {
     a {
-      font-size: calc-rem(140);
+      @media (min-height: 781px) {
+        padding: 1vh 0;
+        font-size: calc-rem(140);
+      }
     }
 
     .choose {
-      padding: 0 $side-padding--maxed;
+      padding-left: calc((100vw - #{$maxed-row-width}) / 2 + #{$side-padding--maxed});
     }
   }
 }
