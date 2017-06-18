@@ -46,6 +46,19 @@
     opacity: 1;
   }
 }
+@keyframes anim-home-offer-after {
+  from {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(101%);
+  }
+}
 @keyframes anim-home-offer-out {
   from {
     opacity: 1;

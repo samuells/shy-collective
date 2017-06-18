@@ -1821,6 +1821,14 @@ a {
     transform: translateX(0%);
     opacity: 1; } }
 
+@keyframes anim-home-offer-after {
+  from {
+    transform: translateX(-100%); }
+  50% {
+    transform: translateX(0%); }
+  to {
+    transform: translateX(101%); } }
+
 @keyframes anim-home-offer-out {
   from {
     opacity: 1; }
@@ -1924,30 +1932,60 @@ a {
     padding: 0;
     margin: 0;
     flex: 1 1 100%; }
+  .home-offer li:nth-child(1) .label::after {
+    animation-name: anim-home-offer-after;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.25s; }
   .home-offer li:nth-child(1) .label span {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 3.25s; }
+  .home-offer li:nth-child(2) .label::after {
+    animation-name: anim-home-offer-after;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s; }
   .home-offer li:nth-child(2) .label span {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 3.5s; }
+  .home-offer li:nth-child(3) .label::after {
+    animation-name: anim-home-offer-after;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.75s; }
   .home-offer li:nth-child(3) .label span {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 3.75s; }
+  .home-offer li:nth-child(4) .label::after {
+    animation-name: anim-home-offer-after;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 4s; }
   .home-offer li:nth-child(4) .label span {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 4s; }
+  .home-offer li:nth-child(5) .label::after {
+    animation-name: anim-home-offer-after;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 4.25s; }
   .home-offer li:nth-child(5) .label span {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
@@ -2058,8 +2096,8 @@ a {
       height: 1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0); }
-  .home-offer .play,
-  .home-offer .loading-label {
+  .home-offer .loading-label,
+  .home-offer .play {
     display: none; }
   .home-offer .label {
     position: relative;
@@ -2076,6 +2114,19 @@ a {
       background-color: #FFFFFF;
       transform: translateX(-100%);
       transition-property: transform; }
+    .home-offer .label::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #FFFFFF;
+      transform: translateX(-100%);
+      transition-property: transform;
+      transition-duration: 400ms;
+      transition-timing-function: ease-out; }
     .home-offer .label.loading::before {
       transform: translateX(0%);
       transition-duration: 1000ms;
