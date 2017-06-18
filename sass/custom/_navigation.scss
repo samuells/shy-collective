@@ -130,7 +130,11 @@
       a {
         display: inline-block;
         padding: rh(0.75) 0;
-        font-size: rem(18);
+      }
+
+      img {
+        height: rem(24);
+        padding: rem(2) 0 rem(4);
       }
     }
 

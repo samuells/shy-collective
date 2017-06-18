@@ -1682,8 +1682,11 @@ a {
         .nav-header .logo-wrapper a,
         .nav-header .quick-menu-wrapper a {
           display: inline-block;
-          padding: 1.125rem 0;
-          font-size: 1.125rem; }
+          padding: 1.125rem 0; }
+        .nav-header .logo-wrapper img,
+        .nav-header .quick-menu-wrapper img {
+          height: 1.5rem;
+          padding: 0.125rem 0 0.25rem; }
       .nav-header .menu-wrapper {
         width: 16.66667%;
         float: left;
@@ -1992,7 +1995,8 @@ a {
     opacity: 0;
     transition-property: opacity;
     transition-duration: 200ms;
-    transition-timing-function: ease-out; }
+    transition-timing-function: ease-out;
+    transition-duration: 400ms; }
     .home-offer .manifest-img span {
       position: absolute !important;
       width: 1px;
