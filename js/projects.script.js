@@ -18,10 +18,10 @@ const initProjects = function() {
         $($thumbnailsList.find('li').get($(this).closest('li').index())).addClass('showed');
       });
     }
-    $projectsList.on('click', 'a.choosed', function(event) {
-      event.preventDefault();
-      smoothState.load('./niro-project-v1.html');
-    });
+    // $projectsList.on('click', 'a.choosed', function(event) {
+    //   event.preventDefault();
+    //   // smoothState.load('./niro-project-v1.html');
+    // });
     console.log('Projects ignited');
   }
 }
