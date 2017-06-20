@@ -2480,9 +2480,7 @@ a {
       padding: 8.25rem 5rem 0; } }
   .page--projects .projects-list a {
     position: relative;
-    display: block; }
-  .page--projects .projects-list h2,
-  .page--projects .projects-list p {
+    display: inline-block;
     max-width: 60%; }
   .page--projects .projects-list .project-thumbnail {
     position: absolute;
