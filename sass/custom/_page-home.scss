@@ -211,17 +211,9 @@
         overflow: hidden;
         transition-property: max-width;
         transition-timing-function: linear;
-        transition-duration: 1400ms;
+        transition-duration: 2000ms;
       }
     }
-
-    // &.loading {
-    //   &::before {
-    //     transform: translateX(0%);
-    //     transition-duration: 1000ms;
-    //     transition-timing-function: ease-in;
-    //   }
-    // }
   }
   @include breakpoint(medium) {
     a {

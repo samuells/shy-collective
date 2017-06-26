@@ -36,7 +36,7 @@ const initHome = function() {
           setTimeout(function() {
             lity($this.attr('href'));
             $this.closest('li').removeClass('loading');
-          }, 1500);
+          }, 2000);
         });
       });
       $homeOffer.on('mouseleave', 'li.choosed a', function(event) {

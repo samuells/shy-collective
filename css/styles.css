@@ -2220,7 +2220,7 @@ footer {
         overflow: hidden;
         transition-property: max-width;
         transition-timing-function: linear;
-        transition-duration: 1400ms; }
+        transition-duration: 2000ms; }
   @media print, screen and (min-width: 33.75em) {
     .home-offer a {
       font-size: 3.125rem;
@@ -2590,10 +2590,10 @@ footer {
       max-width: 118.75rem; } }
   @media screen and (min-width: 64em) {
     .page--projects .projects-list {
-      padding: 6.75rem 2.5rem 0; } }
+      padding: 13.5rem 2.5rem 0; } }
   @media screen and (min-width: 120em) {
     .page--projects .projects-list {
-      padding: 8.25rem 5rem 0; } }
+      padding: 15rem 5rem 0; } }
   .page--projects .projects-list a {
     position: relative;
     display: inline-block;

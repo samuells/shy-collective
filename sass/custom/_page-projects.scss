@@ -47,10 +47,10 @@
     @include in-row($outer: true);
     padding: rh(3) $side-padding--mobile 0;
     @include breakpoint(xlarge) {
-      padding: rh(4.5) $side-padding--xlarge 0;
+      padding: rh(9) $side-padding--xlarge 0;
     }
     @include breakpoint(maxed) {
-      padding: rh(5.5) $side-padding--maxed 0;
+      padding: rh(10) $side-padding--maxed 0;
     }
 
     a {
