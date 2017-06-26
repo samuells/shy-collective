@@ -79,9 +79,9 @@
     position: relative;
     display: block;
     padding: rh(0.5) 0;
-    font-size: calc-rem(30);
-    line-height: (36 / 30);
-    text-align: center;
+    font-size: calc-rem(56);
+    line-height: 1;
+    text-align: right;
     @include ps-transition(color);
   }
 
@@ -428,6 +428,7 @@
   width: 100%;
   padding-bottom: rh(0.5);
   opacity: 0;
+  z-index: 10;
   @include ps-animate(anim-social-bar, 3s);
 
   .is-exiting & {

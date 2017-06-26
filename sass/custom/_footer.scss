@@ -1,0 +1,54 @@
+// Footer
+
+footer {
+  @include in-row($outer: true);
+  display: none;
+  position: relative;
+  padding: rh(3) $side-padding--mobile 0;
+  z-index: 10;
+
+  .to-top-wrapper {
+    padding: rh(0.5) 0;
+    border-bottom: rem(1) solid $white;
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    padding: rh(0.5) rem(6);
+  }
+
+  li {
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    &:last-child a {
+      padding-right: 0;
+    }
+  }
+
+  ul {
+    @include reset-ul(true);
+    @include in-column(6, $gutter: 0);
+    width: 50%;
+    padding: rh(0.5) 0;
+
+    &.social {
+      text-align: right;
+    }
+  }
+  @include breakpoint(large) {
+    display: block;
+  }
+  @include breakpoint(xlarge) {
+    padding: rh(4.5) $side-padding--xlarge 0;
+
+    a {
+      padding: rh(0.5) rem(12);
+    }
+  }
+  @include breakpoint(maxed) {
+    padding: rh(5.5) $side-padding--maxed 0;
+  }
+}
