@@ -56,7 +56,7 @@
           @include ps-animate(anim-home-offer-after, 1000ms, $tmp-delay);
         }
 
-        span {
+        .value {
           @include ps-animate(anim-home-offer, 500ms, $tmp-delay);
         }
       }
@@ -82,6 +82,7 @@
     font-size: calc-rem(56);
     line-height: 1;
     text-align: right;
+    outline: none;
     @include ps-transition(color);
   }
 
@@ -178,21 +179,35 @@
       @include ps-transition(transform);
     }
 
-    &.loading {
-      &::before {
-        transform: translateX(0%);
-        transition-duration: 1000ms;
-        transition-timing-function: ease-in;
-      }
-    }
-
-    span {
+    .value {
       position: relative;
       display: block;
       transform: translateX(-100%);
       opacity: 0;
       z-index: 1;
+
+      &::before {
+        content: attr(data-value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: rem(0);
+        color: $home-offer-fc--choosed;
+        white-space: nowrap;
+        overflow: hidden;
+        transition-property: max-width;
+        transition-timing-function: linear;
+        transition-duration: 1400ms;
+      }
     }
+
+    // &.loading {
+    //   &::before {
+    //     transform: translateX(0%);
+    //     transition-duration: 1000ms;
+    //     transition-timing-function: ease-in;
+    //   }
+    // }
   }
   @include breakpoint(medium) {
     a {
@@ -352,6 +367,14 @@
           }
         }
       }
+
+      .value {
+        color: $transparent;
+
+        &::before {
+          max-width: rem(400);
+        }
+      }
     }
   }
   @include breakpoint(xlarge) {
@@ -384,6 +407,14 @@
       }
     }
 
+    li.loading {
+      .value {
+        &::before {
+          max-width: rem(500);
+        }
+      }
+    }
+
     .choose {
       padding: 0 $side-padding--xlarge;
     }
@@ -394,6 +425,14 @@
         padding: 0.5vh 0;
         font-size: calc-rem(110);
         line-height: 1;
+      }
+    }
+
+    li.loading {
+      .value {
+        &::before {
+          max-width: rem(550);
+        }
       }
     }
   }

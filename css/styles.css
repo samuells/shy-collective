@@ -1997,7 +1997,7 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 3.25s; }
-  .home-offer li:nth-child(1) .label span {
+  .home-offer li:nth-child(1) .label .value {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
@@ -2009,7 +2009,7 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 3.5s; }
-  .home-offer li:nth-child(2) .label span {
+  .home-offer li:nth-child(2) .label .value {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
@@ -2021,7 +2021,7 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 3.75s; }
-  .home-offer li:nth-child(3) .label span {
+  .home-offer li:nth-child(3) .label .value {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
@@ -2033,7 +2033,7 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 4s; }
-  .home-offer li:nth-child(4) .label span {
+  .home-offer li:nth-child(4) .label .value {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
@@ -2045,7 +2045,7 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 4.25s; }
-  .home-offer li:nth-child(5) .label span {
+  .home-offer li:nth-child(5) .label .value {
     animation-name: anim-home-offer;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
@@ -2090,6 +2090,7 @@ footer {
     font-size: 3.5rem;
     line-height: 1;
     text-align: right;
+    outline: none;
     transition-property: color;
     transition-duration: 400ms;
     transition-timing-function: ease-out; }
@@ -2186,16 +2187,24 @@ footer {
       transition-property: transform;
       transition-duration: 400ms;
       transition-timing-function: ease-out; }
-    .home-offer .label.loading::before {
-      transform: translateX(0%);
-      transition-duration: 1000ms;
-      transition-timing-function: ease-in; }
-    .home-offer .label span {
+    .home-offer .label .value {
       position: relative;
       display: block;
       transform: translateX(-100%);
       opacity: 0;
       z-index: 1; }
+      .home-offer .label .value::before {
+        content: attr(data-value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 0;
+        color: #FFE300;
+        white-space: nowrap;
+        overflow: hidden;
+        transition-property: max-width;
+        transition-timing-function: linear;
+        transition-duration: 1400ms; }
   @media print, screen and (min-width: 33.75em) {
     .home-offer a {
       font-size: 3.125rem;
@@ -2321,7 +2330,11 @@ footer {
         animation-fill-mode: forwards;
         animation-delay: 1025ms;
         animation-iteration-count: infinite;
-        animation-direction: alternate; } }
+        animation-direction: alternate; }
+    .home-offer li.loading .value {
+      color: rgba(255, 255, 255, 0); }
+      .home-offer li.loading .value::before {
+        max-width: 25rem; } }
   @media screen and (min-width: 64em) {
     .home-offer a {
       font-size: 4.75rem;
@@ -2341,6 +2354,8 @@ footer {
       .home-offer .link-wrapper .loading-label {
         font-size: 2.875rem;
         transform: translateX(-50%) translateY(-50%); }
+    .home-offer li.loading .value::before {
+      max-width: 31.25rem; }
     .home-offer .choose {
       padding: 0 2.5rem; } }
 
@@ -2349,6 +2364,9 @@ footer {
     padding: 0.5vh 0;
     font-size: 6.875rem;
     line-height: 1; } }
+  @media screen and (min-width: 87.5em) {
+    .home-offer li.loading .value::before {
+      max-width: 34.375rem; } }
 
 @media screen and (min-width: 120em) and (min-height: 781px) {
   .home-offer a {
