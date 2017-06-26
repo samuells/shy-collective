@@ -133,10 +133,24 @@
   }
 
   .choose {
-    @include in-row($outer: true);
-    display: none;
-    width: 100%;
-    padding: 0 $side-padding--mobile;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($black-cod, 0.9);
+    z-index: $home-choose-layer-zi;
+    opacity: 0;
+    @include ps-animate(anim-home-choose--mobile, 1500ms, 4800ms);
+
+    strong {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: rem(48);
+      transform: translateY(-50%) translateX(-50%);
+    }
 
     &.visually-hidden {
       @include element-invisible;
@@ -217,17 +231,25 @@
   }
   @include breakpoint(large) {
     .choose {
+      @include in-row($outer: true);
       position: absolute;
       top: 50%;
       left: 0;
-      display: block;
+      width: auto;
+      height: auto;
       transform: translateY(-50%);
+      background-color: $transparent;
+      z-index: 0;
       opacity: 0;
       @include ps-animate(anim-home-choose, 300ms, 4800ms);
 
       strong {
+        position: static;
+        top: auto;
+        left: auto;
         font-size: rem(50);
         color: $home-offer-fc;
+        transform: none;
       }
     }
 

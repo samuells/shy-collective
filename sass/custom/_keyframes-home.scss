@@ -1,3 +1,5 @@
+@import "ps-z-index";
+
 // 2.5s
 @keyframes anim-intro-flyout {
   80% {
@@ -20,6 +22,26 @@
   to {
     opacity: 0;
     transform: translateY(-70%);
+  }
+}
+@keyframes anim-home-choose--mobile {
+  from {
+    opacity: 0;
+    z-index: $home-choose-layer-zi;
+  }
+
+  33%, 66% {
+    opacity: 1;
+    z-index: $home-choose-layer-zi;
+  }
+
+  99% {
+    opacity: 0;
+    z-index: $home-choose-layer-zi;
+  }
+
+  to {
+    z-index: -1;
   }
 }
 @keyframes anim-home-choose {
