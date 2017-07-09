@@ -3,26 +3,77 @@
 .page--projects {
   // --------
   // Layout of the page
+  @include in-row($outer: true);
+  padding: rh(3) $side-padding--mobile 0;
+  @include breakpoint(xlarge) {
+    padding: rh(4) $side-padding--xlarge 0;
+  }
+  @include breakpoint(maxed) {
+    padding: rh(6) $side-padding--maxed 0;
+  }
 
   // --------
-  // Thumbnails list
-  .thumbnails-list {
+  // Projects List
+  .projects-list {
     @include reset-ul;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100vw;
-    height: 100vh;
 
-    .project-thumbnail {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+    .project-preview {
+      height: calc(#{rh(5)} + 5vh + 5vw);
+      margin-bottom: rh(1);
+
+      a {
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: $white;
+          transform: translateX(-100%);
+          z-index: 2;
+        }
+
+        h2,
+        img {
+          opacity: 0;
+        }
+      }
+      @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+          $tmp-delay: (0.35 * $i + $i / 10) * 1s;
+
+          a {
+            &::after {
+              @include ps-animate(anim-project-preview-after-in, 1400ms, $tmp-delay);
+            }
+
+            h2,
+            img {
+              @include ps-animate(anim-project-preview-content-in, 700ms, $tmp-delay);
+              animation-timing-function: step-end;
+            }
+          }
+        }
+      }
+
+      .is-exiting & {
+        @for $i from 1 through 15 {
+          &:nth-child(#{$i}) {
+            $tmp-delay: (0.25 * $i - $i / 10) * 1s;
+            @include ps-animate(anim-project-preview-out, 600ms, $tmp-delay);
+          }
+        }
+      }
+    }
+
+    a {
+      position: relative;
       display: block;
-      width: 65%;
-      height: 65%;
-      transform: translateX(-50%) translateY(-50%);
+      height: 100%;
     }
 
     img {
@@ -30,146 +81,133 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0;
-      @include ps-transition(opacity);
-    }
-    .project-thumbnail.showed {
-      img {
-        opacity: 1;
-      }
-    }
-  }
-
-  // --------
-  // Projects List
-  .projects-list {
-    @include reset-ul;
-    @include in-row($outer: true);
-    padding: rh(3) $side-padding--mobile 0;
-    @include breakpoint(xlarge) {
-      padding: rh(9) $side-padding--xlarge 0;
-    }
-    @include breakpoint(maxed) {
-      padding: rh(10) $side-padding--maxed 0;
     }
 
-    a {
-      position: relative;
-      display: inline-block;
-      max-width: 60%;
-    }
-
-    .project-thumbnail {
+    h2 {
       position: absolute;
-      top: 50%;
-      right: 0;
-      width: 80%;
-      max-width: rem(200);
-      transform: translateY(-50%);
-      z-index: -1;
-      opacity: 0;
-      @include ps-transition(opacity);
-      transition-duration: 600ms;
+      bottom: 0;
+      left: 0;
+      padding: rem(10);
+    }
+    @include breakpoint(medium) {
+      margin-left: rem(-15);
+      margin-right: rem(-15);
 
-      span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        display: block;
-        transform: translateX(-50%) translateY(-50%);
+      .project-preview {
+        @include in-column(6);
+
+        &:last-child {
+          @include grid-column-end;
+        }
       }
     }
+    @include breakpoint(xlarge) {
+      margin-left: rem(-20);
+      margin-right: rem(-20);
 
-    a.choosed {
-      z-index: 1;
-
-      .project-thumbnail {
-        opacity: 1;
+      h2 {
+        font-size: rem(36);
+        padding: rem(20);
+        line-height: 1.2;
+        opacity: 0;
+        transform: translateX(-100%);
+        z-index: 2;
+        @include ps-transition(opacity);
       }
-    }
 
-    li {
-      padding: rh(0.5) 0;
-      opacity: 0;
-      $tmp-px: rem(20);
-      transform: translateY($tmp-px);
-      @for $i from 1 through 15 {
-        &:nth-child(#{$i}) {
-          $tmp-delay: (0.3 * $i) * 1s;
-          @include ps-animate(anim-project-preview, 500ms, $tmp-delay);
+      a {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($black-cod, 0.5);
+          opacity: 0;
+          transform: translateX(-100%);
+          z-index: 1;
+          @include ps-transition(opacity);
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+          &::before,
+          h2 {
+            opacity: 1;
+          }
         }
       }
 
-      .is-exiting & {
-        opacity: 1;
-        transform: translateX(0);
+      .project-preview {
+        @include in-column(4, $gutter: 40);
+        height: calc(#{rh(6)} + 6vh + 5vw);
+        margin-bottom: rem(40);
+
+        &:first-child,
+        &:nth-child(2) {
+          @include in-column(6, $gutter: 40);
+          height: calc(#{rh(10)} + 5vh + 7vw);
+
+          h2 {
+            font-size: rem(48);
+            padding: rem(30);
+          }
+        }
         @for $i from 1 through 15 {
           &:nth-child(#{$i}) {
-            $tmp-delay: (0.1 * ($i - 1)) * 1s;
-            @include ps-animate(anim-project-preview-out, 300ms, $tmp-delay);
+            $tmp-delay: (0 + 0.35 * $i + $i / 10) * 1s;
 
-            .project-thumbnail {
-              @include ps-animate(anim-project-thumb-out, 300ms, $tmp-delay);
+            a {
+               &::before,
+              h2 {
+                @include ps-animate(anim-project-preview-content-hover-in, 700ms, $tmp-delay);
+                animation-timing-function: step-end;
+              }
             }
           }
         }
       }
     }
-    @include breakpoint(medium) {
-      .project-thumbnail {
-        max-width: rem(400);
-
-        span {
-          color: $white;
-          font-size: rem(28);
-        }
-      }
-    }
-    @include breakpoint(xlarge) {
-      a:active,
-      a:focus,
-      a:hover {
-        h2,
-        p {
-          color: inherit;
-        }
-      }
-    }
-    @include breakpoint(xlarge) {
+    @include breakpoint(xxlarge) {
       h2 {
-        font-size: rem(40);
-        line-height: (48 / 40);
+        font-size: rem(42);
+        font-size: calc(rem(42) + 2vh);
       }
 
-      p {
-        font-size: rem(34);
-        line-height: (40 / 34);
-      }
+      .project-preview {
+        height: calc(#{rh(7)} + 6vh + 5vw);
 
-      .project-thumbnail {
-        max-width: rem(800);
+        &:first-child,
+        &:nth-child(2) {
+          height: calc(#{rh(11)} + 5vh + 7vw);
 
-        span {
-          font-size: rem(50);
+          h2 {
+            font-size: rem(56);
+            font-size: calc(rem(56) + 2vh);
+          }
         }
       }
     }
     @include breakpoint(maxed) {
       h2 {
-        font-size: rem(48);
-        line-height: (56 / 48);
+        font-size: rem(56);
+        padding: rem(30);
       }
 
-      p {
-        font-size: rem(40);
-        line-height: (48 / 40);
-      }
+      .project-preview {
+        height: calc(#{rh(8)} + 6vh + 5vw);
 
-      .project-thumbnail {
-        max-width: rem(1000);
+        &:first-child,
+        &:nth-child(2) {
+          height: calc(#{rh(12)} + 5vh + 7vw);
 
-        span {
-          font-size: rem(60);
+          h2 {
+            font-size: rem(75);
+            padding: rem(40);
+          }
         }
       }
     }
