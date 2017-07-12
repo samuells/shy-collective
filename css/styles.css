@@ -3285,3 +3285,170 @@ footer {
         padding-right: 1.875rem; }
       .page--detail-v1 .photo-gallery figure:nth-child(even) {
         padding-left: 1.875rem; } }
+
+.page--detail-v2 {
+  padding-top: 3rem; }
+  @media print, screen and (min-width: 33.75em) {
+    .page--detail-v2 {
+      padding-top: 3.75rem; } }
+  @media screen and (min-width: 64em) {
+    .page--detail-v2 {
+      padding-top: 5.25rem; } }
+  .page--detail-v2 .hero-area {
+    position: relative; }
+    .page--detail-v2 .hero-area a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      padding: 0.75rem;
+      font-size: 1.5rem;
+      transform: translateX(-50%) translateY(-50%); }
+    @media print, screen and (min-width: 33.75em) {
+      .page--detail-v2 .hero-area a {
+        font-size: 2.5rem; } }
+    @media screen and (min-width: 64em) {
+      .page--detail-v2 .hero-area {
+        height: calc(100vh - 10.5rem); }
+        .page--detail-v2 .hero-area img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+        .page--detail-v2 .hero-area a {
+          font-size: 3.125rem; } }
+  .page--detail-v2 .project-nav {
+    height: 3rem; }
+    .page--detail-v2 .project-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      .page--detail-v2 .project-nav ul > li {
+        display: inline-block; }
+    @media screen and (min-width: 64em) {
+      .page--detail-v2 .project-nav {
+        height: 5.25rem; } }
+  .page--detail-v2 article {
+    max-width: 118.75rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1.25rem;
+    opacity: 0;
+    transform: translateY(5rem); }
+    .page--detail-v2 article::before, .page--detail-v2 article::after {
+      display: table;
+      content: ' '; }
+    .page--detail-v2 article::after {
+      clear: both; }
+    @media screen and (min-width: 120em) {
+      .page--detail-v2 article {
+        max-width: 98.95833%; } }
+    @media screen and (min-width: 120em) {
+      .page--detail-v2 article {
+        max-width: 118.75rem; } }
+    @media screen and (min-width: 64em) {
+      .page--detail-v2 article {
+        padding: 0 2.5rem; } }
+    @media screen and (min-width: 120em) {
+      .page--detail-v2 article {
+        padding: 0 5rem; } }
+  .page--detail-v2 p {
+    font-style: italic; }
+  .page--detail-v2 .photo-gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin: 2.25rem 0; }
+    .page--detail-v2 .photo-gallery > li {
+      display: inline-block; }
+    .page--detail-v2 .photo-gallery figure {
+      display: inline-block;
+      height: 9rem;
+      margin: 0; }
+    .page--detail-v2 .photo-gallery figcaption {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0); }
+    .page--detail-v2 .photo-gallery a {
+      display: block;
+      height: 100%; }
+      .page--detail-v2 .photo-gallery a img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover; }
+    @media print, screen and (min-width: 33.75em) {
+      .page--detail-v2 .photo-gallery::before, .page--detail-v2 .photo-gallery::after {
+        display: table;
+        content: ' '; }
+      .page--detail-v2 .photo-gallery::after {
+        clear: both; }
+      .page--detail-v2 .photo-gallery figure {
+        float: left;
+        width: 50%;
+        height: 12rem;
+        padding-bottom: 1.25rem; }
+        .page--detail-v2 .photo-gallery figure:nth-child(odd) {
+          padding-right: 0.625rem; }
+        .page--detail-v2 .photo-gallery figure:nth-child(even) {
+          padding-left: 0.625rem; } }
+    @media print, screen and (min-width: 46.25em) {
+      .page--detail-v2 .photo-gallery {
+        margin-bottom: 4.5rem; }
+        .page--detail-v2 .photo-gallery figure {
+          position: relative;
+          height: 19.5rem; }
+          .page--detail-v2 .photo-gallery figure a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 26, 0.7);
+            opacity: 0;
+            transition-property: opacity;
+            transition-duration: 400ms;
+            transition-timing-function: ease-out; }
+        .page--detail-v2 .photo-gallery figcaption {
+          position: static !important;
+          width: auto;
+          height: auto;
+          overflow: visible;
+          clip: auto;
+          position: absolute !important;
+          top: 50%;
+          width: 100%;
+          text-align: center;
+          padding: 0 1.25rem;
+          color: #FFFFFF;
+          opacity: 0;
+          transform: translateY(0%);
+          transition-property: opacity, transform;
+          transition-duration: 400ms;
+          transition-timing-function: ease-out; }
+        .page--detail-v2 .photo-gallery a:active:before, .page--detail-v2 .photo-gallery a:focus:before, .page--detail-v2 .photo-gallery a:hover:before {
+          opacity: 0.85; }
+        .page--detail-v2 .photo-gallery a:active figcaption, .page--detail-v2 .photo-gallery a:focus figcaption, .page--detail-v2 .photo-gallery a:hover figcaption {
+          opacity: 1;
+          transform: translateY(-50%); } }
+    @media screen and (min-width: 64em) {
+      .page--detail-v2 .photo-gallery {
+        margin-top: 6rem; }
+        .page--detail-v2 .photo-gallery figure {
+          height: 28.5rem;
+          padding-bottom: 2.5rem; }
+          .page--detail-v2 .photo-gallery figure:nth-child(odd) {
+            padding-right: 1.25rem; }
+          .page--detail-v2 .photo-gallery figure:nth-child(even) {
+            padding-left: 1.25rem; } }
+    @media screen and (min-width: 120em) {
+      .page--detail-v2 .photo-gallery figure {
+        height: 34.5rem;
+        padding-bottom: 3.75rem; }
+        .page--detail-v2 .photo-gallery figure:nth-child(odd) {
+          padding-right: 1.875rem; }
+        .page--detail-v2 .photo-gallery figure:nth-child(even) {
+          padding-left: 1.875rem; } }

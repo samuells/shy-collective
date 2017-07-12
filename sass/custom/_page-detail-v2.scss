@@ -1,0 +1,212 @@
+// @import "keyframes-detail-v2";
+
+.page--detail-v2 {
+  // ------
+  // Hero Area
+  padding-top: rh(2);
+  @include breakpoint(medium) {
+    padding-top: rh(2.5);
+  }
+  @include breakpoint(xlarge) {
+    padding-top: rh(3.5);
+  }
+
+  .hero-area {
+    position: relative;
+    // @include ps-animate(detail-hero-area-v1, 600ms);
+
+    .is-exiting & {
+      // @include ps-animate(detail-hero-area-v1-out, 600ms);
+    }
+
+    a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      padding: rem(12);
+      font-size: rem(24);
+      transform: translateX(-50%) translateY(-50%);
+    }
+    @include breakpoint(medium) {
+      a {
+        font-size: rem(40);
+      }
+    }
+    @include breakpoint(xlarge) {
+      height: calc(100vh - #{rh(7)});
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      a {
+        font-size: rem(50);
+      }
+    }
+  }
+  // ------
+  // project content
+  .project-nav {
+    height: rh(2);
+    ul {
+      @include reset-ul(true);
+    }
+    @include breakpoint(xlarge) {
+      height: rh(3.5);
+    }
+  }
+
+  // ------
+  // project content
+  article {
+    @include in-row($outer: true);
+    padding: 0 $side-padding--mobile;
+    opacity: 0;
+    $tmp-dist: rem(80);
+    transform: translateY($tmp-dist);
+    // @include ps-animate(detail-article-v1, 600ms, 300ms);
+    .is-exiting & {
+      // @include ps-animate(detail-article-v1-out, 600ms, 100ms);
+    }
+    @include breakpoint(xlarge) {
+      padding: 0 $side-padding--xlarge;
+    }
+    @include breakpoint(maxed) {
+      padding: 0 $side-padding--maxed;
+    }
+  }
+  // ------
+  // paragraph style
+  p {
+    font-style: italic;
+  }
+  // ------
+  // photo gallery
+  .photo-gallery {
+    @include reset-ul(true);
+    margin: rh(1.5) 0;
+
+    figure {
+      display: inline-block;
+      height: rh(6);
+      margin: 0;
+    }
+
+    figcaption {
+      @include element-invisible;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+
+      img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    @include breakpoint(medium) {
+       @include clearfix;
+
+      figure {
+        float: left;
+        width: 50%;
+        height: rh(8);
+        padding-bottom: rem(20);
+
+        &:nth-child(odd) {
+          padding-right: rem(10);
+        }
+
+        &:nth-child(even) {
+          padding-left: rem(10);
+        }
+      }
+    }
+    @include breakpoint(large) {
+      margin-bottom: rh(3);
+
+      figure {
+        position: relative;
+        height: rh(13);
+
+        a:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($black-cod, 0.7);
+          opacity: 0;
+          @include ps-transition(opacity);
+        }
+      }
+
+      figcaption {
+        @include element-invisible-off;
+        position: absolute !important;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        padding: 0 rem(20);
+        color: $white;
+        opacity: 0;
+        transform: translateY(0%);
+        @include ps-transition(opacity, transform);
+      }
+
+      a {
+        &:active,
+        &:focus,
+        &:hover {
+          &:before {
+            opacity: 0.85;
+          }
+
+          figcaption {
+            opacity: 1;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    @include breakpoint(xlarge) {
+      margin-top: rh(4);
+
+      figure {
+        height: rh(19);
+        padding-bottom: rem(40);
+
+        &:nth-child(odd) {
+          padding-right: rem(20);
+        }
+
+        &:nth-child(even) {
+          padding-left: rem(20);
+        }
+      }
+    }
+    @include breakpoint(maxed) {
+      figure {
+        height: rh(23);
+        padding-bottom: rem(60);
+
+        &:nth-child(odd) {
+          padding-right: rem(30);
+        }
+
+        &:nth-child(even) {
+          padding-left: rem(30);
+        }
+      }
+    }
+  }
+
+}
