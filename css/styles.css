@@ -2516,14 +2516,6 @@ footer {
       .social-bar a:after {
         font-size: 1.375rem; } }
 
-@keyframes anim-project-preview-after-in {
-  from {
-    transform: translateX(-100%); }
-  50% {
-    transform: translateX(0%); }
-  to {
-    transform: translateX(101%); } }
-
 @keyframes anim-project-preview-before-in {
   from {
     opacity: 0; }
@@ -2532,9 +2524,9 @@ footer {
 
 @keyframes anim-project-preview-content-in {
   from {
-    opacity: 0; }
+    transform: translateX(-100%); }
   to {
-    opacity: 1; } }
+    transform: translateX(0%); } }
 
 @keyframes anim-project-preview-content-hover-in {
   from {
@@ -2579,230 +2571,204 @@ footer {
       margin-bottom: 1.5rem; }
       .page--projects .projects-list .project-preview a {
         overflow: hidden; }
-        .page--projects .projects-list .project-preview a::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: block;
-          width: 100%;
-          height: 100%;
-          background-color: #FFFFFF;
-          transform: translateX(-100%);
-          z-index: 2; }
         .page--projects .projects-list .project-preview a h2,
         .page--projects .projects-list .project-preview a img {
-          opacity: 0; }
+          transform: translateX(-100%); }
       .page--projects .projects-list .project-preview:nth-child(1) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 0.45s; }
+        animation-delay: 0.4s; }
       .page--projects .projects-list .project-preview:nth-child(1) a h2,
       .page--projects .projects-list .project-preview:nth-child(1) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 0.45s;
-        animation-timing-function: step-end; }
+        animation-delay: 0.4s; }
       .page--projects .projects-list .project-preview:nth-child(2) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 0.9s; }
+        animation-delay: 0.8s; }
       .page--projects .projects-list .project-preview:nth-child(2) a h2,
       .page--projects .projects-list .project-preview:nth-child(2) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 0.9s;
-        animation-timing-function: step-end; }
+        animation-delay: 0.8s; }
       .page--projects .projects-list .project-preview:nth-child(3) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 1.35s; }
+        animation-delay: 1.2s; }
       .page--projects .projects-list .project-preview:nth-child(3) a h2,
       .page--projects .projects-list .project-preview:nth-child(3) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 1.35s;
-        animation-timing-function: step-end; }
+        animation-delay: 1.2s; }
       .page--projects .projects-list .project-preview:nth-child(4) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 1.8s; }
+        animation-delay: 1.6s; }
       .page--projects .projects-list .project-preview:nth-child(4) a h2,
       .page--projects .projects-list .project-preview:nth-child(4) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 1.8s;
-        animation-timing-function: step-end; }
+        animation-delay: 1.6s; }
       .page--projects .projects-list .project-preview:nth-child(5) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 2.25s; }
+        animation-delay: 2s; }
       .page--projects .projects-list .project-preview:nth-child(5) a h2,
       .page--projects .projects-list .project-preview:nth-child(5) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 2.25s;
-        animation-timing-function: step-end; }
+        animation-delay: 2s; }
       .page--projects .projects-list .project-preview:nth-child(6) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 2.7s; }
+        animation-delay: 2.4s; }
       .page--projects .projects-list .project-preview:nth-child(6) a h2,
       .page--projects .projects-list .project-preview:nth-child(6) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 2.7s;
-        animation-timing-function: step-end; }
+        animation-delay: 2.4s; }
       .page--projects .projects-list .project-preview:nth-child(7) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 3.15s; }
+        animation-delay: 2.8s; }
       .page--projects .projects-list .project-preview:nth-child(7) a h2,
       .page--projects .projects-list .project-preview:nth-child(7) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 3.15s;
-        animation-timing-function: step-end; }
+        animation-delay: 2.8s; }
       .page--projects .projects-list .project-preview:nth-child(8) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 3.6s; }
+        animation-delay: 3.2s; }
       .page--projects .projects-list .project-preview:nth-child(8) a h2,
       .page--projects .projects-list .project-preview:nth-child(8) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 3.6s;
-        animation-timing-function: step-end; }
+        animation-delay: 3.2s; }
       .page--projects .projects-list .project-preview:nth-child(9) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 4.05s; }
+        animation-delay: 3.6s; }
       .page--projects .projects-list .project-preview:nth-child(9) a h2,
       .page--projects .projects-list .project-preview:nth-child(9) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 4.05s;
-        animation-timing-function: step-end; }
+        animation-delay: 3.6s; }
       .page--projects .projects-list .project-preview:nth-child(10) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 4.5s; }
+        animation-delay: 4s; }
       .page--projects .projects-list .project-preview:nth-child(10) a h2,
       .page--projects .projects-list .project-preview:nth-child(10) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 4.5s;
-        animation-timing-function: step-end; }
+        animation-delay: 4s; }
       .page--projects .projects-list .project-preview:nth-child(11) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 4.95s; }
+        animation-delay: 4.4s; }
       .page--projects .projects-list .project-preview:nth-child(11) a h2,
       .page--projects .projects-list .project-preview:nth-child(11) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 4.95s;
-        animation-timing-function: step-end; }
+        animation-delay: 4.4s; }
       .page--projects .projects-list .project-preview:nth-child(12) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 5.4s; }
+        animation-delay: 4.8s; }
       .page--projects .projects-list .project-preview:nth-child(12) a h2,
       .page--projects .projects-list .project-preview:nth-child(12) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 5.4s;
-        animation-timing-function: step-end; }
+        animation-delay: 4.8s; }
       .page--projects .projects-list .project-preview:nth-child(13) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 5.85s; }
+        animation-delay: 5.2s; }
       .page--projects .projects-list .project-preview:nth-child(13) a h2,
       .page--projects .projects-list .project-preview:nth-child(13) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 5.85s;
-        animation-timing-function: step-end; }
+        animation-delay: 5.2s; }
       .page--projects .projects-list .project-preview:nth-child(14) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 6.3s; }
+        animation-delay: 5.6s; }
       .page--projects .projects-list .project-preview:nth-child(14) a h2,
       .page--projects .projects-list .project-preview:nth-child(14) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 6.3s;
-        animation-timing-function: step-end; }
+        animation-delay: 5.6s; }
       .page--projects .projects-list .project-preview:nth-child(15) a::after {
         animation-name: anim-project-preview-after-in;
         animation-duration: 1400ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 6.75s; }
+        animation-delay: 6s; }
       .page--projects .projects-list .project-preview:nth-child(15) a h2,
       .page--projects .projects-list .project-preview:nth-child(15) a img {
         animation-name: anim-project-preview-content-in;
-        animation-duration: 700ms;
+        animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 6.75s;
-        animation-timing-function: step-end; }
+        animation-delay: 6s; }
       .is-exiting .page--projects .projects-list .project-preview:nth-child(1) {
         animation-name: anim-project-preview-out;
         animation-duration: 600ms;

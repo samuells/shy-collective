@@ -1,16 +1,3 @@
-@keyframes anim-project-preview-after-in {
-  from {
-    transform: translateX(-100%);
-  }
-
-  50% {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(101%);
-  }
-}
 @keyframes anim-project-preview-before-in {
   from {
     opacity: 0;
@@ -21,11 +8,11 @@
 }
 @keyframes anim-project-preview-content-in {
   from {
-    opacity: 0;
+    transform: translateX(-100%);
   }
 
   to {
-    opacity: 1;
+    transform: translateX(0%);
   }
 }
 

@@ -24,27 +24,15 @@
       a {
         overflow: hidden;
 
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: block;
-          width: 100%;
-          height: 100%;
-          background-color: $white;
-          transform: translateX(-100%);
-          z-index: 2;
-        }
-
         h2,
         img {
-          opacity: 0;
+          // opacity: 0;
+          transform: translateX(-100%);
         }
       }
       @for $i from 1 through 15 {
         &:nth-child(#{$i}) {
-          $tmp-delay: (0.35 * $i + $i / 10) * 1s;
+          $tmp-delay: (0.4 * $i) * 1s;
 
           a {
             &::after {
@@ -53,8 +41,7 @@
 
             h2,
             img {
-              @include ps-animate(anim-project-preview-content-in, 700ms, $tmp-delay);
-              animation-timing-function: step-end;
+              @include ps-animate(anim-project-preview-content-in, 500ms, $tmp-delay);
             }
           }
         }
