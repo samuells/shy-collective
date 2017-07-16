@@ -141,20 +141,11 @@
     @include clearfix;
 
     figure {
-      float: left;
-      display: inline-block;
-      width: 50%;
-      height: rh(6);
+      height: rh(7);
+      height: calc(#{rh(6)} + 10vw);
       margin: 0;
       padding-bottom: rem(20);
 
-      &:nth-child(odd) {
-        padding-right: rem(10);
-      }
-
-      &:nth-child(even) {
-        padding-left: rem(10);
-      }
     }
 
     figcaption {
@@ -175,9 +166,29 @@
     @include breakpoint(medium) {
       figure {
         height: rh(8);
+        height: calc(#{rh(8)} + 2vw);
+
+        &:nth-child(odd) {
+          padding-right: rem(10);
+        }
+
+        &:nth-child(even) {
+          padding-left: rem(10);
+        }
       }
     }
     @include breakpoint(large) {
+      figure {
+        float: left;
+        display: inline-block;
+        width: 50%;
+        height: rh(10);
+        height: calc(#{rh(9)} + 4vw);
+        padding-right: rem(10) !important;
+        padding-left: rem(10) !important;
+      }
+    }
+    @include breakpoint(xlarge) {
       overflow: hidden;
 
       .gallery-row {
@@ -201,9 +212,11 @@
       figure {
         position: relative;
         width: 25%;
-        height: rh(10);
-        padding-right: rem(10) !important;
-        padding-left: rem(10) !important;
+        height: rh(14);
+        height: calc(#{rh(13)} + 3vw);
+        padding-bottom: rem(40) !important;
+        padding-right: rem(20);
+        padding-left: rem(20) !important;
 
         a:before {
           content: '';
@@ -246,17 +259,10 @@
         }
       }
     }
-    @include breakpoint(xlarge) {
-      figure {
-        height: rh(15);
-        padding-bottom: rem(40) !important;
-        padding-right: rem(20);
-        padding-left: rem(20) !important;
-      }
-    }
     @include breakpoint(maxed) {
       figure {
-        height: rh(19);
+        height: rh(18);
+        height: calc(#{rh(17)} + 3vw);
         padding-bottom: rem(60) !important;
         padding-right: rem(30);
         padding-left: rem(30) !important;

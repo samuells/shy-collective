@@ -79,7 +79,7 @@ $browser-default-font-size: 16px;
 // * <code>@include breakpoint(small down){ STYLES }</code>
 //
 // Styleguide 1.3
-$breakpoints: ( default: 0, small: 360px, medium: 540px, large: 740px, xlarge: 1024px, xxlarge: 1400px, maxed: 1920px);
+$breakpoints: ( default: 0, small: 360px, medium: 540px, large: 740px, xlarge: 1025px, xxlarge: 1400px, maxed: 1920px);
 $adaptive-breakpoint: map-get($breakpoints, maxed); // Get the breakpoint after which has the content max width
 $maxed-breakpoint: map-get($breakpoints, maxed); // Get the breakpoint after which has the content max width
 $maxed-row-width: 1900px; // max width of the content
