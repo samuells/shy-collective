@@ -1,4 +1,4 @@
-// @import "keyframes-detail-v2";
+@import "keyframes-detail-v2";
 
 .page--detail-v2 {
   // ------
@@ -19,17 +19,52 @@
       // @include ps-animate(detail-hero-area-v1-out, 600ms);
     }
 
+    .project-name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 !important;
+      opacity: 0;
+      transform: translateX(-50%) translateY(-30%);
+      @include ps-animate(anim-project-name-in, 2.5s);
+      @include ps-animate(anim-project-name-in, 2.5s);
+    }
+
+    img {
+      opacity: 0;
+      transform: translateY(50px);
+      @include ps-animate(anim-hero-img-in, 1s, 2.2s);
+    }
+
     a {
       position: absolute;
       top: 50%;
       left: 50%;
       display: block;
-      padding: rem(12);
+      padding: rem(6) rem(12);
       font-size: rem(24);
+      color: $transparent;
       transform: translateX(-50%) translateY(-50%);
+      overflow: hidden;
+      @include ps-animate(anim-play-in, 500ms, 3s);
+      animation-timing-function: step-end;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        transform: translateX(-100%);
+        @include ps-animate(anim-play-after-in, 1s, 3s);
+        animation-timing-function: ease-in-out;
+      }
     }
     @include breakpoint(medium) {
       a {
+        padding: rem(6) rem(18);
         font-size: rem(40);
       }
     }
@@ -44,6 +79,7 @@
       }
 
       a {
+        padding: rem(6) rem(24);
         font-size: rem(50);
       }
     }
@@ -52,6 +88,9 @@
   // project content
   .project-nav {
     padding: rh(0.5) 0;
+    opacity: 0;
+    transform: translateY(50px);
+    @include ps-animate(anim-project-nav-in, 0.8s, 2.4s);
 
     ul {
       @include reset-ul(true);
@@ -145,7 +184,8 @@
       height: calc(#{rh(6)} + 10vw);
       margin: 0;
       padding-bottom: rem(20);
-
+      opacity: 0;
+      transform: translateY(50px);
     }
 
     figcaption {
@@ -161,6 +201,20 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+      }
+    }
+
+    .gallery-row {
+      @for $row from 1 through 4 {
+        &:nth-child(#{$row}) {
+          @for $figure from 1 through 4 {
+            $tmp-delay: (2 + 0.4 * $figure + 1 * $row ) * 1s;
+
+            figure:nth-child(#{$figure}) {
+                @include ps-animate(anim-gallery-figure-in, 500ms, $tmp-delay);
+            }
+          }
+        }
       }
     }
     @include breakpoint(medium) {

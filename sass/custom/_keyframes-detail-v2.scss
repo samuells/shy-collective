@@ -1,0 +1,70 @@
+// 2.5s
+@keyframes anim-project-name-in {
+  50%,
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-70%);
+  }
+}
+
+@keyframes anim-hero-img-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+// 1.5s
+@keyframes anim-play-in {
+  from {
+    color: $transparent;
+  }
+
+  to {
+    color: $white;
+  }
+}
+
+@keyframes anim-play-after-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes anim-project-nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes anim-gallery-figure-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

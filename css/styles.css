@@ -3185,6 +3185,51 @@ footer {
       .page--detail-v1 .photo-gallery figure:nth-child(even) {
         padding-left: 1.875rem; } }
 
+@keyframes anim-project-name-in {
+  50%,
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%); }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-70%); } }
+
+@keyframes anim-hero-img-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+
+@keyframes anim-play-in {
+  from {
+    color: rgba(255, 255, 255, 0); }
+  to {
+    color: #FFFFFF; } }
+
+@keyframes anim-play-after-in {
+  from {
+    transform: translateX(-100%); }
+  to {
+    transform: translateX(100%); } }
+
+@keyframes anim-project-nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+
+@keyframes anim-gallery-figure-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+
 .page--detail-v2 {
   padding-top: 3rem; }
   @media print, screen and (min-width: 33.75em) {
@@ -3195,16 +3240,65 @@ footer {
       padding-top: 5.25rem; } }
   .page--detail-v2 .hero-area {
     position: relative; }
+    .page--detail-v2 .hero-area .project-name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 !important;
+      opacity: 0;
+      transform: translateX(-50%) translateY(-30%);
+      animation-name: anim-project-name-in;
+      animation-duration: 2.5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
+      animation-name: anim-project-name-in;
+      animation-duration: 2.5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s; }
+    .page--detail-v2 .hero-area img {
+      opacity: 0;
+      transform: translateY(50px);
+      animation-name: anim-hero-img-in;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 2.2s; }
     .page--detail-v2 .hero-area a {
       position: absolute;
       top: 50%;
       left: 50%;
       display: block;
-      padding: 0.75rem;
+      padding: 0.375rem 0.75rem;
       font-size: 1.5rem;
-      transform: translateX(-50%) translateY(-50%); }
+      color: rgba(255, 255, 255, 0);
+      transform: translateX(-50%) translateY(-50%);
+      overflow: hidden;
+      animation-name: anim-play-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 3s;
+      animation-timing-function: step-end; }
+      .page--detail-v2 .hero-area a::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+        transform: translateX(-100%);
+        animation-name: anim-play-after-in;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+        animation-timing-function: ease-in-out; }
     @media print, screen and (min-width: 33.75em) {
       .page--detail-v2 .hero-area a {
+        padding: 0.375rem 1.125rem;
         font-size: 2.5rem; } }
     @media screen and (min-width: 64.0625em) {
       .page--detail-v2 .hero-area {
@@ -3215,9 +3309,17 @@ footer {
           height: 100%;
           object-fit: cover; }
         .page--detail-v2 .hero-area a {
+          padding: 0.375rem 1.5rem;
           font-size: 3.125rem; } }
   .page--detail-v2 .project-nav {
-    padding: 0.75rem 0; }
+    padding: 0.75rem 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation-name: anim-project-nav-in;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 2.4s; }
     .page--detail-v2 .project-nav ul {
       list-style: none;
       padding: 0;
@@ -3318,7 +3420,9 @@ footer {
       height: 10.5rem;
       height: calc(9rem + 10vw);
       margin: 0;
-      padding-bottom: 1.25rem; }
+      padding-bottom: 1.25rem;
+      opacity: 0;
+      transform: translateY(50px); }
     .page--detail-v2 .photo-gallery figcaption {
       position: absolute !important;
       width: 1px;
@@ -3333,6 +3437,102 @@ footer {
         height: 100%;
         width: 100%;
         object-fit: cover; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(1) figure:nth-child(1) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 3.4s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(1) figure:nth-child(2) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 3.8s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(1) figure:nth-child(3) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 4.2s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(1) figure:nth-child(4) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 4.6s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(2) figure:nth-child(1) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 4.4s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(2) figure:nth-child(2) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 4.8s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(2) figure:nth-child(3) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 5.2s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(2) figure:nth-child(4) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 5.6s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(3) figure:nth-child(1) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 5.4s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(3) figure:nth-child(2) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 5.8s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(3) figure:nth-child(3) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 6.2s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(3) figure:nth-child(4) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 6.6s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(4) figure:nth-child(1) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 6.4s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(4) figure:nth-child(2) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 6.8s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(4) figure:nth-child(3) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 7.2s; }
+    .page--detail-v2 .photo-gallery .gallery-row:nth-child(4) figure:nth-child(4) {
+      animation-name: anim-gallery-figure-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 7.6s; }
     @media print, screen and (min-width: 33.75em) {
       .page--detail-v2 .photo-gallery figure {
         height: 12rem;
