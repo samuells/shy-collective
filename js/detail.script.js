@@ -6,6 +6,13 @@ var initDetail = function(){
       initPhotoSwipeFromDOM('.photo-gallery');
     }
   }
+  if (document.querySelector('.page--detail-v2')) {
+    var $pageDetail = $('.page--detail-v2');
+    $pageDetail.on('click', 'a[data-lightbox]', lity);
+    if (document.querySelector('.photo-gallery')) {
+      initPhotoSwipeFromDOM('.photo-gallery');
+    }
+  }
 };
 
 jQuery(function($) {
