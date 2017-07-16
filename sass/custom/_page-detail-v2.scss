@@ -160,6 +160,7 @@
   .project-description {
     @include in-row($outer: true);
     padding: 0 $side-padding--mobile;
+    outline: none;
 
     h1 {
       @include create-rwd-font("headline-lvl3");
