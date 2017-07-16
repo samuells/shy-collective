@@ -24,11 +24,11 @@
       a {
         overflow: hidden;
 
-        h2,
-        img {
-          // opacity: 0;
-          transform: translateX(-100%);
-        }
+        // h2,
+        // img {
+        //   // opacity: 0;
+        //   transform: translateX(-100%);
+        // }
       }
       @for $i from 1 through 15 {
         &:nth-child(#{$i}) {
@@ -36,12 +36,7 @@
 
           a {
             &::after {
-              @include ps-animate(anim-project-preview-after-in, 1400ms, $tmp-delay);
-            }
-
-            h2,
-            img {
-              @include ps-animate(anim-project-preview-content-in, 500ms, $tmp-delay);
+              @include ps-animate(anim-project-preview-after-in, 500ms, $tmp-delay);
             }
           }
         }
@@ -103,7 +98,8 @@
       }
 
       a {
-        &::before {
+        &::before,
+        &::after {
           content: '';
           position: absolute;
           top: 0;
@@ -116,6 +112,13 @@
           transform: translateX(-100%);
           z-index: 1;
           @include ps-transition(opacity);
+        }
+
+        &::after {
+          background-color: rgba($black-cod, 1);
+          opacity: 1;
+          transform: translateX(0%);
+          @include ps-transition(transform);
         }
 
         &:active,
