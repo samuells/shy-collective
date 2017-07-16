@@ -181,26 +181,27 @@
       overflow: hidden;
 
       .gallery-row {
-        margin-left: -25%;
-        margin-right: -25%;
+        margin-right: -50%;
+        transition-duration: 200ms;
+        transition-timing-function: linear;
 
         &:nth-child(1) {
-          transform: translateX(10%);
+          transform: translateX(-12.5%);
         }
 
         &:nth-child(2) {
-          transform: translateX(-5%);
+          transform: translateX(-25%);
         }
 
         &:nth-child(3) {
-          transform: translateX(2%);
+          transform: translateX(-12.5%);
         }
       }
 
       figure {
         position: relative;
         width: 25%;
-        height: rh(13);
+        height: rh(10);
         padding-right: rem(10) !important;
         padding-left: rem(10) !important;
 
@@ -247,20 +248,15 @@
     }
     @include breakpoint(xlarge) {
       figure {
-        height: rh(19);
+        height: rh(15);
         padding-bottom: rem(40) !important;
         padding-right: rem(20);
         padding-left: rem(20) !important;
-
-        .gallery-row {
-          margin-left: -40%;
-          margin-right: -40%;
-        }
       }
     }
     @include breakpoint(maxed) {
       figure {
-        height: rh(23);
+        height: rh(19);
         padding-bottom: rem(60) !important;
         padding-right: rem(30);
         padding-left: rem(30) !important;
