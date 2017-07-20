@@ -32,11 +32,11 @@
       }
       @for $i from 1 through 15 {
         &:nth-child(#{$i}) {
-          $tmp-delay: (0.4 * $i) * 1s;
+          $tmp-delay: (0.3 * $i) * 1s;
 
           a {
             &::after {
-              @include ps-animate(anim-project-preview-after-in, 500ms, $tmp-delay);
+              @include ps-animate(anim-project-preview-after-in, 400ms, $tmp-delay);
             }
           }
         }

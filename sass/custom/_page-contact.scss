@@ -1,0 +1,110 @@
+@import "keyframes-projects";
+
+.page--contact {
+  // --------
+  // Layout of the page
+  @include in-row($outer: true);
+  padding: rh(2.5) $side-padding--mobile 0;
+  @include breakpoint(xlarge) {
+    padding: rh(4) $side-padding--xlarge 0;
+  }
+  @include breakpoint(maxed) {
+    padding: rh(6) $side-padding--maxed 0;
+  }
+
+  // --------
+  // Imgs Row
+  .imgs-row {
+    @include in-row();
+    padding-bottom: rh(1);
+    .img-column {
+      @include in-column(12);
+      display: none;
+      &:first-child {
+        display: block;
+      }
+    }
+    @include breakpoint(xlarge){
+      padding: rh(1) 0;
+      margin-left: rem(-15);
+      margin-right: rem(-15);
+
+      .img-column {
+        @include in-column(4, $gutter: 30);
+        display: block;
+      }
+    }
+    @include breakpoint(xlarge) {
+      margin-bottom: rh(2);
+    }
+    @include breakpoint(xxlarge) {
+      margin-bottom: rh(3);
+    }
+    @include breakpoint(maxed) {
+      margin-bottom: rh(4);
+    }
+  }
+  // --------
+  // Contact Info
+  .contact-info {
+    p {
+      margin-bottom: rh(0.75);
+      font-size: rem(24);
+      line-height: 1.2;
+      text-align: center;
+    }
+    @include breakpoint(xlarge) {
+      p {
+        margin-bottom: rh(1);
+        font-size: rem(48);
+      }
+    }
+    @include breakpoint(xxlarge) {
+      p {
+        margin-bottom: rh(2);
+        font-size: rem(56);
+      }
+    }
+    @include breakpoint(maxed) {
+      p {
+        margin-bottom: rh(4);
+        font-size: rem(69);
+      }
+    }
+  }
+  // --------
+  // Contact Info
+  .legals {
+    ul {
+      @include reset-ul(true);
+      @include clearfix;
+      display: block;
+      padding: rh(0.5) 0;
+      text-align: center;
+    }
+    li {
+      padding: 0 rem(12);
+    }
+    @include breakpoint(xlarge) {
+      a {
+        font-size: rem(20);
+      }
+      ul {
+        padding: rh(1) 0;
+      }
+    }
+    @include breakpoint(xxlarge) {
+      a {
+        font-size: rem(24);
+      }
+      ul {
+        padding: rh(1.5) 0;
+      }
+    }
+    @include breakpoint(maxed) {
+      a {
+        font-size: rem(28);
+      }
+    }
+  }
+}
