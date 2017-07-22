@@ -152,3 +152,48 @@
     opacity: 0;
   }
 }
+
+// Loading dots 3
+@keyframes shake {
+  from, to {
+    opacity: 1;
+  }
+  10%, 90% {
+    transform: translate3d(-1px, -50%, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, -50%, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, -50%, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, -50%, 0);
+  }
+}
+@keyframes shake-pause {
+  from, to {
+    opacity: 1;
+  }
+  78% {
+    transform: translate3d(0, -50%, 0) rotateZ(0deg);
+  }
+  80%, 96% {
+    transform: translate3d(-1px, -50%, 0) rotateZ(-5deg);
+  }
+
+  82%, 94% {
+    transform: translate3d(2px, -50%, 0) rotateZ(5deg);
+  }
+
+  84%, 88%, 92% {
+    transform: translate3d(-4px, -50%, 0) rotateZ(-10deg);
+  }
+
+  86%, 90% {
+    transform: translate3d(4px, -50%, 0) rotateZ(10deg);
+  }
+}

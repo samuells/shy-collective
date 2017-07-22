@@ -17,14 +17,16 @@
   .imgs-row {
     @include in-row();
     padding-bottom: rh(1);
+
     .img-column {
       @include in-column(12);
       display: none;
+
       &:first-child {
         display: block;
       }
     }
-    @include breakpoint(xlarge){
+    @include breakpoint(xlarge) {
       padding: rh(1) 0;
       margin-left: rem(-15);
       margin-right: rem(-15);
@@ -48,6 +50,7 @@
   // Contact Info
   .contact-info {
     p {
+      display: block;
       margin-bottom: rh(0.75);
       font-size: rem(24);
       line-height: 1.2;
@@ -82,6 +85,7 @@
       padding: rh(0.5) 0;
       text-align: center;
     }
+
     li {
       padding: 0 rem(12);
     }
@@ -89,6 +93,7 @@
       a {
         font-size: rem(20);
       }
+
       ul {
         padding: rh(1) 0;
       }
@@ -97,6 +102,7 @@
       a {
         font-size: rem(24);
       }
+
       ul {
         padding: rh(1.5) 0;
       }
