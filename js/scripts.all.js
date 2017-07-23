@@ -877,10 +877,12 @@ const initHome = function() {
         var $this= $(this);
         console.log('click');
         $this.closest('li').addClass('loading');
-        setTimeout(function() {
-          lity($this.attr('href'));
-          $this.closest('li').removeClass('loading');
-        }, 0);
+        // if (!Foundation.MediaQuery.atLeast('xlarge')) {
+        //   setTimeout(function() {
+        //     lity($this.attr('href'));
+        //     $this.closest('li').removeClass('loading');
+        //   }, 0);
+        // }
       });
     });
     if (Foundation.MediaQuery.atLeast('xlarge')) {
@@ -899,6 +901,7 @@ const initHome = function() {
           setTimeout(function() {
             lity($this.attr('href'));
             $this.closest('li').removeClass('loading');
+            $('.lity.lity-hidden').remove();
           }, 2000);
         });
       });
