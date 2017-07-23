@@ -31,13 +31,18 @@
         // }
       }
       @for $i from 1 through 15 {
-        &:nth-child(#{$i}) {
-          $tmp-delay: (0.3 * $i) * 1s;
-
+        // &:nth-child(#{$i}) {
+        //   // $tmp-delay: (0.3 * $i) * 1s;
+        //   $tmp-delay: (0.25 * $i - $i / 10) * 1s;
+        //   a {
+        //     @include ps-animate(anim-project-preview-in, 600ms, $tmp-delay);
+        //   }
+        // }
+        &.show-#{$i} {
+          // $tmp-delay: (0.3 * $i) * 1s;
+          $tmp-delay: (0.25 * $i - $i / 10) * 1s;
           a {
-            &::after {
-              @include ps-animate(anim-project-preview-after-in, 400ms, $tmp-delay);
-            }
+            @include ps-animate(anim-project-preview-in, 600ms, $tmp-delay);
           }
         }
       }
@@ -98,8 +103,10 @@
       }
 
       a {
-        &::before,
-        &::after {
+        // &::before,
+        // &::after {
+        opacity: 0;
+        &::before {
           content: '';
           position: absolute;
           top: 0;
@@ -114,12 +121,12 @@
           @include ps-transition(opacity);
         }
 
-        &::after {
-          background-color: rgba($black-cod, 1);
-          opacity: 1;
-          transform: translateX(0%);
-          @include ps-transition(transform);
-        }
+        // &::after {
+        //   background-color: rgba($black-cod, 1);
+        //   opacity: 1;
+        //   transform: translateX(0%);
+        //   @include ps-transition(transform);
+        // }
 
         &:active,
         &:focus,

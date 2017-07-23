@@ -2625,6 +2625,12 @@ footer {
   to {
     transform: translateX(100%); } }
 
+@keyframes anim-project-preview-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 @keyframes anim-project-preview-content-hover-in {
   from {
     transform: translateX(-100%); }
@@ -2668,96 +2674,96 @@ footer {
       margin-bottom: 1.5rem; }
       .page--projects .projects-list .project-preview a {
         overflow: hidden; }
-      .page--projects .projects-list .project-preview:nth-child(1) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-1 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.15s; }
+      .page--projects .projects-list .project-preview.show-2 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 0.3s; }
-      .page--projects .projects-list .project-preview:nth-child(2) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-3 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.45s; }
+      .page--projects .projects-list .project-preview.show-4 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 0.6s; }
-      .page--projects .projects-list .project-preview:nth-child(3) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-5 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.75s; }
+      .page--projects .projects-list .project-preview.show-6 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 0.9s; }
-      .page--projects .projects-list .project-preview:nth-child(4) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-7 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 1.05s; }
+      .page--projects .projects-list .project-preview.show-8 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 1.2s; }
-      .page--projects .projects-list .project-preview:nth-child(5) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-9 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 1.35s; }
+      .page--projects .projects-list .project-preview.show-10 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 1.5s; }
-      .page--projects .projects-list .project-preview:nth-child(6) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-11 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 1.65s; }
+      .page--projects .projects-list .project-preview.show-12 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 1.8s; }
-      .page--projects .projects-list .project-preview:nth-child(7) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-13 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 1.95s; }
+      .page--projects .projects-list .project-preview.show-14 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 2.1s; }
-      .page--projects .projects-list .project-preview:nth-child(8) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
+      .page--projects .projects-list .project-preview.show-15 a {
+        animation-name: anim-project-preview-in;
+        animation-duration: 600ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 2.4s; }
-      .page--projects .projects-list .project-preview:nth-child(9) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-delay: 2.7s; }
-      .page--projects .projects-list .project-preview:nth-child(10) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-delay: 3s; }
-      .page--projects .projects-list .project-preview:nth-child(11) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-delay: 3.3s; }
-      .page--projects .projects-list .project-preview:nth-child(12) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-delay: 3.6s; }
-      .page--projects .projects-list .project-preview:nth-child(13) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-delay: 3.9s; }
-      .page--projects .projects-list .project-preview:nth-child(14) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-delay: 4.2s; }
-      .page--projects .projects-list .project-preview:nth-child(15) a::after {
-        animation-name: anim-project-preview-after-in;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-delay: 4.5s; }
+        animation-delay: 2.25s; }
       .is-exiting .page--projects .projects-list .project-preview:nth-child(1) {
         animation-name: anim-project-preview-out;
         animation-duration: 600ms;
@@ -2894,33 +2900,28 @@ footer {
           transition-property: opacity;
           transition-duration: 400ms;
           transition-timing-function: ease-out; }
-        .page--projects .projects-list a::before, .page--projects .projects-list a::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: block;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(26, 26, 26, 0.5);
-          opacity: 0;
-          transform: translateX(-100%);
-          z-index: 1;
-          transition-property: opacity;
-          transition-duration: 400ms;
-          transition-timing-function: ease-out; }
-        .page--projects .projects-list a::after {
-          background-color: #1a1a1a;
-          opacity: 1;
-          transform: translateX(0%);
-          transition-property: transform;
-          transition-duration: 400ms;
-          transition-timing-function: ease-out; }
-        .page--projects .projects-list a:active::before,
-        .page--projects .projects-list a:active h2, .page--projects .projects-list a:focus::before,
-        .page--projects .projects-list a:focus h2, .page--projects .projects-list a:hover::before,
-        .page--projects .projects-list a:hover h2 {
-          opacity: 1; }
+        .page--projects .projects-list a {
+          opacity: 0; }
+          .page--projects .projects-list a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 26, 0.5);
+            opacity: 0;
+            transform: translateX(-100%);
+            z-index: 1;
+            transition-property: opacity;
+            transition-duration: 400ms;
+            transition-timing-function: ease-out; }
+          .page--projects .projects-list a:active::before,
+          .page--projects .projects-list a:active h2, .page--projects .projects-list a:focus::before,
+          .page--projects .projects-list a:focus h2, .page--projects .projects-list a:hover::before,
+          .page--projects .projects-list a:hover h2 {
+            opacity: 1; }
         .page--projects .projects-list .project-preview {
           width: 33.33333%;
           float: left;
@@ -3750,6 +3751,12 @@ footer {
     transform: translateX(0%); }
   to {
     transform: translateX(100%); } }
+
+@keyframes anim-project-preview-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 @keyframes anim-project-preview-content-hover-in {
   from {

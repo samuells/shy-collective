@@ -940,6 +940,7 @@ const initProjects = function() {
       $('a.choosed').removeClass('choosed');
       $(this).addClass('choosed');
     });
+    showRandomPreview();
     if (Foundation.MediaQuery.atLeast('xlarge')) {
       $projectsList.on('mouseover', 'a:not(.choosed)', function(event) {
         event.preventDefault();
@@ -992,6 +993,16 @@ const initProjects = function() {
       });
 
     console.log('Projects ignited');
+  }
+}
+
+var showRandomPreview = function(){
+  var previewList = $('.project-preview');
+  var previewCount = previewList.length;
+  for (var i = 1; i <= previewCount; i++) {
+    var randomIndex = Math.floor(Math.random() * previewList.length);
+    $(previewList[randomIndex]).addClass('show-' + i);
+    previewList.splice(randomIndex, 1);
   }
 }
 
