@@ -3508,7 +3508,9 @@ footer {
             transform: translateX(-50%); } }
     @media screen and (min-width: 120em) {
       .page--detail-v2 .project-nav {
-        padding: 1.5rem 5rem; } }
+        padding: 1.5rem 5rem; }
+        .page--detail-v2 .project-nav a {
+          font-size: 1.375rem; } }
   .page--detail-v2 article {
     padding: 0 1.25rem; }
     .is-exiting .page--detail-v2 article {
@@ -3782,41 +3784,39 @@ footer {
         padding-right: 1.875rem;
         padding-left: 1.875rem !important; } }
 
-@keyframes anim-project-preview-before-in {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 0; } }
-
-@keyframes anim-project-preview-after-in {
-  from {
-    transform: translateX(0%); }
-  to {
-    transform: translateX(100%); } }
-
-@keyframes anim-project-preview-in {
+@keyframes anim-contact-preview-in {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
 
-@keyframes anim-project-preview-content-hover-in {
+@keyframes anim-contact-content-in {
   from {
-    transform: translateX(-100%); }
+    opacity: 0;
+    transform: translateY(50px); }
   to {
-    transform: translateX(0); } }
+    opacity: 1;
+    transform: translateY(0); } }
 
-@keyframes anim-project-preview-out {
+@keyframes anim-contact-page-out {
   from {
-    opacity: 1; }
+    opacity: 1;
+    transform: translateY(0); }
   to {
-    opacity: 0; } }
+    opacity: 0;
+    transform: translateY(50px); } }
 
 .page--contact {
   max-width: 118.75rem;
   margin-right: auto;
   margin-left: auto;
   padding: 3.75rem 1.25rem 0; }
+  .is-exiting .page--contact {
+    animation-name: anim-contact-page-out;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0; }
   .page--contact::before, .page--contact::after {
     display: table;
     content: ' '; }
@@ -3852,13 +3852,32 @@ footer {
       float: left;
       padding-right: 0.9375rem;
       padding-left: 0.9375rem;
-      display: none; }
+      display: none;
+      opacity: 0; }
       @media print, screen and (min-width: 33.75em) {
         .page--contact .imgs-row .img-column {
           padding-right: 0.9375rem;
           padding-left: 0.9375rem; } }
       .page--contact .imgs-row .img-column:last-child:not(:first-child) {
         float: right; }
+      .page--contact .imgs-row .img-column:nth-child(1) {
+        animation-name: anim-contact-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.15s; }
+      .page--contact .imgs-row .img-column:nth-child(2) {
+        animation-name: anim-contact-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s; }
+      .page--contact .imgs-row .img-column:nth-child(3) {
+        animation-name: anim-contact-preview-in;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.45s; }
       .page--contact .imgs-row .img-column:first-child {
         display: block; }
     @media screen and (min-width: 64.0625em) {
@@ -3883,50 +3902,64 @@ footer {
     @media screen and (min-width: 120em) {
       .page--contact .imgs-row {
         margin-bottom: 6rem; } }
-  .page--contact .contact-info p {
-    display: block;
-    margin-bottom: 1.125rem;
-    font-size: 1.5rem;
-    line-height: 1.2;
-    text-align: center; }
-  @media screen and (min-width: 64.0625em) {
+  .page--contact .contact-info {
+    opacity: 0;
+    animation-name: anim-contact-content-in;
+    animation-duration: 450ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 200ms; }
     .page--contact .contact-info p {
-      margin-bottom: 1.5rem;
-      font-size: 3rem; } }
-  @media screen and (min-width: 87.5em) {
-    .page--contact .contact-info p {
-      margin-bottom: 3rem;
-      font-size: 3.5rem; } }
-  @media screen and (min-width: 120em) {
-    .page--contact .contact-info p {
-      margin-bottom: 6rem;
-      font-size: 4.3125rem; } }
-  .page--contact .legals ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
-    padding: 0.75rem 0;
-    text-align: center; }
-    .page--contact .legals ul > li {
-      display: inline-block; }
-    .page--contact .legals ul::before, .page--contact .legals ul::after {
-      display: table;
-      content: ' '; }
-    .page--contact .legals ul::after {
-      clear: both; }
-  .page--contact .legals li {
-    padding: 0 0.75rem; }
-  @media screen and (min-width: 64.0625em) {
-    .page--contact .legals a {
-      font-size: 1.25rem; }
+      display: block;
+      margin-bottom: 1.125rem;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      text-align: center; }
+    @media screen and (min-width: 64.0625em) {
+      .page--contact .contact-info p {
+        margin-bottom: 1.5rem;
+        font-size: 3rem; } }
+    @media screen and (min-width: 87.5em) {
+      .page--contact .contact-info p {
+        margin-bottom: 3rem;
+        font-size: 3.5rem; } }
+    @media screen and (min-width: 120em) {
+      .page--contact .contact-info p {
+        margin-bottom: 6rem;
+        font-size: 4.3125rem; } }
+  .page--contact .legals {
+    opacity: 0;
+    animation-name: anim-contact-content-in;
+    animation-duration: 450ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 300ms; }
     .page--contact .legals ul {
-      padding: 1.5rem 0; } }
-  @media screen and (min-width: 87.5em) {
-    .page--contact .legals a {
-      font-size: 1.5rem; }
-    .page--contact .legals ul {
-      padding: 2.25rem 0; } }
-  @media screen and (min-width: 120em) {
-    .page--contact .legals a {
-      font-size: 1.75rem; } }
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: block;
+      padding: 0.75rem 0;
+      text-align: center; }
+      .page--contact .legals ul > li {
+        display: inline-block; }
+      .page--contact .legals ul::before, .page--contact .legals ul::after {
+        display: table;
+        content: ' '; }
+      .page--contact .legals ul::after {
+        clear: both; }
+    .page--contact .legals li {
+      padding: 0 0.75rem; }
+    @media screen and (min-width: 64.0625em) {
+      .page--contact .legals a {
+        font-size: 1.25rem; }
+      .page--contact .legals ul {
+        padding: 1.5rem 0; } }
+    @media screen and (min-width: 87.5em) {
+      .page--contact .legals a {
+        font-size: 1.5rem; }
+      .page--contact .legals ul {
+        padding: 2.25rem 0; } }
+    @media screen and (min-width: 120em) {
+      .page--contact .legals a {
+        font-size: 1.75rem; } }

@@ -143,6 +143,9 @@
     }
     @include breakpoint(maxed) {
       padding: rh(1) $side-padding--maxed;
+      a {
+        font-size: rem(22);
+      }
     }
   }
 

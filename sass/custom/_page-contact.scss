@@ -1,6 +1,9 @@
-@import "keyframes-projects";
+@import "keyframes-contact";
 
 .page--contact {
+  .is-exiting & {
+    @include ps-animate(anim-contact-page-out, 600ms, 0);
+  }
   // --------
   // Layout of the page
   @include in-row($outer: true);
@@ -21,6 +24,14 @@
     .img-column {
       @include in-column(12);
       display: none;
+      opacity: 0;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          // $tmp-delay: (0.3 * $i) * 1s;
+          $tmp-delay: (0.25 * $i - $i / 10) * 1s;
+          @include ps-animate(anim-contact-preview-in, 600ms, $tmp-delay);
+        }
+      }
 
       &:first-child {
         display: block;
@@ -49,6 +60,9 @@
   // --------
   // Contact Info
   .contact-info {
+    opacity: 0;
+    @include ps-animate(anim-contact-content-in, 450ms, 200ms);
+
     p {
       display: block;
       margin-bottom: rh(0.75);
@@ -78,6 +92,9 @@
   // --------
   // Contact Info
   .legals {
+    opacity: 0;
+    @include ps-animate(anim-contact-content-in, 450ms, 300ms);
+
     ul {
       @include reset-ul(true);
       @include clearfix;
