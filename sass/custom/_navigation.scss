@@ -183,6 +183,13 @@
       }
     }
   }
+  @include breakpoint(xxlarge) {
+    .overlay-menu {
+      a {
+        font-size: rem(58);
+      }
+    }
+  }
   @include breakpoint(maxed) {
     padding-top: rh(1.5);
 
@@ -200,7 +207,7 @@
     .overlay-menu {
       a {
         padding: rh(1.5) 0;
-        font-size: rem(50);
+        font-size: rem(75);
       }
     }
   }

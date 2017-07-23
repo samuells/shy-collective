@@ -1743,6 +1743,9 @@ a {
       .nav-header .overlay-menu a {
         padding: 1.5rem 0;
         font-size: 2.1875rem; } }
+  @media screen and (min-width: 87.5em) {
+    .nav-header .overlay-menu a {
+      font-size: 3.625rem; } }
   @media screen and (min-width: 120em) {
     .nav-header {
       padding-top: 2.25rem; }
@@ -1753,7 +1756,7 @@ a {
         font-size: 1.375rem; }
       .nav-header .overlay-menu a {
         padding: 2.25rem 0;
-        font-size: 3.125rem; } }
+        font-size: 4.6875rem; } }
 
 .icon-hamburger {
   position: relative;
