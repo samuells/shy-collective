@@ -1,3 +1,24 @@
 .lity-vimeo .lity-container {
   max-width: 90vw;
 }
+
+.lity .lity-close {
+  padding: rem(12 18);
+  font-family: "Brown-Bold";
+  font-size: 0;
+  line-height: rem(24);
+  color: $black-cod;
+  @include ps-transition(color);
+
+  &::after {
+    content: 'close';
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $yellow-turbo;
+  }
+}

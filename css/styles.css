@@ -1323,12 +1323,12 @@ a.pswp__share--download:hover {
   left: 0;
   white-space: nowrap;
   background: #0b0b0b;
-  background: rgba(0, 0, 0, 0.9);
+  background: #ffffff;
   outline: none !important;
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease; }
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease; }
 
 .lity.lity-opened {
   opacity: 1; }
@@ -1394,11 +1394,11 @@ a.pswp__share--download:hover {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  -o-transition: -o-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease; }
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: -o-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease; }
 
 .lity-loading .lity-content,
 .lity-closed .lity-content {
@@ -1417,13 +1417,10 @@ a.pswp__share--download:hover {
   right: 0;
   width: auto;
   height: auto;
-  z-index: -1;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); }
+  z-index: -1; }
 
 .lity-close {
   z-index: 9994;
-  width: 35px;
   height: 35px;
   position: fixed;
   right: 0;
@@ -1433,12 +1430,11 @@ a.pswp__share--download:hover {
   text-decoration: none;
   text-align: center;
   padding: 0;
-  color: #fff;
+  color: #1A1A1A;
   font-style: normal;
-  font-size: 35px;
-  font-family: Arial, Baskerville, monospace;
+  font-size: 16px;
+  font-family: "Brown-Bold", Arial, Baskerville, monospace;
   line-height: 35px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   border: 0;
   background: none;
   outline: none;
@@ -1456,12 +1452,11 @@ a.pswp__share--download:hover {
   text-decoration: none;
   text-align: center;
   padding: 0;
-  color: #fff;
+  color: #FFE300;
   font-style: normal;
   font-size: 35px;
   font-family: Arial, Baskerville, monospace;
   line-height: 35px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   border: 0;
   background: none;
   outline: none;
@@ -1848,6 +1843,22 @@ footer {
 
 .lity-vimeo .lity-container {
   max-width: 90vw; }
+
+.lity .lity-close {
+  padding: 0.75rem 1.125rem;
+  font-family: "Brown-Bold";
+  font-size: 0;
+  line-height: 1.5rem;
+  color: #1A1A1A;
+  transition-property: color;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out; }
+  .lity .lity-close::after {
+    content: 'close';
+    font-size: 1rem;
+    line-height: 1.5rem; }
+  .lity .lity-close:hover, .lity .lity-close:focus, .lity .lity-close:active {
+    color: #FFE300; }
 
 @keyframes anim-intro-flyout {
   80% {
