@@ -1860,6 +1860,51 @@ footer {
   .lity .lity-close:hover, .lity .lity-close:focus, .lity .lity-close:active {
     color: #FFE300; }
 
+.pswp__button--close {
+  width: auto;
+  padding: 0.75rem 1.125rem;
+  color: #FFFFFF;
+  font-family: "Brown-Bold", "Helvetica Neue", Arial, "Source Sans Pro", Helvetica, Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  background-image: none !important;
+  opacity: 1;
+  transition-property: color;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out; }
+  .pswp__button--close:active, .pswp__button--close:focus, .pswp__button--close:hover {
+    color: #FFE300; }
+  .pswp__button--close::after {
+    content: 'close'; }
+
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+  width: auto;
+  font-family: "Brown-Bold", "Helvetica Neue", Arial, "Source Sans Pro", Helvetica, Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #FFFFFF;
+  opacity: 1;
+  transition-property: color;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out; }
+  .pswp__button--arrow--left::before,
+  .pswp__button--arrow--right::before {
+    content: 'next';
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1.125rem;
+    background-image: none !important; }
+  .pswp__button--arrow--left:active, .pswp__button--arrow--left:focus, .pswp__button--arrow--left:hover,
+  .pswp__button--arrow--right:active,
+  .pswp__button--arrow--right:focus,
+  .pswp__button--arrow--right:hover {
+    color: #FFE300; }
+
+.pswp__button--arrow--left::before {
+  content: 'back'; }
+
 @keyframes anim-intro-flyout {
   80% {
     opacity: 1; }

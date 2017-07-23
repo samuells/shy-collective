@@ -1,0 +1,57 @@
+.pswp__button--close {
+  width: auto;
+  padding: rem(12 18);
+  color: $white;
+  font-family: $body-font-family;
+  font-size: rem(16);
+  line-height: 1.25;
+  background-image: none !important;
+  opacity: 1;
+  @include ps-transition(color);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $yellow-turbo;
+  }
+
+  &::after {
+    content: 'close';
+  }
+}
+
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+  width: auto;
+  font-family: $body-font-family;
+  font-size: rem(16);
+  line-height: 1.25;
+  color: $white;
+  opacity: 1;
+  @include ps-transition(color);
+
+  &::before {
+    content: 'next';
+    display: block;
+    width: auto;
+    height: auto;
+    padding: rem(12 18);
+    background-image: none !important;
+  }
+
+  .pswp--has_mouse & {
+
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $yellow-turbo;
+  }
+}
+
+.pswp__button--arrow--left {
+  &::before {
+    content: 'back';
+  }
+}

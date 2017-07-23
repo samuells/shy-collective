@@ -793,7 +793,14 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
     // define options (if needed)
     options = {
-
+      closeEl:true,
+      captionEl: true,
+      fullscreenEl: false,
+      zoomEl: false,
+      shareEl: false,
+      counterEl: false,
+      arrowEl: true,
+      preloaderEl: false,
       history: false,
       // define gallery index (for URL)
       // galleryUID: galleryElement.getAttribute('data-pswp-uid'),
