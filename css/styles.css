@@ -2147,7 +2147,7 @@ footer {
     transition-property: opacity;
     transition-duration: 400ms;
     transition-timing-function: ease-out;
-    transition-duration: 400ms; }
+    transition-duration: 500ms; }
     .home-offer .manifest-img span {
       position: absolute !important;
       width: 1px;
