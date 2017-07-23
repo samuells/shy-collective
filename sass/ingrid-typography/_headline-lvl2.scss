@@ -22,6 +22,7 @@ $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
 // the custom variables and section down. Same as medium section ;)
 $use-medium-h2-styles: true;
 $use-large-h2-styles: true;
+$use-custom-h2-styles: true;
 
 // Medium h2 Styles
 @if $use-medium-h2-styles {
@@ -35,10 +36,10 @@ $use-large-h2-styles: true;
   $line-height: "calc";
   $map: add-node($map, "line-height", $line-height);
   // margin-top defined in baselines
-  $margin-top: 0;
+  $margin-top: 0.25;
   $map: add-node($map, "margin-top", $margin-top);
   // margin-top defined in baselines
-  $margin-bottom: 0;
+  $margin-bottom: 0.75;
   $map: add-node($map, "margin-bottom", $margin-bottom);
   // defined map is added to the right styling map
   $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
@@ -57,10 +58,32 @@ $use-large-h2-styles: true;
   $line-height: "calc";
   $map: add-node($map, "line-height", $line-height);
   // margin-top defined in baselines
-  $margin-top: 0;
+  $margin-top: 0.25;
   $map: add-node($map, "margin-top", $margin-top);
   // margin-top defined in baselines
-  $margin-bottom: 0;
+  $margin-bottom: 1;
+  $map: add-node($map, "margin-bottom", $margin-bottom);
+  // defined map is added to the right styling map
+  $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
+  $font-styles-map: add-node($font-styles-map, $font-style-name, $font-style-map);
+}
+
+// Large h2 Styles
+@if $use-custom-h2-styles {
+  $map: ();  // init of styles map
+  // define breakpoint for the style
+  $breakpoint-name: "xxlarge";
+  // font-size in px(without unit means px) or rem
+  $font-size: 32px;
+  $map: add-node($map, "font-size", $font-size);
+  // number of baselines or "min"
+  $line-height: "calc";
+  $map: add-node($map, "line-height", $line-height);
+  // margin-top defined in baselines
+  $margin-top: 0.5;
+  $map: add-node($map, "margin-top", $margin-top);
+  // margin-top defined in baselines
+  $margin-bottom: 1.25;
   $map: add-node($map, "margin-bottom", $margin-bottom);
   // defined map is added to the right styling map
   $font-style-map: add-node($font-style-map, $breakpoint-name, $map);

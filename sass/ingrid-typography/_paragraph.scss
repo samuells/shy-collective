@@ -77,7 +77,7 @@ $use-large-paragraph-styles: true;
   $font-size: 22px;
   $map: add-node($map, "font-size", $font-size);
   // number of baselines or "calc"
-  $line-height: 1.375;
+  $line-height: 1.125;
   $map: add-node($map, "line-height", $line-height);
   // defined map is added to the right styling map
   $font-style-map: add-node($font-style-map, $breakpoint-name, $map);
