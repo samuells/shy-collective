@@ -9,6 +9,9 @@ var initDetail = function() {
   if (document.querySelector('.page--detail-v2')) {
     var $pageDetail = $('.page--detail-v2');
     $pageDetail.on('click', 'a[data-lightbox]', lity);
+    $('.js-next').on('click', function(){
+      $('main').addClass('next-project');
+    })
     if (document.querySelector('.photo-gallery')) {
       initPhotoSwipeFromDOM('.photo-gallery');
       if (Foundation.MediaQuery.atLeast('xlarge')) {

@@ -3350,6 +3350,22 @@ footer {
     opacity: 1;
     transform: translateY(0px); } }
 
+@keyframes exit-detail {
+  from {
+    opacity: 1;
+    transform: translateY(0%); }
+  to {
+    opacity: 0;
+    transform: translateY(50px); } }
+
+@keyframes exit-detail-to-next-project {
+  from {
+    opacity: 1;
+    transform: translateX(0%); }
+  to {
+    opacity: 0;
+    transform: translateX(-50px); } }
+
 .page--detail-v2 {
   padding-top: 3rem; }
   @media print, screen and (min-width: 33.75em) {
@@ -3358,8 +3374,22 @@ footer {
   @media screen and (min-width: 64.0625em) {
     .page--detail-v2 {
       padding-top: 5.25rem; } }
+  .is-exiting .page--detail-v2.next-project > .hero-area,
+  .is-exiting .page--detail-v2.next-project > .project-nav,
+  .is-exiting .page--detail-v2.next-project > .project-detail {
+    animation-name: exit-detail-to-next-project;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s; }
   .page--detail-v2 .hero-area {
     position: relative; }
+    .is-exiting .page--detail-v2 .hero-area {
+      animation-name: exit-detail;
+      animation-duration: 600ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s; }
     .page--detail-v2 .hero-area .project-name {
       position: absolute;
       top: 50%;
@@ -3440,6 +3470,12 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 2.4s; }
+    .is-exiting .page--detail-v2 .project-nav {
+      animation-name: exit-detail;
+      animation-duration: 600ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s; }
     .page--detail-v2 .project-nav ul {
       list-style: none;
       padding: 0;
@@ -3475,6 +3511,12 @@ footer {
         padding: 1.5rem 5rem; } }
   .page--detail-v2 article {
     padding: 0 1.25rem; }
+    .is-exiting .page--detail-v2 article {
+      animation-name: exit-detail;
+      animation-duration: 600ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s; }
     @media screen and (min-width: 64.0625em) {
       .page--detail-v2 article {
         padding: 0; } }

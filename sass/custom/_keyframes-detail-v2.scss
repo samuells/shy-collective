@@ -68,3 +68,27 @@
     transform: translateY(0px);
   }
 }
+
+@keyframes exit-detail {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform:translateY(50px);
+  }
+}
+
+@keyframes exit-detail-to-next-project {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform:translateX(-50px);
+  }
+}

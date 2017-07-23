@@ -11,12 +11,19 @@
     padding-top: rh(3.5);
   }
 
+  .is-exiting &.next-project {
+    > .hero-area,
+    > .project-nav,
+    > .project-detail {
+      @include ps-animate(exit-detail-to-next-project, 600ms);
+    }
+  }
+
   .hero-area {
     position: relative;
-    // @include ps-animate(detail-hero-area-v1, 600ms);
 
     .is-exiting & {
-      // @include ps-animate(detail-hero-area-v1-out, 600ms);
+      @include ps-animate(exit-detail, 600ms);
     }
 
     .project-name {
@@ -62,6 +69,7 @@
         animation-timing-function: ease-in-out;
       }
     }
+
     @include breakpoint(medium) {
       a {
         padding: rem(6) rem(18);
@@ -91,6 +99,10 @@
     opacity: 0;
     transform: translateY(50px);
     @include ps-animate(anim-project-nav-in, 0.8s, 2.4s);
+
+    .is-exiting & {
+      @include ps-animate(exit-detail, 600ms);
+    }
 
     ul {
       @include reset-ul(true);
@@ -144,7 +156,7 @@
     // transform: translateY($tmp-dist);
     // @include ps-animate(detail-article-v1, 600ms, 300ms);
     .is-exiting & {
-      // @include ps-animate(detail-article-v1-out, 600ms, 100ms);
+      @include ps-animate(exit-detail, 600ms);
     }
     @include breakpoint(xlarge) {
       // padding: 0 $side-padding--xlarge;
@@ -212,7 +224,7 @@
             $tmp-delay: (2 + 0.4 * $figure + 1 * $row ) * 1s;
 
             figure:nth-child(#{$figure}) {
-                @include ps-animate(anim-gallery-figure-in, 500ms, $tmp-delay);
+              @include ps-animate(anim-gallery-figure-in, 500ms, $tmp-delay);
             }
           }
         }
