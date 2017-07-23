@@ -45,10 +45,21 @@
     margin: rem(3) 0;
     @include ps-transition(color);
 
+    &.rotate {
+      animation: anim-nav-button-rotate 5s cubic-bezier(.84,.04,.61,.95) both;
+      animation-iteration-count: infinite;
+      backface-visibility: hidden;
+      perspective: 1000px;
+
+    }
+
     & > span {
       @include element-invisible;
     }
+  }
 
+  &.menu-showed .menu-trigger.rotate {
+    animation: none;
   }
   // Overlay Menu
   .overlay-menu {

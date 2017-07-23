@@ -1541,6 +1541,22 @@ a {
     opacity: 0;
     transform: translateY(-100%); } }
 
+@keyframes anim-nav-button-rotate {
+  from, to, 80% {
+    opacity: 1; }
+  90% {
+    opacity: 0.4; }
+  78% {
+    transform: translate3d(0, 0, 0) rotateZ(0deg); }
+  80%, 96% {
+    transform: translate3d(0, 0, 0) rotateZ(-25deg); }
+  82%, 94% {
+    transform: translate3d(0, 0, 0) rotateZ(30deg); }
+  84%, 88%, 92% {
+    transform: translate3d(0, 0, 0) rotateZ(-180deg); }
+  86%, 90% {
+    transform: translate3d(0, 0, 0) rotateZ(180deg); } }
+
 .nav-header {
   position: fixed;
   width: 100%;
@@ -1603,12 +1619,19 @@ a {
     transition-property: color;
     transition-duration: 400ms;
     transition-timing-function: ease-out; }
+    .nav-header .menu-trigger.rotate {
+      animation: anim-nav-button-rotate 5s cubic-bezier(0.84, 0.04, 0.61, 0.95) both;
+      animation-iteration-count: infinite;
+      backface-visibility: hidden;
+      perspective: 1000px; }
     .nav-header .menu-trigger > span {
       position: absolute !important;
       width: 1px;
       height: 1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0); }
+  .nav-header.menu-showed .menu-trigger.rotate {
+    animation: none; }
   .nav-header .overlay-menu {
     position: fixed;
     top: 0;

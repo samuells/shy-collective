@@ -907,6 +907,7 @@ const initHome = function() {
       });
       setTimeout(function() {
         $('.choose').addClass('shaking');
+        $('.menu-trigger').addClass('rotate');
       }, 5200);
     }
     console.log('Home ignited');
