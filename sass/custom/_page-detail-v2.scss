@@ -174,7 +174,6 @@
   .project-description {
     @include in-row($outer: true);
     padding: 0 $side-padding--mobile;
-    text-align: center;
     outline: none;
 
     h1 {

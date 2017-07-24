@@ -3519,7 +3519,6 @@ footer {
     margin-right: auto;
     margin-left: auto;
     padding: 0 1.25rem;
-    text-align: center;
     outline: none; }
     .page--detail-v2 .project-description::before, .page--detail-v2 .project-description::after {
       display: table;
