@@ -45,9 +45,6 @@ const initHome = function() {
       $homeOffer.on('mouseleave', 'li.choosed a', function(event) {
         $(this).closest('li').removeClass('choosed');
       });
-      setTimeout(function() {
-        $('.menu-trigger').addClass('rotate');
-      }, 5200);
     }
     console.log('Home ignited');
   }

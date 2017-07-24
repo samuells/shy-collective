@@ -1805,6 +1805,16 @@ a {
       transform: translateY(50%) rotateZ(-45deg); }
     .menu-showed .icon-hamburger span {
       opacity: 0; }
+  .rotate .icon-hamburger {
+    transform: rotateZ(225deg); }
+    .rotate .icon-hamburger:before {
+      top: 50%;
+      transform: translateY(-50%) rotateZ(45deg); }
+    .rotate .icon-hamburger:after {
+      bottom: 50%;
+      transform: translateY(50%) rotateZ(-45deg); }
+    .rotate .icon-hamburger span {
+      opacity: 0; }
   @media screen and (min-width: 64.0625em) {
     .icon-hamburger {
       width: 3.125rem;

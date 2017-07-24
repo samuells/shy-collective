@@ -271,6 +271,23 @@
       opacity: 0;
     }
   }
+  .rotate & {
+    transform: rotateZ(225deg);
+
+    &:before {
+      top: 50%;
+      transform: translateY(-50%) rotateZ(45deg);
+    }
+
+    &:after {
+      bottom: 50%;
+      transform: translateY(50%) rotateZ(-45deg);
+    }
+
+    span {
+      opacity: 0;
+    }
+  }
   @include breakpoint(xlarge) {
     $line-height: 2;
     width: rem(50);
