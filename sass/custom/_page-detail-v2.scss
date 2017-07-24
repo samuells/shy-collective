@@ -50,11 +50,16 @@
       display: block;
       padding: rem(6) rem(12);
       font-size: rem(24);
-      color: $transparent;
+      color: $white;
       transform: translateX(-50%) translateY(-50%);
       overflow: hidden;
-      @include ps-animate(anim-play-in, 500ms, 3s);
-      animation-timing-function: step-end;
+      @include ps-transition(color);
+
+      > span {
+        opacity: 0;
+        @include ps-animate(anim-play-in, 500ms, 3s);
+        animation-timing-function: step-end;
+      }
 
       &::after {
         content: '';
@@ -67,6 +72,10 @@
         transform: translateX(-100%);
         @include ps-animate(anim-play-after-in, 1s, 3s);
         animation-timing-function: ease-in-out;
+      }
+
+      @include link-states{
+        color: $yellow-turbo;
       }
     }
 

@@ -27,11 +27,11 @@
 // 1.5s
 @keyframes anim-play-in {
   from {
-    color: $transparent;
+    opacity: 0;
   }
 
   to {
-    color: $white;
+    opacity: 1;
   }
 }
 

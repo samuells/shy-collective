@@ -3316,9 +3316,9 @@ footer {
 
 @keyframes anim-play-in {
   from {
-    color: rgba(255, 255, 255, 0); }
+    opacity: 0; }
   to {
-    color: #FFFFFF; } }
+    opacity: 1; } }
 
 @keyframes anim-play-after-in {
   from {
@@ -3414,15 +3414,20 @@ footer {
       display: block;
       padding: 0.375rem 0.75rem;
       font-size: 1.5rem;
-      color: rgba(255, 255, 255, 0);
+      color: #FFFFFF;
       transform: translateX(-50%) translateY(-50%);
       overflow: hidden;
-      animation-name: anim-play-in;
-      animation-duration: 500ms;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
-      animation-delay: 3s;
-      animation-timing-function: step-end; }
+      transition-property: color;
+      transition-duration: 400ms;
+      transition-timing-function: ease-out; }
+      .page--detail-v2 .hero-area a > span {
+        opacity: 0;
+        animation-name: anim-play-in;
+        animation-duration: 500ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+        animation-timing-function: step-end; }
       .page--detail-v2 .hero-area a::after {
         content: '';
         position: absolute;
@@ -3438,6 +3443,8 @@ footer {
         animation-fill-mode: forwards;
         animation-delay: 3s;
         animation-timing-function: ease-in-out; }
+      .page--detail-v2 .hero-area a:active, .page--detail-v2 .hero-area a:focus, .page--detail-v2 .hero-area a:hover {
+        color: #FFE300; }
     @media print, screen and (min-width: 33.75em) {
       .page--detail-v2 .hero-area a {
         padding: 0.375rem 1.125rem;
