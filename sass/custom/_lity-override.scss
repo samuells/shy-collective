@@ -7,7 +7,7 @@
   font-family: "Brown-Bold";
   font-size: 0;
   line-height: rem(24);
-  color: $black-cod;
+  color: $white;
   @include ps-transition(color);
 
   &::after {
