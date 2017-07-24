@@ -2009,18 +2009,6 @@ footer {
   to {
     opacity: 0; } }
 
-@keyframes shake {
-  from, to {
-    opacity: 1; }
-  10%, 90% {
-    transform: translate3d(-1px, -50%, 0); }
-  20%, 80% {
-    transform: translate3d(2px, -50%, 0); }
-  30%, 50%, 70% {
-    transform: translate3d(-4px, -50%, 0); }
-  40%, 60% {
-    transform: translate3d(4px, -50%, 0); } }
-
 @keyframes shake-pause {
   from, to {
     opacity: 1; }
@@ -2348,11 +2336,6 @@ footer {
     .home-offer .choose {
       max-width: 118.75rem; } }
   @media print, screen and (min-width: 46.25em) {
-      .home-offer .choose.shaking {
-        animation: shake-pause 3s cubic-bezier(0.84, 0.04, 0.61, 0.95) both;
-        animation-iteration-count: infinite;
-        backface-visibility: hidden;
-        perspective: 1000px; }
       .home-offer .choose strong {
         position: static;
         top: auto;

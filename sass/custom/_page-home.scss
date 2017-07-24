@@ -234,12 +234,6 @@
       z-index: 0;
       opacity: 0;
       @include ps-animate(anim-home-choose, 300ms, 4800ms);
-      &.shaking {
-        animation: shake-pause 3s cubic-bezier(.84,.04,.61,.95) both;
-        animation-iteration-count: infinite;
-        backface-visibility: hidden;
-        perspective: 1000px;
-      }
 
       strong {
         position: static;

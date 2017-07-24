@@ -46,7 +46,6 @@ const initHome = function() {
         $(this).closest('li').removeClass('choosed');
       });
       setTimeout(function() {
-        $('.choose').addClass('shaking');
         $('.menu-trigger').addClass('rotate');
       }, 5200);
     }
