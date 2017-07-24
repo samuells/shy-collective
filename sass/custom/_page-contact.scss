@@ -73,19 +73,19 @@
     @include breakpoint(xlarge) {
       p {
         margin-bottom: rh(1);
-        font-size: rem(48);
+        font-size: rem(36);
       }
     }
     @include breakpoint(xxlarge) {
       p {
         margin-bottom: rh(2);
-        font-size: rem(56);
+        font-size: rem(42);
       }
     }
     @include breakpoint(maxed) {
       p {
-        margin-bottom: rh(4);
-        font-size: rem(69);
+        margin-bottom: rh(3.5);
+        font-size: rem(50);
       }
     }
   }
@@ -108,7 +108,7 @@
     }
     @include breakpoint(xlarge) {
       a {
-        font-size: rem(20);
+        font-size: rem(18);
       }
 
       ul {
@@ -117,7 +117,7 @@
     }
     @include breakpoint(xxlarge) {
       a {
-        font-size: rem(24);
+        font-size: rem(20);
       }
 
       ul {
@@ -126,7 +126,7 @@
     }
     @include breakpoint(maxed) {
       a {
-        font-size: rem(28);
+        font-size: rem(22);
       }
     }
   }

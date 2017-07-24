@@ -3909,15 +3909,15 @@ footer {
     @media screen and (min-width: 64.0625em) {
       .page--contact .contact-info p {
         margin-bottom: 1.5rem;
-        font-size: 3rem; } }
+        font-size: 2.25rem; } }
     @media screen and (min-width: 87.5em) {
       .page--contact .contact-info p {
         margin-bottom: 3rem;
-        font-size: 3.5rem; } }
+        font-size: 2.625rem; } }
     @media screen and (min-width: 120em) {
       .page--contact .contact-info p {
-        margin-bottom: 6rem;
-        font-size: 4.3125rem; } }
+        margin-bottom: 5.25rem;
+        font-size: 3.125rem; } }
   .page--contact .legals {
     opacity: 0;
     animation-name: anim-contact-content-in;
@@ -3943,14 +3943,14 @@ footer {
       padding: 0 0.75rem; }
     @media screen and (min-width: 64.0625em) {
       .page--contact .legals a {
-        font-size: 1.25rem; }
+        font-size: 1.125rem; }
       .page--contact .legals ul {
         padding: 1.5rem 0; } }
     @media screen and (min-width: 87.5em) {
       .page--contact .legals a {
-        font-size: 1.5rem; }
+        font-size: 1.25rem; }
       .page--contact .legals ul {
         padding: 2.25rem 0; } }
     @media screen and (min-width: 120em) {
       .page--contact .legals a {
-        font-size: 1.75rem; } }
+        font-size: 1.375rem; } }
