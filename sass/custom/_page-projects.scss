@@ -26,10 +26,9 @@
       }
       @for $i from 1 through 15 {
         &.show-#{$i} {
-          // $tmp-delay: (0.3 * $i) * 1s;
           $tmp-delay: (0.25 * $i - $i / 10) * 1s;
           a {
-            @include ps-animate(anim-project-preview-in, 600ms, $tmp-delay);
+            @include ps-animate(anim-project-preview-in, 2000ms, $tmp-delay);
           }
         }
       }
