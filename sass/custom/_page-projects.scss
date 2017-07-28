@@ -168,15 +168,15 @@
           height: calc(#{rh(11)} + 5vh + 7vw);
 
           h2 {
-            font-size: rem(56);
-            font-size: calc(rem(56) + 2vh);
+            font-size: rem(55);
+            font-size: calc(rem(55) + 2vh);
           }
         }
       }
     }
     @include breakpoint(maxed) {
       h2 {
-        font-size: rem(56);
+        font-size: rem(50);
         padding: rem(30);
       }
 
@@ -188,7 +188,7 @@
           height: calc(#{rh(12)} + 5vh + 7vw);
 
           h2 {
-            font-size: rem(75);
+            font-size: rem(65);
             padding: rem(40);
           }
         }

@@ -3062,18 +3062,18 @@ footer {
         .page--projects .projects-list .project-preview:first-child, .page--projects .projects-list .project-preview:nth-child(2) {
           height: calc(16.5rem + 5vh + 7vw); }
           .page--projects .projects-list .project-preview:first-child h2, .page--projects .projects-list .project-preview:nth-child(2) h2 {
-            font-size: 3.5rem;
-            font-size: calc(rem(56) + 2vh); } }
+            font-size: 3.4375rem;
+            font-size: calc(rem(55) + 2vh); } }
     @media screen and (min-width: 120em) {
       .page--projects .projects-list h2 {
-        font-size: 3.5rem;
+        font-size: 3.125rem;
         padding: 1.875rem; }
       .page--projects .projects-list .project-preview {
         height: calc(12rem + 6vh + 5vw); }
         .page--projects .projects-list .project-preview:first-child, .page--projects .projects-list .project-preview:nth-child(2) {
           height: calc(18rem + 5vh + 7vw); }
           .page--projects .projects-list .project-preview:first-child h2, .page--projects .projects-list .project-preview:nth-child(2) h2 {
-            font-size: 4.6875rem;
+            font-size: 4.0625rem;
             padding: 2.5rem; } }
 
 @keyframes detail-hero-area-v1 {
