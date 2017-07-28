@@ -3949,13 +3949,9 @@ footer {
     .page--contact .legals li {
       padding: 0 0.75rem; }
     @media screen and (min-width: 64.0625em) {
-      .page--contact .legals a {
-        font-size: 1.125rem; }
       .page--contact .legals ul {
         padding: 1.5rem 0; } }
     @media screen and (min-width: 87.5em) {
-      .page--contact .legals a {
-        font-size: 1.25rem; }
       .page--contact .legals ul {
         padding: 2.25rem 0; } }
     @media screen and (min-width: 120em) {

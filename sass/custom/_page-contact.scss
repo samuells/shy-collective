@@ -107,19 +107,12 @@
       padding: 0 rem(12);
     }
     @include breakpoint(xlarge) {
-      a {
-        font-size: rem(18);
-      }
 
       ul {
         padding: rh(1) 0;
       }
     }
     @include breakpoint(xxlarge) {
-      a {
-        font-size: rem(20);
-      }
-
       ul {
         padding: rh(1.5) 0;
       }
