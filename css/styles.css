@@ -1740,7 +1740,7 @@ a {
       .nav-header .menu-trigger {
         margin: 0; }
       .nav-header .overlay-menu a {
-        padding: 1.5rem 0;
+        padding: 1.125rem 0;
         font-size: 2.1875rem; } }
   @media screen and (min-width: 87.5em) {
     .nav-header .overlay-menu a {
@@ -1754,7 +1754,6 @@ a {
       .nav-header .quick-menu-wrapper a {
         font-size: 1.375rem; }
       .nav-header .overlay-menu a {
-        padding: 2.25rem 0;
         font-size: 4.6875rem; } }
 
 .icon-hamburger {
