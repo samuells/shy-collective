@@ -182,6 +182,7 @@
   // project description
   .project-description {
     @include in-row($outer: true);
+    max-width: rem(1000);
     padding: 0 $side-padding--mobile;
     outline: none;
 

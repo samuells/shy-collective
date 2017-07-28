@@ -3524,6 +3524,7 @@ footer {
     max-width: 118.75rem;
     margin-right: auto;
     margin-left: auto;
+    max-width: 62.5rem;
     padding: 0 1.25rem;
     outline: none; }
     .page--detail-v2 .project-description::before, .page--detail-v2 .project-description::after {
