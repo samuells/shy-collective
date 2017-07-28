@@ -2328,7 +2328,7 @@ footer {
       z-index: 0;
       opacity: 0;
       animation-name: anim-home-choose;
-      animation-duration: 300ms;
+      animation-duration: 1000ms;
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
       animation-delay: 4800ms; }
