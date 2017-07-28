@@ -3901,6 +3901,8 @@ footer {
       .page--contact .imgs-row {
         margin-bottom: 6rem; } }
   .page--contact .contact-info {
+    max-width: 87.5rem;
+    margin: 0 auto;
     opacity: 0;
     animation-name: anim-contact-content-in;
     animation-duration: 450ms;
@@ -3916,15 +3918,23 @@ footer {
     @media screen and (min-width: 64.0625em) {
       .page--contact .contact-info p {
         margin-bottom: 1.5rem;
-        font-size: 2.25rem; } }
+        font-size: 2.25rem; }
+        .page--contact .contact-info p:first-child {
+          margin-bottom: 7.5rem; }
+        .page--contact .contact-info p.address, .page--contact .contact-info p.contact {
+          font-size: 2rem; } }
     @media screen and (min-width: 87.5em) {
       .page--contact .contact-info p {
         margin-bottom: 3rem;
-        font-size: 2.625rem; } }
+        font-size: 2.625rem; }
+        .page--contact .contact-info p.address, .page--contact .contact-info p.contact {
+          font-size: 2.25rem; } }
     @media screen and (min-width: 120em) {
       .page--contact .contact-info p {
         margin-bottom: 5.25rem;
-        font-size: 3.125rem; } }
+        font-size: 3.125rem; }
+        .page--contact .contact-info p:first-child {
+          margin-bottom: 10.5rem; } }
   .page--contact .legals {
     opacity: 0;
     animation-name: anim-contact-content-in;

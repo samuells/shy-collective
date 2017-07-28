@@ -60,6 +60,8 @@
   // --------
   // Contact Info
   .contact-info {
+    max-width: rem(1400);
+    margin: 0 auto;
     opacity: 0;
     @include ps-animate(anim-contact-content-in, 450ms, 200ms);
 
@@ -74,18 +76,35 @@
       p {
         margin-bottom: rh(1);
         font-size: rem(36);
+
+        &:first-child{
+          margin-bottom: rh(5);
+        }
+
+        &.address,
+        &.contact {
+          font-size: rem(32);
+        }
       }
     }
     @include breakpoint(xxlarge) {
       p {
         margin-bottom: rh(2);
         font-size: rem(42);
+
+        &.address,
+        &.contact {
+          font-size: rem(36);
+        }
       }
     }
     @include breakpoint(maxed) {
       p {
         margin-bottom: rh(3.5);
         font-size: rem(50);
+        &:first-child{
+          margin-bottom: rh(7);
+        }
       }
     }
   }
@@ -107,7 +126,6 @@
       padding: 0 rem(12);
     }
     @include breakpoint(xlarge) {
-
       ul {
         padding: rh(1) 0;
       }
