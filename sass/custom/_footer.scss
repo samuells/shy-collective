@@ -2,7 +2,7 @@
 
 footer {
   @include in-row($outer: true);
-  padding: 0 $side-padding--mobile 0;
+  padding: 0 $side-padding--mobile;
 
   .to-top-wrapper {
     padding: rh(0.5) 0;
@@ -10,10 +10,35 @@ footer {
   }
 
   a {
+    position: relative;
     display: inline-block;
-    padding: rh(0.5) rem(6);
-  }
+    padding: rh(0.5) 0;
+    margin: 0 rem(6);
 
+    &::before {
+      content: attr(data-value);
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: rem(0);
+      padding: inherit;
+      color: $yellow-turbo;
+      white-space: nowrap;
+      overflow: hidden;
+      transition-property: max-width;
+      transition-timing-function: linear;
+      transition-duration: 400ms;
+    }
+
+    &:focus,
+    &:hover {
+      color: inherit;
+
+      &::before {
+        max-width: 100%;
+      }
+    }
+  }
   @include breakpoint(large) {
     display: block;
   }
@@ -22,7 +47,7 @@ footer {
     padding-right: $side-padding--xlarge;
 
     a {
-      padding: rh(0.5) rem(12);
+      padding: rh(0.5) 0;
     }
   }
   @include breakpoint(maxed) {

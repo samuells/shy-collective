@@ -1646,16 +1646,35 @@ a {
       position: relative;
       top: 50%;
       transform: translateY(-50%); }
+    .nav-header .overlay-menu li {
+      text-align: center; }
     .nav-header .overlay-menu a {
-      display: block;
+      position: relative;
+      display: inline-block;
       font-size: 3.125rem;
       line-height: 1;
-      text-align: center;
       opacity: 0;
       transform: translateY(-1rem);
       transition-property: opacity, transform;
       transition-duration: 400ms;
       transition-timing-function: ease-out; }
+      .nav-header .overlay-menu a::before {
+        content: attr(data-value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 0;
+        padding: inherit;
+        color: #FFE300;
+        white-space: nowrap;
+        overflow: hidden;
+        transition-property: max-width;
+        transition-timing-function: linear;
+        transition-duration: 400ms; }
+      .nav-header .overlay-menu a:hover, .nav-header .overlay-menu a:focus {
+        color: inherit; }
+        .nav-header .overlay-menu a:hover::before, .nav-header .overlay-menu a:focus::before {
+          max-width: 100%; }
   .nav-header.menu-showed .overlay-menu {
     opacity: 1;
     transform: translateY(0%);
@@ -1698,8 +1717,31 @@ a {
           float: right; }
         .nav-header .logo-wrapper a,
         .nav-header .quick-menu-wrapper a {
+          position: relative;
           display: inline-block;
           padding: 1.125rem 0; }
+          .nav-header .logo-wrapper a::before,
+          .nav-header .quick-menu-wrapper a::before {
+            content: attr(data-value);
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 0;
+            padding: inherit;
+            color: #FFE300;
+            white-space: nowrap;
+            overflow: hidden;
+            transition-property: max-width;
+            transition-timing-function: linear;
+            transition-duration: 400ms; }
+          .nav-header .logo-wrapper a:hover, .nav-header .logo-wrapper a:focus,
+          .nav-header .quick-menu-wrapper a:hover,
+          .nav-header .quick-menu-wrapper a:focus {
+            color: inherit; }
+            .nav-header .logo-wrapper a:hover::before, .nav-header .logo-wrapper a:focus::before,
+            .nav-header .quick-menu-wrapper a:hover::before,
+            .nav-header .quick-menu-wrapper a:focus::before {
+              max-width: 100%; }
         .nav-header .logo-wrapper img,
         .nav-header .quick-menu-wrapper img {
           height: 1.5rem;
@@ -1820,7 +1862,7 @@ footer {
   max-width: 118.75rem;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 1.25rem 0; }
+  padding: 0 1.25rem; }
   footer::before, footer::after {
     display: table;
     content: ' '; }
@@ -1836,8 +1878,27 @@ footer {
     padding: 0.75rem 0;
     text-align: right; }
   footer a {
+    position: relative;
     display: inline-block;
-    padding: 0.75rem 0.375rem; }
+    padding: 0.75rem 0;
+    margin: 0 0.375rem; }
+    footer a::before {
+      content: attr(data-value);
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 0;
+      padding: inherit;
+      color: #FFE300;
+      white-space: nowrap;
+      overflow: hidden;
+      transition-property: max-width;
+      transition-timing-function: linear;
+      transition-duration: 400ms; }
+    footer a:focus, footer a:hover {
+      color: inherit; }
+      footer a:focus::before, footer a:hover::before {
+        max-width: 100%; }
   @media print, screen and (min-width: 46.25em) {
     footer {
       display: block; } }
@@ -1846,7 +1907,7 @@ footer {
       padding-left: 2.5rem;
       padding-right: 2.5rem; }
       footer a {
-        padding: 0.75rem 0.75rem; } }
+        padding: 0.75rem 0; } }
   @media screen and (min-width: 120em) {
     footer {
       padding-left: 5rem;
@@ -3909,6 +3970,26 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 200ms; }
+    .page--contact .contact-info a {
+      position: relative;
+      display: inline-block; }
+      .page--contact .contact-info a::before {
+        content: attr(data-value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 0;
+        padding: inherit;
+        color: #FFE300;
+        white-space: nowrap;
+        overflow: hidden;
+        transition-property: max-width;
+        transition-timing-function: linear;
+        transition-duration: 400ms; }
+      .page--contact .contact-info a:focus, .page--contact .contact-info a:hover {
+        color: inherit; }
+        .page--contact .contact-info a:focus::before, .page--contact .contact-info a:hover::before {
+          max-width: 100%; }
     .page--contact .contact-info p {
       display: block;
       margin-bottom: 1.125rem;
@@ -3958,6 +4039,26 @@ footer {
         clear: both; }
     .page--contact .legals li {
       padding: 0 0.75rem; }
+    .page--contact .legals a {
+      position: relative;
+      display: inline-block; }
+      .page--contact .legals a::before {
+        content: attr(data-value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 0;
+        padding: inherit;
+        color: #FFE300;
+        white-space: nowrap;
+        overflow: hidden;
+        transition-property: max-width;
+        transition-timing-function: linear;
+        transition-duration: 400ms; }
+      .page--contact .legals a:focus, .page--contact .legals a:hover {
+        color: inherit; }
+        .page--contact .legals a:focus::before, .page--contact .legals a:hover::before {
+          max-width: 100%; }
     @media screen and (min-width: 64.0625em) {
       .page--contact .legals ul {
         padding: 1.5rem 0; } }
