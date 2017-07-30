@@ -1,3 +1,7 @@
+.pswp__container {
+  @include ps-transition(transform);
+}
+
 .pswp__button--close {
   width: auto;
   padding: rem(12 18);

@@ -1877,6 +1877,11 @@ footer {
   .lity .lity-close:hover, .lity .lity-close:focus, .lity .lity-close:active {
     color: #FFE300; }
 
+.pswp__container {
+  transition-property: transform;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out; }
+
 .pswp__button--close {
   width: auto;
   padding: 0.75rem 1.125rem;
