@@ -1907,6 +1907,7 @@ footer {
   .pswp__button--arrow--left::before,
   .pswp__button--arrow--right::before {
     content: 'next';
+    position: static;
     display: block;
     width: auto;
     height: auto;

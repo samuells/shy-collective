@@ -36,6 +36,7 @@
 
   &::before {
     content: 'next';
+    position: static;
     display: block;
     width: auto;
     height: auto;

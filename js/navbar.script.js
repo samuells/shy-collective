@@ -32,7 +32,7 @@ var inactivityTime = function() {
   function resetInterval() {
     clearInterval(interval);
     $('.menu-trigger').removeClass('rotate');
-    t = setInterval(rotateHamburger, 6000)
+    t = setInterval(rotateHamburger, 4000)
   }
 };
 
