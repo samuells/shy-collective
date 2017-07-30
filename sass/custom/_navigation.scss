@@ -221,7 +221,8 @@
   position: relative;
   width: rem(40);
   height: rem(16);
-  @include ps-transition(transform);
+  color: $menu-fc;
+  @include ps-transition(color, transform);
   transition-duration: 500ms;
 
   &:after,
@@ -231,7 +232,7 @@
     left: 0;
     width: 100%;
     height: rem($line-height);
-    background-color: $menu-fc;
+    background-color: currentColor;
   }
 
   &:before {
@@ -251,9 +252,31 @@
     display: block;
     width: 100%;
     height: rem($line-height);
-    background-color: $menu-fc;
+    background-color: currentColor;
     transform: translateY(-50%);
     @include ps-transition(opacity);
+  }
+
+  .menu-trigger:hover & {
+    color: $yellow-turbo;
+
+    &::before {
+      transform: translateY(-60%);
+    }
+
+    &::after {
+      transform: translateY(60%);
+    }
+
+    .menu-showed & {
+      &::before {
+        transform: translateY(-50%) rotateZ(45deg);
+      }
+
+      &::after {
+        transform: translateY(50%) rotateZ(-45deg);
+      }
+    }
   }
 
   .menu-showed & {
