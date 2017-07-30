@@ -17,21 +17,21 @@ var inactivityTime = function() {
   document.onmousemove = resetTimer;
 
   function rotateHamburger() {
-    $('.menu-wrapper').addClass('rotate');
+    $('.menu-trigger').addClass('rotate');
     setTimeout(function(){
-      $('.menu-wrapper').removeClass('rotate');
+      $('.menu-trigger').removeClass('rotate');
     }, 1400)
   }
 
   function resetTimer() {
     clearTimeout(t);
-    $('.menu-wrapper').removeClass('rotate');
+    $('.menu-trigger').removeClass('rotate');
     t = setTimeout(resetInterval, 2500)
   }
 
   function resetInterval() {
     clearInterval(interval);
-    $('.menu-wrapper').removeClass('rotate');
+    $('.menu-trigger').removeClass('rotate');
     t = setInterval(rotateHamburger, 6000)
   }
 };

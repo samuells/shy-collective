@@ -46,11 +46,13 @@
     @include ps-transition(color);
 
     &.rotate {
-      animation: anim-nav-button-rotate 5s cubic-bezier(.84,.04,.61,.95) both;
-      animation-iteration-count: infinite;
+      animation-name: anim-nav-button-rotate;
+      animation-duration: 500ms;
+      animation-timing-function: ease-in-out;
+      animation-direction: normal;
+      animation-fill-mode: none;
       backface-visibility: hidden;
       perspective: 1000px;
-
     }
 
     & > span {
@@ -256,23 +258,6 @@
 
   .menu-showed & {
     transform: rotateZ(180deg);
-
-    &:before {
-      top: 50%;
-      transform: translateY(-50%) rotateZ(45deg);
-    }
-
-    &:after {
-      bottom: 50%;
-      transform: translateY(50%) rotateZ(-45deg);
-    }
-
-    span {
-      opacity: 0;
-    }
-  }
-  .rotate & {
-    transform: rotateZ(225deg);
 
     &:before {
       top: 50%;
