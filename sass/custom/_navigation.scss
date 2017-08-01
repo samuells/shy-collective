@@ -314,11 +314,11 @@
     color: $yellow-turbo;
 
     &::before {
-      transform: translateY(-60%);
+      transform: translateY(rem(-5));
     }
 
     &::after {
-      transform: translateY(60%);
+      transform: translateY(rem(5));
     }
 
     .menu-showed & {

@@ -1818,9 +1818,9 @@ a {
   .menu-trigger:hover .icon-hamburger {
     color: #FFE300; }
     .menu-trigger:hover .icon-hamburger::before {
-      transform: translateY(-60%); }
+      transform: translateY(-0.3125rem); }
     .menu-trigger:hover .icon-hamburger::after {
-      transform: translateY(60%); }
+      transform: translateY(0.3125rem); }
     .menu-showed .menu-trigger:hover .icon-hamburger::before {
       transform: translateY(-50%) rotateZ(45deg); }
     .menu-showed .menu-trigger:hover .icon-hamburger::after {
