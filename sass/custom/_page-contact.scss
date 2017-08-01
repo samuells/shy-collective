@@ -65,9 +65,14 @@
     opacity: 0;
     @include ps-animate(anim-contact-content-in, 450ms, 200ms);
 
+    p:first-child {
+      font-weight: 400;
+    }
+
     a {
       position: relative;
       display: inline-block;
+      font-weight: 400;
 
       &::before {
         content: attr(data-value);

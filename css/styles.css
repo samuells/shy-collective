@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Brown-Bold";
-  src: url("../fonts/lineto-brown-bold.eot");
-  src: url("../fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/lineto-brown-bold.woff2") format("woff2"), url("../fonts/lineto-brown-bold.woff") format("woff");
+  src: url("../fonts/lineto-brown-light.eot");
+  src: url("../fonts/lineto-brown-light.eot?#iefix") format("embedded-opentype"), url("../fonts/lineto-brown-light.woff2") format("woff2"), url("../fonts/lineto-brown-light.woff") format("woff");
   font-weight: 300;
   font-style: normal; }
 
@@ -9,20 +9,6 @@
   font-family: "Brown-Bold";
   src: url("../fonts/lineto-brown-boldalt.eot");
   src: url("../fonts/lineto-brown-boldalt.eot?#iefix") format("embedded-opentype"), url("../fonts/lineto-brown-boldalt.woff2") format("woff2"), url("../fonts/lineto-brown-boldalt.woff") format("woff");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Brown-Reclinbold";
-  src: url("../fonts/lineto-brown-reclinbold.eot");
-  src: url("../fonts/lineto-brown-reclinbold.eot?#iefix") format("embedded-opentype"), url("../fonts/lineto-brown-reclinbold.woff2") format("woff2"), url("../fonts/lineto-brown-reclinbold.woff") format("woff");
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Brown-Reclinbold";
-  src: url("../fonts/lineto-brown-reclinboldalt.eot");
-  src: url("../fonts/lineto-brown-reclinboldalt.eot?#iefix") format("embedded-opentype"), url("../fonts/lineto-brown-reclinboldalt.woff2") format("woff2"), url("../fonts/lineto-brown-reclinboldalt.woff") format("woff");
   font-weight: 400;
   font-style: normal; }
 
@@ -546,7 +532,7 @@ p {
   margin-top: 0;
   margin-bottom: 0.375rem;
   color: #FFFFFF;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   text-rendering: optimizeLegibility; }
   @media print, screen and (min-width: 33.75em) {
@@ -588,7 +574,7 @@ h2 {
   margin-top: 0;
   margin-bottom: 0;
   color: #FFFFFF;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   text-rendering: optimizeLegibility; }
   @media print, screen and (min-width: 33.75em) {
@@ -3606,7 +3592,7 @@ footer {
       margin-top: 0;
       margin-bottom: 0;
       color: #FFFFFF;
-      font-weight: 300;
+      font-weight: 400;
       font-style: normal;
       text-rendering: optimizeLegibility;
       margin-top: 0 !important; }
@@ -3970,9 +3956,12 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 200ms; }
+    .page--contact .contact-info p:first-child {
+      font-weight: 400; }
     .page--contact .contact-info a {
       position: relative;
-      display: inline-block; }
+      display: inline-block;
+      font-weight: 400; }
       .page--contact .contact-info a::before {
         content: attr(data-value);
         position: absolute;
