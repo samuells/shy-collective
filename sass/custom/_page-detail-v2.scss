@@ -12,9 +12,9 @@
   }
 
   .is-exiting &.next-project {
-    > .hero-area,
-    > .project-nav,
-    > .project-detail {
+     > .project-detail,
+     > .project-nav,
+    > .hero-area {
       @include ps-animate(exit-detail-to-next-project, 600ms);
     }
   }
@@ -73,12 +73,10 @@
         @include ps-animate(anim-play-after-in, 1s, 3s);
         animation-timing-function: ease-in-out;
       }
-
-      @include link-states{
+      @include link-states {
         color: $yellow-turbo;
       }
     }
-
     @include breakpoint(medium) {
       a {
         padding: rem(6) rem(18);
@@ -121,6 +119,30 @@
     a {
       display: inline-block;
       padding: rem(6 12);
+
+      &::before {
+        content: attr(data-value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: rem(0);
+        padding: inherit;
+        color: $yellow-turbo;
+        white-space: nowrap;
+        overflow: hidden;
+        transition-property: max-width;
+        transition-timing-function: linear;
+        transition-duration: 200ms;
+      }
+
+      &:focus,
+      &:hover {
+        color: inherit;
+
+        &::before {
+          max-width: 100%;
+        }
+      }
     }
     @include breakpoint(xlarge) {
       padding: rh(0.75) $side-padding--xlarge;
@@ -152,6 +174,7 @@
     }
     @include breakpoint(maxed) {
       padding: rh(1) $side-padding--maxed;
+
       a {
         font-size: rem(22);
       }
