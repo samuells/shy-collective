@@ -140,9 +140,13 @@
       text-align: right;
     }
 
-    a {
-      display: inline-block;
+    li {
       padding: rem(6 12);
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
 
       &::before {
         content: attr(data-value);

@@ -1584,7 +1584,8 @@ a {
     .nav-header .logo-wrapper a,
     .nav-header .menu-wrapper a {
       display: inline-block;
-      padding: 0.75rem 0; }
+      padding: 0.75rem 0;
+      letter-spacing: 2.3px; }
   .nav-header .menu-wrapper {
     text-align: right; }
   .nav-header .quick-menu-wrapper {
@@ -3664,9 +3665,11 @@ footer {
       text-align: right; }
       .page--detail-v2 .project-nav ul > li {
         display: inline-block; }
-    .page--detail-v2 .project-nav a {
-      display: inline-block;
+    .page--detail-v2 .project-nav li {
       padding: 0.375rem 0.75rem; }
+    .page--detail-v2 .project-nav a {
+      position: relative;
+      display: inline-block; }
       .page--detail-v2 .project-nav a::before {
         content: attr(data-value);
         position: absolute;
