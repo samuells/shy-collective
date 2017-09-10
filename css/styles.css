@@ -1969,6 +1969,125 @@ footer {
 .pswp__button--arrow--left::before {
   content: 'back'; }
 
+.page--detail-v2 .social-bar,
+.page--projects .social-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 0.75rem;
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(50%);
+  transition-property: transform, opacity, z-index;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out;
+  transition-delay: 0ms;
+  transition-duration: 600ms;
+  transition-timing-function: ease-out, ease-out, step-end; }
+  .menu-showed + .page--detail-v2 .social-bar, .menu-showed +
+  .page--projects .social-bar {
+    opacity: 1;
+    transform: translateY(0%);
+    z-index: 10;
+    transition-delay: 200ms;
+    transition-timing-function: ease-out, ease-out, step-start; }
+  .page--detail-v2 .social-bar nav,
+  .page--projects .social-bar nav {
+    max-width: 118.75rem;
+    margin-right: auto;
+    margin-left: auto; }
+    .page--detail-v2 .social-bar nav::before, .page--detail-v2 .social-bar nav::after,
+    .page--projects .social-bar nav::before,
+    .page--projects .social-bar nav::after {
+      display: table;
+      content: ' '; }
+    .page--detail-v2 .social-bar nav::after,
+    .page--projects .social-bar nav::after {
+      clear: both; }
+    @media screen and (min-width: 120em) {
+      .page--detail-v2 .social-bar nav,
+      .page--projects .social-bar nav {
+        max-width: 98.95833%; } }
+    @media screen and (min-width: 120em) {
+      .page--detail-v2 .social-bar nav,
+      .page--projects .social-bar nav {
+        max-width: 118.75rem; } }
+  .page--detail-v2 .social-bar ul,
+  .page--projects .social-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; }
+    .page--detail-v2 .social-bar ul > li,
+    .page--projects .social-bar ul > li {
+      display: inline-block; }
+  .page--detail-v2 .social-bar a,
+  .page--projects .social-bar a {
+    display: block; }
+    .page--detail-v2 .social-bar a:after,
+    .page--projects .social-bar a:after {
+      padding: 0.625rem; }
+    .page--detail-v2 .social-bar a.facebook:after,
+    .page--projects .social-bar a.facebook:after {
+      display: inline-block;
+      font-family: "iconfont";
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-decoration: inherit;
+      text-rendering: optimizeLegibility;
+      text-transform: none;
+      vertical-align: middle;
+      speak: none;
+      content: "\E001"; }
+    .page--detail-v2 .social-bar a.vimeo:after,
+    .page--projects .social-bar a.vimeo:after {
+      display: inline-block;
+      font-family: "iconfont";
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-decoration: inherit;
+      text-rendering: optimizeLegibility;
+      text-transform: none;
+      vertical-align: middle;
+      speak: none;
+      content: "\E003"; }
+    .page--detail-v2 .social-bar a.instagram:after,
+    .page--projects .social-bar a.instagram:after {
+      display: inline-block;
+      font-family: "iconfont";
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-decoration: inherit;
+      text-rendering: optimizeLegibility;
+      text-transform: none;
+      vertical-align: middle;
+      speak: none;
+      content: "\E002"; }
+    .page--detail-v2 .social-bar a span,
+    .page--projects .social-bar a span {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0); }
+  @media screen and (min-width: 64.0625em) {
+    .page--detail-v2 .social-bar,
+    .page--projects .social-bar {
+      padding-bottom: 2.25rem; }
+      .page--detail-v2 .social-bar a:after,
+      .page--projects .social-bar a:after {
+        font-size: 1.375rem; } }
+
 @keyframes anim-intro-flyout {
   80% {
     opacity: 1; }
@@ -2553,7 +2672,7 @@ footer {
     .home-offer .choose {
       padding-left: calc((100vw - 1900px) / 2 + 5rem); } }
 
-.social-bar {
+.page--home .social-bar {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -2565,39 +2684,39 @@ footer {
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-delay: 0s; }
-  .is-exiting .social-bar {
+  .is-exiting .page--home .social-bar {
     animation-name: anim-social-bar-out;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s; }
-  .social-bar nav {
+  .page--home .social-bar nav {
     max-width: 118.75rem;
     margin-right: auto;
     margin-left: auto; }
-    .social-bar nav::before, .social-bar nav::after {
+    .page--home .social-bar nav::before, .page--home .social-bar nav::after {
       display: table;
       content: ' '; }
-    .social-bar nav::after {
+    .page--home .social-bar nav::after {
       clear: both; }
     @media screen and (min-width: 120em) {
-      .social-bar nav {
+      .page--home .social-bar nav {
         max-width: 98.95833%; } }
     @media screen and (min-width: 120em) {
-      .social-bar nav {
+      .page--home .social-bar nav {
         max-width: 118.75rem; } }
-  .social-bar ul {
+  .page--home .social-bar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: center; }
-    .social-bar ul > li {
+    .page--home .social-bar ul > li {
       display: inline-block; }
-  .social-bar a {
+  .page--home .social-bar a {
     display: block; }
-    .social-bar a:after {
+    .page--home .social-bar a:after {
       padding: 0.625rem; }
-    .social-bar a.facebook:after {
+    .page--home .social-bar a.facebook:after {
       display: inline-block;
       font-family: "iconfont";
       -moz-osx-font-smoothing: grayscale;
@@ -2611,7 +2730,7 @@ footer {
       vertical-align: middle;
       speak: none;
       content: "\E001"; }
-    .social-bar a.vimeo:after {
+    .page--home .social-bar a.vimeo:after {
       display: inline-block;
       font-family: "iconfont";
       -moz-osx-font-smoothing: grayscale;
@@ -2625,7 +2744,7 @@ footer {
       vertical-align: middle;
       speak: none;
       content: "\E003"; }
-    .social-bar a.instagram:after {
+    .page--home .social-bar a.instagram:after {
       display: inline-block;
       font-family: "iconfont";
       -moz-osx-font-smoothing: grayscale;
@@ -2639,16 +2758,16 @@ footer {
       vertical-align: middle;
       speak: none;
       content: "\E002"; }
-    .social-bar a span {
+    .page--home .social-bar a span {
       position: absolute !important;
       width: 1px;
       height: 1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0); }
   @media screen and (min-width: 64.0625em) {
-    .social-bar {
+    .page--home .social-bar {
       padding-bottom: 2.25rem; }
-      .social-bar a:after {
+      .page--home .social-bar a:after {
         font-size: 1.375rem; } }
 
 @keyframes anim-project-preview-before-in {
