@@ -3788,7 +3788,7 @@ footer {
         overflow: hidden; }
         .page--detail-v2 .photo-gallery .gallery-row {
           margin-right: -50%;
-          transition-duration: 200ms;
+          transition-duration: 600ms;
           transition-timing-function: linear; }
           .page--detail-v2 .photo-gallery .gallery-row:nth-child(1) {
             transform: translateX(-12.5%); }
