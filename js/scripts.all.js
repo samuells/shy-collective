@@ -674,7 +674,7 @@ var inactivityTime = function() {
     clearInterval(interval);
     $('.menu-trigger').removeClass('rotate');
     t = setTimeout(resetInterval, 1000)
-    console.log('reset start ' + new Date().getSeconds());
+    // console.log('reset start ' + new Date().getSeconds());
   }
 
   function resetInterval() {
