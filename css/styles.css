@@ -3531,9 +3531,9 @@ footer {
   @media screen and (min-width: 64.0625em) {
     .page--detail-v2 {
       padding-top: 5.25rem; } }
-  .is-exiting .page--detail-v2.next-project > .project-detail,
+  .is-exiting .page--detail-v2.next-project > .hero-area,
   .is-exiting .page--detail-v2.next-project > .project-nav,
-  .is-exiting .page--detail-v2.next-project > .hero-area {
+  .is-exiting .page--detail-v2.next-project > .project-detail {
     animation-name: exit-detail-to-next-project;
     animation-duration: 600ms;
     animation-timing-function: ease-out;
@@ -3592,7 +3592,22 @@ footer {
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
         animation-delay: 3s;
-        animation-timing-function: step-end; }
+        animation-timing-function: step-end;
+        display: inline-block;
+        position: relative; }
+        .page--detail-v2 .hero-area a > span::before {
+          content: attr(data-value);
+          position: absolute;
+          top: 0;
+          left: 0;
+          max-width: 0;
+          padding: inherit;
+          color: #FFE300;
+          white-space: nowrap;
+          overflow: hidden;
+          transition-property: max-width;
+          transition-timing-function: linear;
+          transition-duration: 400ms; }
       .page--detail-v2 .hero-area a::after {
         content: '';
         position: absolute;
@@ -3608,8 +3623,10 @@ footer {
         animation-fill-mode: forwards;
         animation-delay: 3s;
         animation-timing-function: ease-in-out; }
-      .page--detail-v2 .hero-area a:active, .page--detail-v2 .hero-area a:focus, .page--detail-v2 .hero-area a:hover {
-        color: #FFE300; }
+      .page--detail-v2 .hero-area a:active > span, .page--detail-v2 .hero-area a:focus > span, .page--detail-v2 .hero-area a:hover > span {
+        color: inherit; }
+        .page--detail-v2 .hero-area a:active > span::before, .page--detail-v2 .hero-area a:focus > span::before, .page--detail-v2 .hero-area a:hover > span::before {
+          max-width: 100%; }
     @media print, screen and (min-width: 33.75em) {
       .page--detail-v2 .hero-area a {
         padding: 0.375rem 1.125rem;

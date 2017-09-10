@@ -12,9 +12,9 @@
   }
 
   .is-exiting &.next-project {
-     > .project-detail,
+     > .hero-area,
      > .project-nav,
-    > .hero-area {
+    > .project-detail {
       @include ps-animate(exit-detail-to-next-project, 600ms);
     }
   }
@@ -59,6 +59,24 @@
         opacity: 0;
         @include ps-animate(anim-play-in, 500ms, 3s);
         animation-timing-function: step-end;
+
+        display: inline-block;
+        position: relative;
+
+        &::before {
+          content: attr(data-value);
+          position: absolute;
+          top: 0;
+          left: 0;
+          max-width: rem(0);
+          padding: inherit;
+          color: $yellow-turbo;
+          white-space: nowrap;
+          overflow: hidden;
+          transition-property: max-width;
+          transition-timing-function: linear;
+          transition-duration: 400ms;
+        }
       }
 
       &::after {
@@ -74,7 +92,13 @@
         animation-timing-function: ease-in-out;
       }
       @include link-states {
-        color: $yellow-turbo;
+        > span {
+          color: inherit;
+
+          &::before {
+            max-width: 100%;
+          }
+        }
       }
     }
     @include breakpoint(medium) {
