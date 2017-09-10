@@ -21,18 +21,22 @@ var inactivityTime = function() {
     setTimeout(function(){
       $('.menu-trigger').removeClass('rotate');
     }, 1400)
+    // console.log('rotate start ' + new Date().getSeconds());
   }
 
   function resetTimer() {
     clearTimeout(t);
+    clearInterval(interval);
     $('.menu-trigger').removeClass('rotate');
-    t = setTimeout(resetInterval, 2500)
+    t = setTimeout(resetInterval, 1000)
+    // console.log('reset start ' + new Date().getSeconds());
   }
 
   function resetInterval() {
     clearInterval(interval);
     $('.menu-trigger').removeClass('rotate');
-    t = setInterval(rotateHamburger, 4000)
+    interval = setInterval(rotateHamburger, 9000)
+    // console.log('interaval start ' + new Date().getSeconds());
   }
 };
 
