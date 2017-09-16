@@ -17,3 +17,13 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "Brown-Bold";
+    src:url("../fonts/lineto-brown-bold.eot");
+    src:url("../fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-brown-bold.woff2") format("woff2"),
+        url("../fonts/lineto-brown-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}

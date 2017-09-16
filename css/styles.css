@@ -12,6 +12,13 @@
   font-weight: 400;
   font-style: normal; }
 
+@font-face {
+  font-family: "Brown-Bold";
+  src: url("../fonts/lineto-brown-bold.eot");
+  src: url("../fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/lineto-brown-bold.woff2") format("woff2"), url("../fonts/lineto-brown-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -3150,9 +3157,6 @@ footer {
             height: calc(15rem + 5vh + 7vw); }
             .page--projects .projects-list .project-preview:first-child:last-child:not(:first-child), .page--projects .projects-list .project-preview:nth-child(2):last-child:not(:first-child) {
               float: right; }
-            .page--projects .projects-list .project-preview:first-child h2, .page--projects .projects-list .project-preview:nth-child(2) h2 {
-              font-size: 3rem;
-              padding: 1.875rem; }
           .page--projects .projects-list .project-preview:nth-child(1) a::before,
           .page--projects .projects-list .project-preview:nth-child(1) a h2 {
             animation-name: anim-project-preview-content-hover-in;
@@ -3274,27 +3278,15 @@ footer {
             animation-delay: 6.75s;
             animation-timing-function: step-end; } }
     @media screen and (min-width: 87.5em) {
-      .page--projects .projects-list h2 {
-        font-size: 2.625rem;
-        font-size: calc(rem(42) + 2vh); }
       .page--projects .projects-list .project-preview {
         height: calc(10.5rem + 6vh + 5vw); }
         .page--projects .projects-list .project-preview:first-child, .page--projects .projects-list .project-preview:nth-child(2) {
-          height: calc(16.5rem + 5vh + 7vw); }
-          .page--projects .projects-list .project-preview:first-child h2, .page--projects .projects-list .project-preview:nth-child(2) h2 {
-            font-size: 3.4375rem;
-            font-size: calc(rem(55) + 2vh); } }
+          height: calc(16.5rem + 5vh + 7vw); } }
     @media screen and (min-width: 120em) {
-      .page--projects .projects-list h2 {
-        font-size: 3.125rem;
-        padding: 1.875rem; }
       .page--projects .projects-list .project-preview {
         height: calc(12rem + 6vh + 5vw); }
         .page--projects .projects-list .project-preview:first-child, .page--projects .projects-list .project-preview:nth-child(2) {
-          height: calc(18rem + 5vh + 7vw); }
-          .page--projects .projects-list .project-preview:first-child h2, .page--projects .projects-list .project-preview:nth-child(2) h2 {
-            font-size: 4.0625rem;
-            padding: 2.5rem; } }
+          height: calc(18rem + 5vh + 7vw); } }
 
 @keyframes detail-hero-area-v1 {
   from {

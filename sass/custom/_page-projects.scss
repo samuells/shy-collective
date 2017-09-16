@@ -134,10 +134,10 @@
           @include in-column(6, $gutter: 40);
           height: calc(#{rh(10)} + 5vh + 7vw);
 
-          h2 {
-            font-size: rem(48);
-            padding: rem(30);
-          }
+          // h2 {
+          //   font-size: rem(48);
+          //   padding: rem(30);
+          // }
         }
         @for $i from 1 through 15 {
           &:nth-child(#{$i}) {
@@ -155,10 +155,10 @@
       }
     }
     @include breakpoint(xxlarge) {
-      h2 {
-        font-size: rem(42);
-        font-size: calc(rem(42) + 2vh);
-      }
+      // h2 {
+      //   font-size: rem(36);
+      //   font-size: calc(rem(32) + 2vh);
+      // }
 
       .project-preview {
         height: calc(#{rh(7)} + 6vh + 5vw);
@@ -167,18 +167,18 @@
         &:nth-child(2) {
           height: calc(#{rh(11)} + 5vh + 7vw);
 
-          h2 {
-            font-size: rem(55);
-            font-size: calc(rem(55) + 2vh);
-          }
+          // h2 {
+          //   font-size: rem(42);
+          //   font-size: calc(rem(38) + 2vh);
+          // }
         }
       }
     }
     @include breakpoint(maxed) {
-      h2 {
-        font-size: rem(50);
-        padding: rem(30);
-      }
+      // h2 {
+      //   font-size: rem(36);
+      //   padding: rem(30);
+      // }
 
       .project-preview {
         height: calc(#{rh(8)} + 6vh + 5vw);
@@ -187,10 +187,10 @@
         &:nth-child(2) {
           height: calc(#{rh(12)} + 5vh + 7vw);
 
-          h2 {
-            font-size: rem(65);
-            padding: rem(40);
-          }
+          // h2 {
+          //   font-size: rem(42);
+          //   padding: rem(40);
+          // }
         }
       }
     }
