@@ -1971,6 +1971,7 @@ footer {
   content: 'back'; }
 
 .page--detail-v2 .social-bar,
+.page--contact .social-bar,
 .page--projects .social-bar {
   position: fixed;
   left: 0;
@@ -1987,6 +1988,7 @@ footer {
   transition-duration: 600ms;
   transition-timing-function: ease-out, ease-out, step-end; }
   .menu-showed + .page--detail-v2 .social-bar, .menu-showed +
+  .page--contact .social-bar, .menu-showed +
   .page--projects .social-bar {
     opacity: 1;
     transform: translateY(0%);
@@ -1994,42 +1996,53 @@ footer {
     transition-delay: 200ms;
     transition-timing-function: ease-out, ease-out, step-start; }
   .page--detail-v2 .social-bar nav,
+  .page--contact .social-bar nav,
   .page--projects .social-bar nav {
     max-width: 118.75rem;
     margin-right: auto;
     margin-left: auto; }
     .page--detail-v2 .social-bar nav::before, .page--detail-v2 .social-bar nav::after,
+    .page--contact .social-bar nav::before,
+    .page--contact .social-bar nav::after,
     .page--projects .social-bar nav::before,
     .page--projects .social-bar nav::after {
       display: table;
       content: ' '; }
     .page--detail-v2 .social-bar nav::after,
+    .page--contact .social-bar nav::after,
     .page--projects .social-bar nav::after {
       clear: both; }
     @media screen and (min-width: 120em) {
       .page--detail-v2 .social-bar nav,
+      .page--contact .social-bar nav,
       .page--projects .social-bar nav {
         max-width: 98.95833%; } }
     @media screen and (min-width: 120em) {
       .page--detail-v2 .social-bar nav,
+      .page--contact .social-bar nav,
       .page--projects .social-bar nav {
         max-width: 118.75rem; } }
   .page--detail-v2 .social-bar ul,
+  .page--contact .social-bar ul,
   .page--projects .social-bar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: center; }
     .page--detail-v2 .social-bar ul > li,
+    .page--contact .social-bar ul > li,
     .page--projects .social-bar ul > li {
       display: inline-block; }
   .page--detail-v2 .social-bar a,
+  .page--contact .social-bar a,
   .page--projects .social-bar a {
     display: block; }
     .page--detail-v2 .social-bar a:after,
+    .page--contact .social-bar a:after,
     .page--projects .social-bar a:after {
       padding: 0.625rem; }
     .page--detail-v2 .social-bar a.facebook:after,
+    .page--contact .social-bar a.facebook:after,
     .page--projects .social-bar a.facebook:after {
       display: inline-block;
       font-family: "iconfont";
@@ -2045,6 +2058,7 @@ footer {
       speak: none;
       content: "\E001"; }
     .page--detail-v2 .social-bar a.vimeo:after,
+    .page--contact .social-bar a.vimeo:after,
     .page--projects .social-bar a.vimeo:after {
       display: inline-block;
       font-family: "iconfont";
@@ -2060,6 +2074,7 @@ footer {
       speak: none;
       content: "\E003"; }
     .page--detail-v2 .social-bar a.instagram:after,
+    .page--contact .social-bar a.instagram:after,
     .page--projects .social-bar a.instagram:after {
       display: inline-block;
       font-family: "iconfont";
@@ -2075,6 +2090,7 @@ footer {
       speak: none;
       content: "\E002"; }
     .page--detail-v2 .social-bar a span,
+    .page--contact .social-bar a span,
     .page--projects .social-bar a span {
       position: absolute !important;
       width: 1px;
@@ -2083,9 +2099,11 @@ footer {
       clip: rect(0, 0, 0, 0); }
   @media screen and (min-width: 64.0625em) {
     .page--detail-v2 .social-bar,
+    .page--contact .social-bar,
     .page--projects .social-bar {
       padding-bottom: 2.25rem; }
       .page--detail-v2 .social-bar a:after,
+      .page--contact .social-bar a:after,
       .page--projects .social-bar a:after {
         font-size: 1.375rem; } }
 
