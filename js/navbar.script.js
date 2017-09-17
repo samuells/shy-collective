@@ -5,16 +5,20 @@ const initNavbar = function() {
       event.preventDefault();
       $navHeader.toggleClass('menu-showed');
     });
+    console.log('nav ignited');
     inactivityTime();
   }
 }
 
+var reset;
+var interval;
+
 var inactivityTime = function() {
-  var t;
-  var interval;
   window.onload = resetTimer;
   // DOM Events
   document.onmousemove = resetTimer;
+  resetTimer();
+  // console.log('inactivity ignited');
 
   function rotateHamburger() {
     $('.menu-trigger').addClass('rotate');
@@ -25,10 +29,10 @@ var inactivityTime = function() {
   }
 
   function resetTimer() {
-    clearTimeout(t);
+    clearTimeout(reset);
     clearInterval(interval);
     $('.menu-trigger').removeClass('rotate');
-    t = setTimeout(resetInterval, 1000)
+    reset = setTimeout(resetInterval, 1000)
     // console.log('reset start ' + new Date().getSeconds());
   }
 

@@ -189,7 +189,7 @@
       width: 100%;
       height: 100%;
       background-color: $home-loading-bgc;
-      transform: translateX(-100%);
+      transform: translateX(-101%);
       @include ps-transition(transform);
     }
 
