@@ -9,6 +9,11 @@
   @include in-row($outer: true);
   padding: rh(2.5) $side-padding--mobile 0;
   @include breakpoint(xlarge) {
+    display: flex;
+    flex-direction: column;
+    height: rem(800);
+    height: 100vh;
+    min-height: rem(700);
     padding: rh(4) $side-padding--xlarge 0;
   }
   @include breakpoint(maxed) {
@@ -38,7 +43,7 @@
       }
     }
     @include breakpoint(xlarge) {
-      padding: rh(1) 0;
+      // padding: rh(0) 0;
       margin-left: rem(-15);
       margin-right: rem(-15);
 
@@ -48,24 +53,25 @@
       }
     }
     @include breakpoint(xlarge) {
-      margin-bottom: rh(2);
+      margin-bottom: rh(0.5);
     }
     @include breakpoint(xxlarge) {
-      margin-bottom: rh(3);
+      margin-bottom: rh(1.5);
     }
     @include breakpoint(maxed) {
-      margin-bottom: rh(4);
+      margin-bottom: rh(2);
     }
   }
   // --------
   // Contact Info
+  .contact-details,
   .contact-info {
     max-width: rem(1400);
     margin: 0 auto;
     opacity: 0;
     @include ps-animate(anim-contact-content-in, 450ms, 200ms);
 
-    p:first-child {
+    .description {
       font-weight: 400;
     }
 
@@ -111,13 +117,15 @@
         margin-bottom: rh(1);
         font-size: rem(36);
 
-        &:first-child {
-          margin-bottom: rh(5);
+        &.desription {
+          margin-bottom: rh(2.5);
+          margin-bottom: 7.25vh;
         }
 
         &.address,
         &.contact {
           font-size: rem(32);
+          margin-bottom: 0 !important;
         }
       }
     }
@@ -137,24 +145,78 @@
         margin-bottom: rh(3.5);
         font-size: rem(50);
 
-        &:first-child {
+        &.desription {
           margin-bottom: rh(7);
         }
       }
     }
   }
   // --------
-  // Contact Info
+  // Contact Detail
+  .contact-details {
+    width: 100%;
+
+    ul {
+      @include reset-ul(true);
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+    }
+
+    li {
+      flex-basis: 100%;
+      flex-grow: 1;
+    }
+    @include breakpoint(xlarge) {
+      display: flex;
+      align-self: center;
+      align-items: center;
+      flex-grow: 1;
+
+      li {
+        flex-basis: 49%;
+
+        &:nth-child(odd) p {
+          padding-right: rem(40);
+          text-align: right;
+        }
+
+        &:nth-child(even) p {
+          padding-left: rem(40);
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  // --------
+  // Legals
   .legals {
     opacity: 0;
     @include ps-animate(anim-contact-content-in, 450ms, 300ms);
 
     ul {
       @include reset-ul(true);
-      @include clearfix;
-      display: block;
-      padding: rh(0.5) 0;
-      text-align: center;
+      // @include clearfix;
+      // display: block;
+      // padding: rh(0.5) 0;
+      // text-align: center;
+      display: flex;
+      width: 100%;
+
+      li {
+        flex-basis: 49%;
+        flex-grow: 1;
+
+        &:nth-child(odd) {
+          text-align: right;
+        }
+
+        &:nth-child(even) {
+          text-align: left;
+        }
+      }
     }
 
     li {
@@ -192,6 +254,10 @@
     @include breakpoint(xlarge) {
       ul {
         padding: rh(1) 0;
+
+        li {
+          padding: 0 rem(40);
+        }
       }
     }
     @include breakpoint(xxlarge) {

@@ -4076,6 +4076,11 @@ footer {
       max-width: 118.75rem; } }
   @media screen and (min-width: 64.0625em) {
     .page--contact {
+      display: flex;
+      flex-direction: column;
+      height: 50rem;
+      height: 100vh;
+      min-height: 43.75rem;
       padding: 6rem 2.5rem 0; } }
   @media screen and (min-width: 120em) {
     .page--contact {
@@ -4128,7 +4133,6 @@ footer {
         display: block; }
     @media screen and (min-width: 64.0625em) {
       .page--contact .imgs-row {
-        padding: 1.5rem 0;
         margin-left: -0.9375rem;
         margin-right: -0.9375rem; }
         .page--contact .imgs-row .img-column {
@@ -4141,13 +4145,14 @@ footer {
             float: right; } }
     @media screen and (min-width: 64.0625em) {
       .page--contact .imgs-row {
-        margin-bottom: 3rem; } }
+        margin-bottom: 0.75rem; } }
     @media screen and (min-width: 87.5em) {
       .page--contact .imgs-row {
-        margin-bottom: 4.5rem; } }
+        margin-bottom: 2.25rem; } }
     @media screen and (min-width: 120em) {
       .page--contact .imgs-row {
-        margin-bottom: 6rem; } }
+        margin-bottom: 3rem; } }
+  .page--contact .contact-details,
   .page--contact .contact-info {
     max-width: 87.5rem;
     margin: 0 auto;
@@ -4157,12 +4162,15 @@ footer {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 200ms; }
-    .page--contact .contact-info p:first-child {
+    .page--contact .contact-details .description,
+    .page--contact .contact-info .description {
       font-weight: 400; }
+    .page--contact .contact-details a,
     .page--contact .contact-info a {
       position: relative;
       display: inline-block;
       font-weight: 400; }
+      .page--contact .contact-details a::before,
       .page--contact .contact-info a::before {
         content: attr(data-value);
         position: absolute;
@@ -4176,10 +4184,15 @@ footer {
         transition-property: max-width;
         transition-timing-function: linear;
         transition-duration: 400ms; }
-      .page--contact .contact-info a:focus, .page--contact .contact-info a:hover {
+      .page--contact .contact-details a:focus, .page--contact .contact-details a:hover,
+      .page--contact .contact-info a:focus,
+      .page--contact .contact-info a:hover {
         color: inherit; }
-        .page--contact .contact-info a:focus::before, .page--contact .contact-info a:hover::before {
+        .page--contact .contact-details a:focus::before, .page--contact .contact-details a:hover::before,
+        .page--contact .contact-info a:focus::before,
+        .page--contact .contact-info a:hover::before {
           max-width: 100%; }
+    .page--contact .contact-details p,
     .page--contact .contact-info p {
       display: block;
       margin-bottom: 1.125rem;
@@ -4187,25 +4200,64 @@ footer {
       line-height: 1.2;
       text-align: center; }
     @media screen and (min-width: 64.0625em) {
+      .page--contact .contact-details p,
       .page--contact .contact-info p {
         margin-bottom: 1.5rem;
         font-size: 2.25rem; }
-        .page--contact .contact-info p:first-child {
-          margin-bottom: 7.5rem; }
-        .page--contact .contact-info p.address, .page--contact .contact-info p.contact {
-          font-size: 2rem; } }
+        .page--contact .contact-details p.desription,
+        .page--contact .contact-info p.desription {
+          margin-bottom: 3.75rem;
+          margin-bottom: 7.25vh; }
+        .page--contact .contact-details p.address, .page--contact .contact-details p.contact,
+        .page--contact .contact-info p.address,
+        .page--contact .contact-info p.contact {
+          font-size: 2rem;
+          margin-bottom: 0 !important; } }
     @media screen and (min-width: 87.5em) {
+      .page--contact .contact-details p,
       .page--contact .contact-info p {
         margin-bottom: 3rem;
         font-size: 2.625rem; }
-        .page--contact .contact-info p.address, .page--contact .contact-info p.contact {
+        .page--contact .contact-details p.address, .page--contact .contact-details p.contact,
+        .page--contact .contact-info p.address,
+        .page--contact .contact-info p.contact {
           font-size: 2.25rem; } }
     @media screen and (min-width: 120em) {
+      .page--contact .contact-details p,
       .page--contact .contact-info p {
         margin-bottom: 5.25rem;
         font-size: 3.125rem; }
-        .page--contact .contact-info p:first-child {
+        .page--contact .contact-details p.desription,
+        .page--contact .contact-info p.desription {
           margin-bottom: 10.5rem; } }
+  .page--contact .contact-details {
+    width: 100%; }
+    .page--contact .contact-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%; }
+      .page--contact .contact-details ul > li {
+        display: inline-block; }
+    .page--contact .contact-details li {
+      flex-basis: 100%;
+      flex-grow: 1; }
+    @media screen and (min-width: 64.0625em) {
+      .page--contact .contact-details {
+        display: flex;
+        align-self: center;
+        align-items: center;
+        flex-grow: 1; }
+        .page--contact .contact-details li {
+          flex-basis: 49%; }
+          .page--contact .contact-details li:nth-child(odd) p {
+            padding-right: 2.5rem;
+            text-align: right; }
+          .page--contact .contact-details li:nth-child(even) p {
+            padding-left: 2.5rem;
+            text-align: left; } }
   .page--contact .legals {
     opacity: 0;
     animation-name: anim-contact-content-in;
@@ -4217,16 +4269,17 @@ footer {
       list-style: none;
       padding: 0;
       margin: 0;
-      display: block;
-      padding: 0.75rem 0;
-      text-align: center; }
+      display: flex;
+      width: 100%; }
       .page--contact .legals ul > li {
         display: inline-block; }
-      .page--contact .legals ul::before, .page--contact .legals ul::after {
-        display: table;
-        content: ' '; }
-      .page--contact .legals ul::after {
-        clear: both; }
+      .page--contact .legals ul li {
+        flex-basis: 49%;
+        flex-grow: 1; }
+        .page--contact .legals ul li:nth-child(odd) {
+          text-align: right; }
+        .page--contact .legals ul li:nth-child(even) {
+          text-align: left; }
     .page--contact .legals li {
       padding: 0 0.75rem; }
     .page--contact .legals a {
@@ -4251,7 +4304,9 @@ footer {
           max-width: 100%; }
     @media screen and (min-width: 64.0625em) {
       .page--contact .legals ul {
-        padding: 1.5rem 0; } }
+        padding: 1.5rem 0; }
+        .page--contact .legals ul li {
+          padding: 0 2.5rem; } }
     @media screen and (min-width: 87.5em) {
       .page--contact .legals ul {
         padding: 2.25rem 0; } }
