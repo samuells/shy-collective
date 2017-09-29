@@ -1,5 +1,9 @@
 // Footer
 
+#top {
+  outline: none !important;
+}
+
 footer {
   @include in-row($outer: true);
   padding: 0 $side-padding--mobile;

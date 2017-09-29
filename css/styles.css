@@ -1852,6 +1852,9 @@ a {
       .icon-hamburger span {
         height: 0.125rem; } }
 
+#top {
+  outline: none !important; }
+
 footer {
   max-width: 118.75rem;
   margin-right: auto;
