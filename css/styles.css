@@ -1982,6 +1982,7 @@ footer {
 
 .page--detail-v2 .social-bar,
 .page--contact .social-bar,
+.page--legal .social-bar,
 .page--projects .social-bar {
   position: fixed;
   left: 0;
@@ -1999,6 +2000,7 @@ footer {
   transition-timing-function: ease-out, ease-out, step-end; }
   .menu-showed + .page--detail-v2 .social-bar, .menu-showed +
   .page--contact .social-bar, .menu-showed +
+  .page--legal .social-bar, .menu-showed +
   .page--projects .social-bar {
     opacity: 1;
     transform: translateY(0%);
@@ -2007,6 +2009,7 @@ footer {
     transition-timing-function: ease-out, ease-out, step-start; }
   .page--detail-v2 .social-bar nav,
   .page--contact .social-bar nav,
+  .page--legal .social-bar nav,
   .page--projects .social-bar nav {
     max-width: 118.75rem;
     margin-right: auto;
@@ -2014,26 +2017,32 @@ footer {
     .page--detail-v2 .social-bar nav::before, .page--detail-v2 .social-bar nav::after,
     .page--contact .social-bar nav::before,
     .page--contact .social-bar nav::after,
+    .page--legal .social-bar nav::before,
+    .page--legal .social-bar nav::after,
     .page--projects .social-bar nav::before,
     .page--projects .social-bar nav::after {
       display: table;
       content: ' '; }
     .page--detail-v2 .social-bar nav::after,
     .page--contact .social-bar nav::after,
+    .page--legal .social-bar nav::after,
     .page--projects .social-bar nav::after {
       clear: both; }
     @media screen and (min-width: 120em) {
       .page--detail-v2 .social-bar nav,
       .page--contact .social-bar nav,
+      .page--legal .social-bar nav,
       .page--projects .social-bar nav {
         max-width: 98.95833%; } }
     @media screen and (min-width: 120em) {
       .page--detail-v2 .social-bar nav,
       .page--contact .social-bar nav,
+      .page--legal .social-bar nav,
       .page--projects .social-bar nav {
         max-width: 118.75rem; } }
   .page--detail-v2 .social-bar ul,
   .page--contact .social-bar ul,
+  .page--legal .social-bar ul,
   .page--projects .social-bar ul {
     list-style: none;
     padding: 0;
@@ -2041,18 +2050,22 @@ footer {
     text-align: center; }
     .page--detail-v2 .social-bar ul > li,
     .page--contact .social-bar ul > li,
+    .page--legal .social-bar ul > li,
     .page--projects .social-bar ul > li {
       display: inline-block; }
   .page--detail-v2 .social-bar a,
   .page--contact .social-bar a,
+  .page--legal .social-bar a,
   .page--projects .social-bar a {
     display: block; }
     .page--detail-v2 .social-bar a:after,
     .page--contact .social-bar a:after,
+    .page--legal .social-bar a:after,
     .page--projects .social-bar a:after {
       padding: 0.625rem; }
     .page--detail-v2 .social-bar a.facebook:after,
     .page--contact .social-bar a.facebook:after,
+    .page--legal .social-bar a.facebook:after,
     .page--projects .social-bar a.facebook:after {
       display: inline-block;
       font-family: "iconfont";
@@ -2069,6 +2082,7 @@ footer {
       content: "\E001"; }
     .page--detail-v2 .social-bar a.vimeo:after,
     .page--contact .social-bar a.vimeo:after,
+    .page--legal .social-bar a.vimeo:after,
     .page--projects .social-bar a.vimeo:after {
       display: inline-block;
       font-family: "iconfont";
@@ -2085,6 +2099,7 @@ footer {
       content: "\E003"; }
     .page--detail-v2 .social-bar a.instagram:after,
     .page--contact .social-bar a.instagram:after,
+    .page--legal .social-bar a.instagram:after,
     .page--projects .social-bar a.instagram:after {
       display: inline-block;
       font-family: "iconfont";
@@ -2101,6 +2116,7 @@ footer {
       content: "\E002"; }
     .page--detail-v2 .social-bar a span,
     .page--contact .social-bar a span,
+    .page--legal .social-bar a span,
     .page--projects .social-bar a span {
       position: absolute !important;
       width: 1px;
@@ -2110,10 +2126,12 @@ footer {
   @media screen and (min-width: 64.0625em) {
     .page--detail-v2 .social-bar,
     .page--contact .social-bar,
+    .page--legal .social-bar,
     .page--projects .social-bar {
       padding-bottom: 2.25rem; }
       .page--detail-v2 .social-bar a:after,
       .page--contact .social-bar a:after,
+      .page--legal .social-bar a:after,
       .page--projects .social-bar a:after {
         font-size: 1.375rem; } }
 
@@ -4316,3 +4334,136 @@ footer {
     @media screen and (min-width: 120em) {
       .page--contact .legals a {
         font-size: 1.375rem; } }
+
+@keyframes anim-contact-preview-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes anim-contact-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes anim-contact-page-out {
+  from {
+    opacity: 1;
+    transform: translateY(0); }
+  to {
+    opacity: 0;
+    transform: translateY(50px); } }
+
+.page--legal {
+  max-width: 118.75rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 3.75rem 1.25rem 0; }
+  .is-exiting .page--legal {
+    animation-name: anim-contact-page-out;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0; }
+  .page--legal::before, .page--legal::after {
+    display: table;
+    content: ' '; }
+  .page--legal::after {
+    clear: both; }
+  @media screen and (min-width: 120em) {
+    .page--legal {
+      max-width: 98.95833%; } }
+  @media screen and (min-width: 120em) {
+    .page--legal {
+      max-width: 118.75rem; } }
+  @media screen and (min-width: 64.0625em) {
+    .page--legal {
+      display: flex;
+      flex-direction: column;
+      height: 50rem;
+      height: 100vh;
+      min-height: 43.75rem;
+      padding: 6rem 2.5rem 0; } }
+  @media screen and (min-width: 120em) {
+    .page--legal {
+      padding: 9rem 5rem 0; } }
+  .page--legal .legal-content {
+    margin: 0 auto;
+    opacity: 0;
+    animation-name: anim-contact-content-in;
+    animation-duration: 450ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 200ms; }
+    .page--legal .legal-content h1,
+    .page--legal .legal-content h2 {
+      font-family: "Brown-Bold", "Helvetica Neue", Arial, "Source Sans Pro", Helvetica, Roboto, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding-top: 0;
+      padding-bottom: 0.375rem;
+      margin-top: 0;
+      margin-bottom: 0.375rem;
+      color: #FFFFFF;
+      font-weight: 300;
+      font-style: normal;
+      text-rendering: optimizeLegibility;
+      font-weight: 700; }
+      @media print, screen and (min-width: 33.75em) {
+        .page--legal .legal-content h1,
+        .page--legal .legal-content h2 {
+          font-size: 1.125rem;
+          line-height: 1.5rem;
+          padding-bottom: 0.75rem;
+          margin-bottom: 0.75rem; } }
+      @media screen and (min-width: 64.0625em) {
+        .page--legal .legal-content h1,
+        .page--legal .legal-content h2 {
+          font-size: 1.375rem;
+          line-height: 1.6875rem; } }
+      @media print, screen and (min-width: 46.25em) {
+        .page--legal .legal-content h1,
+        .page--legal .legal-content h2 {
+          margin-top: 2.25rem; } }
+    .page--legal .legal-content h1 {
+      margin-bottom: 2.25rem; }
+    .page--legal .legal-content p {
+      font-weight: 700; }
+    .page--legal .legal-content a {
+      position: relative;
+      display: inline-block;
+      font-weight: 400; }
+      .page--legal .legal-content a::before {
+        content: attr(data-value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 0;
+        padding: inherit;
+        color: #FFE300;
+        white-space: nowrap;
+        overflow: hidden;
+        transition-property: max-width;
+        transition-timing-function: linear;
+        transition-duration: 400ms; }
+      .page--legal .legal-content a:focus, .page--legal .legal-content a:hover {
+        color: inherit; }
+        .page--legal .legal-content a:focus::before, .page--legal .legal-content a:hover::before {
+          max-width: 100%; }
+    .page--legal .legal-content .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 1.125rem; }
+      .page--legal .legal-content .contact-list p {
+        padding-bottom: 0;
+        margin-bottom: 0; }
+      @media screen and (min-width: 64.0625em) {
+        .page--legal .legal-content .contact-list {
+          margin-top: 2.25rem;
+          margin-bottom: 2.25rem; } }
+    .page--legal .legal-content .border-margin {
+      margin: 2.25rem 0 3rem !important; }
