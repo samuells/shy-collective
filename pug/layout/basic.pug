@@ -1,0 +1,10 @@
+include ../includes/mixins.pug
+
+doctype html
+
+html(lang="en")
+  include ../includes/head.pug
+  body
+    .m-scene#main
+      block content
+    script(src='js/scripts.all.min.js', charset='utf-8')

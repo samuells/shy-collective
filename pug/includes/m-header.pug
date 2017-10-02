@@ -1,0 +1,30 @@
+mixin header(isHomepage)
+  header(class=isHomepage ? 'nav-header on-home' : 'nav-header', style=isHomepage ? '' : 'background-color: #1A1A1A;')
+    .header-row
+      .logo-wrapper
+        a.js-smooth-link(href='./index.html')
+          a.js-smooth-link(href='./manifest.html', data-value='shy collective')
+            | shy collective
+      .menu-wrapper
+        a#js-toggle-menu.menu-trigger(href='#', data-lightbox='')
+          span toggle menu
+          .icon-hamburger
+            span
+        .overlay-menu
+          ul
+            li
+              a.js-smooth-link(href='./manifest.html', data-value='manifest') manifest
+            li
+              a(href='https://vimeo.com/211445039', data-lity='', data-value='showreel') showreel
+            li
+              a.js-smooth-link(href='./projects.html', data-value='projects') projects
+            li
+              a.js-smooth-link(href='./contact.html', data-value='contact') contact
+      .quick-menu-wrapper
+        ul
+          li
+            a(href='https://vimeo.com/211445039', data-lity='', data-value='showreel') showreel
+          li
+            a.js-smooth-link(href='./projects.html', data-value='projects') projects
+          li
+            a.js-smooth-link(href='./contact.html', data-value='contact') contact
