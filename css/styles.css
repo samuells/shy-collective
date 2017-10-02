@@ -2436,15 +2436,15 @@ footer {
         animation-fill-mode: forwards;
         animation-delay: 500ms; }
     .home-offer .manifest-img.unique {
-      background-image: url("../img/home-unique.jpg"); }
+      background-image: url("../img/home-unique.jpeg"); }
     .home-offer .manifest-img.focused {
-      background-image: url("../img/home-focused.jpg"); }
+      background-image: url("../img/home-focused.jpeg"); }
     .home-offer .manifest-img.craft {
-      background-image: url("../img/home-craft.jpg"); }
+      background-image: url("../img/home-craft.jpeg"); }
     .home-offer .manifest-img.passion {
-      background-image: url("../img/home-passion.jpg"); }
+      background-image: url("../img/home-passion.jpeg"); }
     .home-offer .manifest-img.care {
-      background-image: url("../img/home-care.jpg"); }
+      background-image: url("../img/home-care.jpeg"); }
   .home-offer .choose {
     position: absolute;
     top: 0;
