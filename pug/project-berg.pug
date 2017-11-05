@@ -1,0 +1,33 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Andrea Berg - Ja ich will", "berg-cover", "woman's face", "https://vimeo.com/237801205")
+    +project-nav("project-europapark")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("berg-1", "2000x1500", "")
+          +gallery-figure("berg-2", "2000x1500", "")
+          +gallery-figure("berg-3", "2000x1500", "")
+          +gallery-figure("berg-4", "2000x1500", "")
+        .gallery-row
+          +gallery-figure("berg-5", "2000x1500", "")
+          +gallery-figure("berg-6", "600x600", "")
+          +gallery-figure("berg-7", "800x600", "")
+      #makingof.project-description
+        h1 Andrea Berg - Ja ich will
+        p
+          | Produktionsfirma: MackMedia
+          br
+          | Producer: Matthias Schilling
+        p
+          | Director & DP 1st Unit: Jan Reiff
+          br
+          | Gimbal Unit: Rafael Grasse & Max Wé / shy collective
+        p
+          | Fotos: Jan Reiff / MackMedia
+    +social-bar
+  +footer-to-top
+  +pswp

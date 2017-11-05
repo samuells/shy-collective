@@ -1,0 +1,27 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Die Schwenninger Krankenkasse - Imagespot", "schwenninger-cover", "woman's face", "https://vimeo.com/137471872")
+    +project-nav("project-syneo")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("schwenninger-1", "2000x1184", "")
+          +gallery-figure("schwenninger-2", "2000x1333", "")
+          +gallery-figure("schwenninger-3", "2000x1257", "")
+          +gallery-figure("schwenninger-4", "2000x1045", "")
+        .gallery-row
+          +gallery-figure("schwenninger-5", "2000x1333", "")
+          +gallery-figure("schwenninger-6", "2000x1222", "")
+          +gallery-figure("schwenninger-7", "2000x3000", "")
+      #makingof.project-description
+        h1 Die Schwenninger Krankenkasse - Imagespot
+        p
+          | Client: Die Schwenninger Krankenkasse
+        p
+          | Production: shy collective
+    +social-bar
+  +footer-to-top
+  +pswp

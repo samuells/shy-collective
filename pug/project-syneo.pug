@@ -1,0 +1,44 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("syNeo aura paradise!", "syneo-cover", "woman's face", "https://vimeo.com/157455729")
+    +project-nav("project-volksbank")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("syneo-1", "1853x1041", "")
+          +gallery-figure("syneo-2", "2000x1134", "")
+          +gallery-figure("syneo-3", "2000x1021", "")
+          +gallery-figure("syneo-4", "2000x1011", "")
+        .gallery-row
+          +gallery-figure("syneo-5", "2000x1106", "")
+          +gallery-figure("syneo-6", "2000x1108", "")
+          +gallery-figure("syneo-7", "2000x1041", "")
+          +gallery-figure("syneo-8", "2000x966", "")
+        .gallery-row
+          +gallery-figure("syneo-9", "2000x1188", "")
+          +gallery-figure("syneo-10", "2000x1063", "")
+          +gallery-figure("syneo-11", "2000x1019", "")
+          +gallery-figure("syneo-12", "2000x1058", "")
+        .gallery-row
+          +gallery-figure("syneo-13", "2000x1181", "")
+          +gallery-figure("syneo-14", "2000x1101", "")
+          +gallery-figure("syneo-15", "2000x1168", "")
+          +gallery-figure("syneo-16", "2000x1111", "")
+      #makingof.project-description
+        h1 syNeo aura paradise!
+        p
+          | Client: syNeo
+        p
+          | Production: shy collective 
+          br
+          | Service Production: insitu
+        p
+          | Director: Jan Reiff
+          br
+          | Music: Wolfram Gruss
+    +social-bar
+  +footer-to-top
+  +pswp

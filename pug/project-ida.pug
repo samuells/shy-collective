@@ -1,0 +1,33 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Hoststar - Portrait “iDa”", "ida-cover", "woman's face", "https://vimeo.com/91347315")
+    +project-nav("project-joy")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("ida-1", "2000x3000", "")
+          +gallery-figure("ida-2", "2000x3032", "")
+          +gallery-figure("ida-3", "2000x956", "")
+          +gallery-figure("ida-4", "2000x1102", "")
+        .gallery-row
+          +gallery-figure("ida-5", "2000x1108", "")
+          +gallery-figure("ida-6", "2000x1062", "")
+          +gallery-figure("ida-7", "2000x1073", "")
+          +gallery-figure("ida-8", "2000x1103", "")
+        .gallery-row
+          +gallery-figure("ida-9", "2000x1162", "")
+          +gallery-figure("ida-10", "2000x1198", "")
+      #makingof.project-description
+        h1 Hoststar - Portrait “iDa”
+        p
+          | Client: Hoststar
+          br
+          | Production: shy collective
+        p
+          | Director: Jan Reiff
+    +social-bar
+  +footer-to-top
+  +pswp

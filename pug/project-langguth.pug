@@ -1,0 +1,35 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Langguth - Kinospot", "langguth-cover", "woman's face", "https://vimeo.com/125783324")
+    +project-nav("project-schwenninger")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("langguth-1", "1500x1000", "")
+          +gallery-figure("langguth-2", "1500x1000", "")
+          +gallery-figure("langguth-3", "1500x1000", "")
+          +gallery-figure("langguth-4", "1500x1000", "")
+        .gallery-row
+          +gallery-figure("langguth-5", "1500x1000", "")
+          +gallery-figure("langguth-6", "1500x1000", "")
+          +gallery-figure("langguth-7", "1500x1000", "")
+          +gallery-figure("langguth-8", "1500x1000", "")
+        .gallery-row
+          +gallery-figure("langguth-9", "1500x1000", "")
+          +gallery-figure("langguth-10", "2000x1109", "")
+          +gallery-figure("langguth-11", "2000x1046", "")
+          +gallery-figure("langguth-12", "2000x980", "")
+      #makingof.project-description
+        h1 Langguth - Kinospot
+        p
+          | Client: Langguth
+          br
+          | Agency: Münchrath Media
+        p
+          |Production: shy collective
+    +social-bar
+  +footer-to-top
+  +pswp

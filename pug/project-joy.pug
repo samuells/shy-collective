@@ -1,0 +1,37 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Joy Sportswear - Commercial", "joy-cover", "woman's face", "https://vimeo.com/75189237")
+    +project-nav("project-kia-niro")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("joy-1", "1500x971", "")
+          +gallery-figure("joy-2", "1500x833", "")
+          +gallery-figure("joy-3", "1500x890", "")
+          +gallery-figure("joy-4", "1500x801", "")
+        .gallery-row
+          +gallery-figure("joy-5", "1500x874", "")
+          +gallery-figure("joy-6", "1500x859", "")
+          +gallery-figure("joy-7", "1500x766", "")
+          +gallery-figure("joy-8", "1500x893", "")
+        .gallery-row
+          +gallery-figure("joy-9", "1500x933", "")
+          +gallery-figure("joy-10", "1500x741", "")
+          +gallery-figure("joy-11", "1500x810", "")
+          +gallery-figure("joy-12", "984x1500", "")
+      #makingof.project-description
+        h1 Joy Sportswear - Commercial
+        p
+          | Client: Joy Sportswear
+          br
+          | Agency: Südpol
+        p
+          | Production: shy collective
+          br
+          | Director: Jan Reiff
+    +social-bar
+  +footer-to-top
+  +pswp

@@ -1,0 +1,51 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Kia - Picanto X-Line", "kia-picanto-cover", "woman's face", "https://vimeo.com/157455729")
+    +project-nav("project-kia-rio")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("kia-picanto-1", "2000x1168", "")
+          +gallery-figure("kia-picanto-2", "2000x1334", "")
+          +gallery-figure("kia-picanto-3", "1339x2007", "")
+          +gallery-figure("kia-picanto-4", "2000x1262", "")
+        .gallery-row
+          +gallery-figure("kia-picanto-5", "2000x1190", "")
+          +gallery-figure("kia-picanto-6", "1591x2385", "")
+          +gallery-figure("kia-picanto-7", "2000x1135", "")
+          +gallery-figure("kia-picanto-8", "2000x1196", "")
+        .gallery-row
+          +gallery-figure("kia-picanto-9", "2000x1221", "")
+          +gallery-figure("kia-picanto-10", "1988x1111", "")
+          +gallery-figure("kia-picanto-11", "2000x1334", "")
+          +gallery-figure("kia-picanto-12", "2000x1157", "")
+      #makingof.project-description
+        h1 Kia - Picanto X-Line
+        p
+          | Client: Kia Motors Europe
+          br
+          | Agency: Innocean Europe
+        p
+          | Production: KOSMO Films
+          br
+          |Service Production: SeaSight
+        p
+          | Director: Nina Gwynn
+          br
+          | DOP: Sebastian Weiland
+          br
+          | 2nd Unit Camera: Rafael Grasse
+          br
+          | Jr. Producer: Felix Blumenstein
+        p
+          | Post Production Supervisor: Rafael Grasse
+          br
+          | Editor: Sebastian Weiland
+          br
+          | Grading: Rafael Grasse
+    +social-bar
+  +footer-to-top
+  +pswp
