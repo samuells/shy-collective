@@ -1,0 +1,34 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("VW Nutzfahrzeuge - Productclips", "vw-cover", "woman's face", "https://vimeo.com/238393807")
+    +project-nav("project-wyss")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("vw-1", "1280x720", "")
+          +gallery-figure("vw-2", "1280x720", "")
+          +gallery-figure("vw-3", "1280x720", "")
+          +gallery-figure("vw-4", "1280x720", "")
+        .gallery-row
+          +gallery-figure("vw-5", "1280x720", "")
+          +gallery-figure("vw-6", "1280x720", "")
+          +gallery-figure("vw-7", "1280x720", "")
+          +gallery-figure("vw-8", "1280x720", "")
+      #makingof.project-description
+        h1 VW Nutzfahrzeuge - Productclips
+        p
+          | Client: VW Nutzfahrzeuge
+          br
+          | Agency: SALT WORKS
+        p
+          | Production: sunshine films
+          br
+          | Director: Ole Zapatka
+          br
+          | DOP: Rafael Grasse
+    +social-bar
+  +footer-to-top
+  +pswp

@@ -1,0 +1,16 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--projects
+      ul.projects-list
+        +project-preview("VW Nutzfahrzeuge", "Productclips", "project-vw", "vw-cover")
+        +project-preview("Volksbank", "Die Gestalterbank", "project-volksbank", "volksbank-cover")
+        +project-preview("Kia Rio", "Product Film", "project-kia-rio", "kia-rio-cover")
+        +project-preview("Kia Niro", "I am more!", "project-kia-niro", "kia-niro-cover")
+        +project-preview("FOCUSED", "Paris", "project-focused", "focused-paris-cover")
+        +project-preview("Europa-Park", "Die Bergung", "project-europapark", "europapark-cover")
+        +project-preview("Hoststar", "Mathias Wyss", "project-wyss", "wyss-cover")
+        +project-preview("ZEISS", "Vision Care", "project-zeiss", "zeiss-cover")
+      +social-bar
+  +footer-to-top

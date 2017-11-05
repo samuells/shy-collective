@@ -1,0 +1,46 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Kia Rio - Product Film", "kia-rio-cover", "woman's face", "https://vimeo.com/238224883")
+    +project-nav("project-volksbank")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("kia-rio-1", "2000x1334", "")
+          +gallery-figure("kia-rio-2", "2000x2998", "")
+          +gallery-figure("kia-rio-3", "2000x982", "")
+          +gallery-figure("kia-rio-4", "2000x1081", "")
+        .gallery-row
+          +gallery-figure("kia-rio-5", "2000x1171", "")
+          +gallery-figure("kia-rio-6", "2000x2998", "")
+          +gallery-figure("kia-rio-7", "2000x2998", "")
+          +gallery-figure("kia-rio-8", "2000x1334", "")
+        .gallery-row
+          +gallery-figure("kia-rio-9", "2000x1044", "")
+          +gallery-figure("kia-rio-10", "2000x1162", "")
+          +gallery-figure("kia-rio-11", "2000x1215", "")
+          +gallery-figure("kia-rio-12", "2000x1118", "")
+        .gallery-row
+          +gallery-figure("kia-rio-13", "2000x969", "")
+          +gallery-figure("kia-rio-14", "2000x1192", "")
+          +gallery-figure("kia-rio-15", "2000x1081", "")
+          +gallery-figure("kia-rio-16", "2000x1059", "")
+      #makingof.project-description
+        h1 Kia Rio - Product Film
+        p
+          | Client: Kia Motors Europe
+          br
+          | Agency: Innocean Europe
+        p
+          | Production: KOSMO Films
+          br
+          | Service Production: SeaSight
+        p
+          | Director: Nina Gwynn
+          br
+          | DOP: Sebastian Weiland
+    +social-bar
+  +footer-to-top
+  +pswp

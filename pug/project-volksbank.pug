@@ -1,0 +1,40 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Volksbank Schwarzwald Baar Hegau - Die Gestalterbank", "volksbank-cover", "woman's face", "https://vimeo.com/220454428")
+    +project-nav("project-vw")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("volksbank-1", "2000x1061", "")
+          +gallery-figure("volksbank-2", "2000x1137", "")
+          +gallery-figure("volksbank-3", "2000x1008", "")
+          +gallery-figure("volksbank-4", "2000x1020", "")
+        .gallery-row
+          +gallery-figure("volksbank-5", "2000x1073", "")
+          +gallery-figure("volksbank-6", "1963x1309", "")
+          +gallery-figure("volksbank-7", "2000x936", "")
+          +gallery-figure("volksbank-8", "2000x1014", "")
+        .gallery-row
+          +gallery-figure("volksbank-9", "2000x1153", "")
+          +gallery-figure("volksbank-10", "2000x1096", "")
+          +gallery-figure("volksbank-11", "2000x1134", "")
+          +gallery-figure("volksbank-12", "1591x2385", "")
+        .gallery-row
+          +gallery-figure("volksbank-13", "2000x1087", "")
+          +gallery-figure("volksbank-14", "2000x1106", "")
+          +gallery-figure("volksbank-15", "2000x1053", "")
+          +gallery-figure("volksbank-16", "2000x1015", "")
+      #makingof.project-description
+        h1 Volksbank Schwarzwald Baar Hegau - Die Gestalterbank
+        p
+          | Client: Volksbank Schwarzwald Baar Helau
+          br
+          | Agency: ZWEI14
+        p
+          | Production: shy collective
+    +social-bar
+  +footer-to-top
+  +pswp

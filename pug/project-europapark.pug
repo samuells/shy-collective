@@ -1,0 +1,48 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Europa-Park Rulantica - Die Bergung", "europapark-cover", "woman's face", "https://vimeo.com/237803300")
+    +project-nav("project-focused")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("europapark-1", "2000x1500", "")
+          +gallery-figure("europapark-2", "2000x1125", "")
+          +gallery-figure("europapark-3", "2000x1125", "")
+          +gallery-figure("europapark-4", "2000x1125", "")
+        .gallery-row
+          +gallery-figure("europapark-5", "2000x1125", "")
+          +gallery-figure("europapark-6", "2000x1125", "")
+          +gallery-figure("europapark-7", "2000x1125", "")
+          +gallery-figure("europapark-8", "2000x1125", "")
+        .gallery-row
+          +gallery-figure("europapark-9", "2000x1500", "")
+          +gallery-figure("europapark-10", "2000x1125", "")
+          +gallery-figure("europapark-11", "2000x1125", "")
+          +gallery-figure("europapark-12", "2000x1125", "")
+        .gallery-row
+          +gallery-figure("europapark-13", "2000x1125", "")
+          +gallery-figure("europapark-14", "2000x1500", "")
+          +gallery-figure("europapark-15", "2000x1125", "")
+          +gallery-figure("europapark-16", "2000x1125", "")
+      #makingof.project-description
+        h1 Europa-Park Rulantica - Die Bergung
+        p
+          | Produktionsfirma: MackMedia
+          br
+          | Producer: Matthias Schilling
+        p
+          | Director & DP 1st Unit: Jan Reiff
+          br
+          | Gimbal Unit: Rafael Grasse & Max Wé / shy collective
+        p
+          | Aerials: Christian Hammer / Dennis Fuhro
+          br
+          | Musik: Hendrik Schwarzer
+        p
+          | Fotos: Jan Reiff / MackMedi
+    +social-bar
+  +footer-to-top
+  +pswp

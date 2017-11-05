@@ -1,0 +1,37 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("ZEISS Vision Care", "zeiss-cover", "woman's face", "https://vimeo.com/220454428")
+    +project-nav("project-europapark")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("zeiss-1", "2000x1068", "")
+          +gallery-figure("zeiss-2", "2000x1101", "")
+          +gallery-figure("zeiss-3", "2000x1020", "")
+          +gallery-figure("zeiss-4", "2000x1334", "")
+        .gallery-row
+          +gallery-figure("zeiss-5", "2000x1334", "")
+          +gallery-figure("zeiss-6", "2000x1334", "")
+          +gallery-figure("zeiss-7", "2000x1334", "")
+          +gallery-figure("zeiss-8", "1591x2385", "")
+        .gallery-row
+          +gallery-figure("zeiss-9", "2000x1146", "")
+          +gallery-figure("zeiss-10", "2000x1334", "")
+          +gallery-figure("zeiss-11", "2000x1174", "")
+          +gallery-figure("zeiss-12", "2000x1271", "")
+      #makingof.project-description
+        h1 ZEISS Vision Care
+        p
+          | Client: Volksbank Schwarzwald Baar Helau
+          br
+          | Agency: ZWEI14
+        p
+          | Production: shy collective
+          br
+          | Director: Jan Reiff
+    +social-bar
+  +footer-to-top
+  +pswp

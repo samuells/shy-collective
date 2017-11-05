@@ -1,0 +1,8 @@
+mixin project-preview(projectTitle, projectSubtitle, projectUrl, projectHero)
+  li.project-preview
+      a.js-smooth-link(href="./" + projectUrl + ".html")
+          img(src="./img/" + projectHero + ".jpeg", alt="showreel thumbnail")
+          h2
+            | #{projectTitle}
+            br
+            | #{projectSubtitle}

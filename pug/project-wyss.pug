@@ -1,0 +1,42 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Hoststar - Portrait “Mathias Wyss” Director’s Cut", "wyss-cover", "woman's face", "https://vimeo.com/157455729")
+    +project-nav("project-zeiss")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("wyss-1", "2000x1023", "")
+          +gallery-figure("wyss-2", "2000x917", "")
+          +gallery-figure("wyss-3", "2000x1094", "")
+          +gallery-figure("wyss-4", "2000x1011", "")
+        .gallery-row
+          +gallery-figure("wyss-5", "2000x950", "")
+          +gallery-figure("wyss-6", "2000x1086", "")
+          +gallery-figure("wyss-7", "2000x1333", "")
+          +gallery-figure("wyss-8", "2000x909", "")
+        .gallery-row
+          +gallery-figure("wyss-9", "2000x1333", "")
+          +gallery-figure("wyss-10", "2000x1080", "")
+          +gallery-figure("wyss-11", "2000x920", "")
+          +gallery-figure("wyss-12", "2000x1011", "")
+        .gallery-row
+          +gallery-figure("wyss-13", "2000x1037", "")
+          +gallery-figure("wyss-14", "2000x988", "")
+          +gallery-figure("wyss-15", "2000x958", "")
+          +gallery-figure("wyss-16", "2000x905", "")
+      #makingof.project-description
+        h1 Hoststar - Portrait “Mathias Wyss” Director’s Cut
+        p
+          | Client: Hoststar
+          br
+          | Production: shy collective
+        p
+          | Director: Jan Reiff
+          br
+          | Aerials: Christian Hammer / Dennis Fuhro
+    +social-bar
+  +footer-to-top
+  +pswp

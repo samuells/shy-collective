@@ -1,0 +1,56 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("Kia Niro - I am more!", "kia-niro-cover", "woman's face", "https://vimeo.com/157455729")
+    +project-nav("project-kia-rio")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("kia-niro-1", "2000x964", "")
+          +gallery-figure("kia-niro-2", "2000x1142", "")
+          +gallery-figure("kia-niro-3", "2000x959", "")
+          +gallery-figure("kia-niro-4", "2000x915", "")
+        .gallery-row
+          +gallery-figure("kia-niro-5", "2000x1038", "")
+          +gallery-figure("kia-niro-6", "2000x928", "")
+          +gallery-figure("kia-niro-7", "2000x987", "")
+          +gallery-figure("kia-niro-8", "1591x950", "")
+        .gallery-row
+          +gallery-figure("kia-niro-9", "1550x860", "")
+          +gallery-figure("kia-niro-10", "1550x1034", "")
+          +gallery-figure("kia-niro-11", "1550x863", "")
+          +gallery-figure("kia-niro-12", "1550x817", "")
+        .gallery-row
+          +gallery-figure("kia-niro-13", "1550x863", "")
+          +gallery-figure("kia-niro-14", "1550x808", "")
+          +gallery-figure("kia-niro-15", "1550x1034", "")
+          +gallery-figure("kia-niro-16", "2000x1130", "")
+      #makingof.project-description
+        h1 Kia Niro - I am more!
+        p
+          | Client: Kia Motors Europe
+          br
+          | Agency: Innocean Europe
+        p
+          | Production: KOSMO Films
+          br
+          | Service Production: SeaSight
+        p
+          | Director: Nina Gwynn
+          br
+          | DOP: Sebastian Weiland
+          br
+          | 2nd Unit Camera: Rafael Grasse
+          br
+          | Drone Shots: Skynamic
+        p
+          | Post Production Supervisor: Rafael Grasse
+          br
+          | Editor: Sebastian Weiland
+          br
+          | Grading: Rafael Grasse
+    +social-bar
+  +footer-to-top
+  +pswp

@@ -1,0 +1,33 @@
+extends layout/basic.pug
+
+block content
+  +header(false)
+  main#top.page--detail-v2
+    +project-header("FOCUSED - Paris", "focused-paris-cover", "woman's face", "https://vimeo.com/161921535")
+    +project-nav("project-kia-niro")
+    article.project-detail
+      .photo-gallery
+        .gallery-row
+          +gallery-figure("focused-paris-1", "2000x844", "")
+          +gallery-figure("focused-paris-2", "2000x844", "")
+          +gallery-figure("focused-paris-3", "2000x844", "")
+          +gallery-figure("focused-paris-4", "2000x844", "")
+        .gallery-row
+          +gallery-figure("focused-paris-5", "2000x844", "")
+          +gallery-figure("focused-paris-6", "2000x844", "")
+          +gallery-figure("focused-paris-7", "2000x844", "")
+          +gallery-figure("focused-paris-8", "2000x844", "")
+        .gallery-row
+          +gallery-figure("focused-paris-9", "2000x844", "")
+          +gallery-figure("focused-paris-10", "1535x858", "")
+          +gallery-figure("focused-paris-11", "1528x821", "")
+          +gallery-figure("focused-paris-12", "935x1402", "")
+      #makingof.project-description
+        h1 FOCUSED - Paris
+        p
+          | Living in a fast-moving world of rapid change, our independent series „FOCUSED“ has the ambition to slow down time for one moment in a certain place. Instead of being obsessed of growing bigger and making things faster, let’s not get distracted and stay focused on the little things in life.
+        p
+          | This series is a tribute to the art of street photography in moving pictures.
+    +social-bar
+  +footer-to-top
+  +pswp
