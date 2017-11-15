@@ -161,6 +161,7 @@
   }
   @include breakpoint(xlarge) {
     padding-top: rh(0.5);
+    padding-bottom: rh(0.5);
 
     .header-row {
       padding: 0 $side-padding--xlarge;
@@ -248,6 +249,7 @@
   }
   @include breakpoint(maxed) {
     padding-top: rh(1.5);
+    padding-bottom: rh(1.5);
 
     .header-row {
       padding: 0 $side-padding--maxed;

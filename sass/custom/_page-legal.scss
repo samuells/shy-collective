@@ -22,7 +22,8 @@
   // --------
   // Legals
   .legal-content {
-    margin: 0 auto;
+    max-width: rem(700);
+    margin: 0 auto 0 0;
     opacity: 0;
     @include ps-animate(anim-contact-content-in, 450ms, 200ms);
 

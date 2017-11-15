@@ -28,10 +28,13 @@
 
     .project-name {
       position: absolute;
-      top: 50%;
+      top: 100%;
       left: 50%;
+      width: 80%;
+      max-width: rem(500);
       margin: 0 !important;
       opacity: 0;
+      text-align: center;
       transform: translateX(-50%) translateY(-30%);
       @include ps-animate(anim-project-name-in, 2.5s);
       @include ps-animate(anim-project-name-in, 2.5s);
@@ -105,6 +108,11 @@
       a {
         padding: rem(6) rem(18);
         font-size: rem(40);
+      }
+    }
+    @include breakpoint(xlarge) {
+      .project-name {
+        top: 50%;
       }
     }
     @include breakpoint(xlarge) {
