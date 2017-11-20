@@ -10,7 +10,7 @@ const initHome = function() {
         var manifestImgList = $('.manifest-img');
         var randomIndex = Math.floor(Math.random() * manifestImgList.length);
         $(manifestImgList[randomIndex]).addClass('showed');
-      }, 1000);
+      }, 3000);
 
       $homeOffer.on('click', 'li a', function(event) {
         event.preventDefault();
