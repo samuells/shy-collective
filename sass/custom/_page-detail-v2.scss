@@ -146,10 +146,15 @@
     ul {
       @include reset-ul(true);
       text-align: right;
+      padding: 0 rem(8);
     }
 
     li {
       padding: rem(6 12);
+
+      &:first-child {
+        float: left;
+      }
     }
 
     a {
@@ -180,7 +185,13 @@
         }
       }
     }
+    @include breakpoint(medium) {
+      ul {
+        padding: 0 rem(18);
+      }
+    }
     @include breakpoint(xlarge) {
+      padding: rh(0.75) $side-padding--xlarge;
       padding: rh(0.75) $side-padding--xlarge;
 
       ul {
@@ -199,12 +210,12 @@
         top: 0;
         left: 0;
         width: 100%;
+        padding: rem(0 12);
 
         &:first-child a {
-          position: absolute;
           top: 0;
-          left: 50%;
-          transform: translateX(-50%);
+          right: 50%;
+          transform: translateX(50%);
         }
       }
     }
