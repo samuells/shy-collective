@@ -30,7 +30,8 @@
     z-index: $home-choose-layer-zi;
   }
 
-  33%, 66% {
+  33%,
+  66% {
     opacity: 1;
     z-index: $home-choose-layer-zi;
   }
@@ -49,8 +50,13 @@
     opacity: 0;
   }
 
-  to {
+  40%,
+  60% {
     opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 @keyframes anim-home-offer {
@@ -151,27 +157,34 @@
     opacity: 0;
   }
 }
-
 @keyframes shake-pause {
-  from, to {
+  from,
+  to {
     opacity: 1;
   }
+
   78% {
     transform: translate3d(0, -50%, 0) rotateZ(0deg);
   }
-  80%, 96% {
+
+  80%,
+  96% {
     transform: translate3d(-1px, -50%, 0) rotateZ(-5deg);
   }
 
-  82%, 94% {
+  82%,
+  94% {
     transform: translate3d(2px, -50%, 0) rotateZ(5deg);
   }
 
-  84%, 88%, 92% {
+  84%,
+  88%,
+  92% {
     transform: translate3d(-4px, -50%, 0) rotateZ(-10deg);
   }
 
-  86%, 90% {
+  86%,
+  90% {
     transform: translate3d(4px, -50%, 0) rotateZ(10deg);
   }
 }

@@ -2157,7 +2157,8 @@ footer {
   from {
     opacity: 0;
     z-index: 20; }
-  33%, 66% {
+  33%,
+  66% {
     opacity: 1;
     z-index: 20; }
   99% {
@@ -2169,8 +2170,11 @@ footer {
 @keyframes anim-home-choose {
   from {
     opacity: 0; }
+  40%,
+  60% {
+    opacity: 1; }
   to {
-    opacity: 1; } }
+    opacity: 0; } }
 
 @keyframes anim-home-offer {
   from {
@@ -2232,17 +2236,23 @@ footer {
     opacity: 0; } }
 
 @keyframes shake-pause {
-  from, to {
+  from,
+  to {
     opacity: 1; }
   78% {
     transform: translate3d(0, -50%, 0) rotateZ(0deg); }
-  80%, 96% {
+  80%,
+  96% {
     transform: translate3d(-1px, -50%, 0) rotateZ(-5deg); }
-  82%, 94% {
+  82%,
+  94% {
     transform: translate3d(2px, -50%, 0) rotateZ(5deg); }
-  84%, 88%, 92% {
+  84%,
+  88%,
+  92% {
     transform: translate3d(-4px, -50%, 0) rotateZ(-10deg); }
-  86%, 90% {
+  86%,
+  90% {
     transform: translate3d(4px, -50%, 0) rotateZ(10deg); } }
 
 .page--home main {
@@ -2544,7 +2554,7 @@ footer {
       z-index: 0;
       opacity: 0;
       animation-name: anim-home-choose;
-      animation-duration: 1000ms;
+      animation-duration: 2400ms;
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
       animation-delay: 4800ms; }

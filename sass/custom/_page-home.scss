@@ -235,7 +235,7 @@
       background-color: $transparent;
       z-index: 0;
       opacity: 0;
-      @include ps-animate(anim-home-choose, 1000ms, 4800ms);
+      @include ps-animate(anim-home-choose, 2400ms, 4800ms);
 
       strong {
         position: static;
