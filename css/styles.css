@@ -2911,10 +2911,12 @@ footer {
     padding: 0;
     margin: 0; }
     .page--projects .projects-list .project-preview {
-      height: calc(7.5rem + 5vh + 5vw);
       margin-bottom: 1.5rem; }
       .page--projects .projects-list .project-preview a {
         overflow: hidden; }
+      .page--projects .projects-list .project-preview h2 {
+        margin-bottom: 0 !important;
+        line-height: 1.2 !important; }
       .page--projects .projects-list .project-preview.show-1 a {
         animation-name: anim-project-preview-in;
         animation-duration: 2000ms;
@@ -3102,8 +3104,7 @@ footer {
     .page--projects .projects-list img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover; }
+      height: auto; }
     .page--projects .projects-list h2 {
       position: absolute;
       bottom: 0;
@@ -3168,7 +3169,6 @@ footer {
           float: left;
           padding-right: 1.25rem;
           padding-left: 1.25rem;
-          height: calc(9rem + 6vh + 5vw);
           margin-bottom: 2.5rem; }
           .page--projects .projects-list .project-preview:last-child:not(:first-child) {
             float: right; }
@@ -3176,8 +3176,7 @@ footer {
             width: 50%;
             float: left;
             padding-right: 1.25rem;
-            padding-left: 1.25rem;
-            height: calc(15rem + 5vh + 7vw); }
+            padding-left: 1.25rem; }
             .page--projects .projects-list .project-preview:first-child:last-child:not(:first-child), .page--projects .projects-list .project-preview:nth-child(2):last-child:not(:first-child) {
               float: right; }
           .page--projects .projects-list .project-preview:nth-child(1) a::before,
@@ -3300,16 +3299,6 @@ footer {
             animation-fill-mode: forwards;
             animation-delay: 6.75s;
             animation-timing-function: step-end; } }
-    @media screen and (min-width: 87.5em) {
-      .page--projects .projects-list .project-preview {
-        height: calc(10.5rem + 6vh + 5vw); }
-        .page--projects .projects-list .project-preview:first-child, .page--projects .projects-list .project-preview:nth-child(2) {
-          height: calc(16.5rem + 5vh + 7vw); } }
-    @media screen and (min-width: 120em) {
-      .page--projects .projects-list .project-preview {
-        height: calc(12rem + 6vh + 5vw); }
-        .page--projects .projects-list .project-preview:first-child, .page--projects .projects-list .project-preview:nth-child(2) {
-          height: calc(18rem + 5vh + 7vw); } }
 
 @keyframes detail-hero-area-v1 {
   from {
