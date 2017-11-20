@@ -18,15 +18,21 @@
     @include reset-ul;
 
     .project-preview {
-      height: calc(#{rh(5)} + 5vh + 5vw);
+      // height: calc(#{rh(5)} + 5vh + 5vw);
       margin-bottom: rh(1);
 
       a {
         overflow: hidden;
       }
+
+      h2 {
+        margin-bottom: 0 !important;
+        line-height: 1.2 !important;
+      }
       @for $i from 1 through 15 {
         &.show-#{$i} {
           $tmp-delay: (0.25 * $i - $i / 10) * 1s;
+
           a {
             @include ps-animate(anim-project-preview-in, 2000ms, $tmp-delay);
           }
@@ -52,8 +58,9 @@
     img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      // height: 100%;
+      height: auto;
+      // object-fit: cover;
     }
 
     h2 {
@@ -92,6 +99,7 @@
         // &::before,
         // &::after {
         opacity: 0;
+
         &::before {
           content: '';
           position: absolute;
@@ -113,7 +121,6 @@
         //   transform: translateX(0%);
         //   @include ps-transition(transform);
         // }
-
         &:active,
         &:focus,
         &:hover {
@@ -126,13 +133,13 @@
 
       .project-preview {
         @include in-column(4, $gutter: 40);
-        height: calc(#{rh(6)} + 6vh + 5vw);
+        // height: calc(#{rh(6)} + 6vh + 5vw);
         margin-bottom: rem(40);
 
         &:first-child,
         &:nth-child(2) {
           @include in-column(6, $gutter: 40);
-          height: calc(#{rh(10)} + 5vh + 7vw);
+          // height: calc(#{rh(10)} + 5vh + 7vw);
 
           // h2 {
           //   font-size: rem(48);
@@ -144,7 +151,7 @@
             $tmp-delay: (0 + 0.35 * $i + $i / 10) * 1s;
 
             a {
-               &::before,
+              &::before,
               h2 {
                 @include ps-animate(anim-project-preview-content-hover-in, 700ms, $tmp-delay);
                 animation-timing-function: step-end;
@@ -161,11 +168,10 @@
       // }
 
       .project-preview {
-        height: calc(#{rh(7)} + 6vh + 5vw);
-
+        // height: calc(#{rh(7)} + 6vh + 5vw);
         &:first-child,
         &:nth-child(2) {
-          height: calc(#{rh(11)} + 5vh + 7vw);
+          // height: calc(#{rh(11)} + 5vh + 7vw);
 
           // h2 {
           //   font-size: rem(42);
@@ -181,11 +187,10 @@
       // }
 
       .project-preview {
-        height: calc(#{rh(8)} + 6vh + 5vw);
-
+        // height: calc(#{rh(8)} + 6vh + 5vw);
         &:first-child,
         &:nth-child(2) {
-          height: calc(#{rh(12)} + 5vh + 7vw);
+          // height: calc(#{rh(12)} + 5vh + 7vw);
 
           // h2 {
           //   font-size: rem(42);
