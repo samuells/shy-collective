@@ -37,7 +37,9 @@
 }
 
 .home-offer {
+  --ios-gap: 0px;
   height: 100vh;
+  height: calc(100vh - var(--ios-gap));
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -538,22 +540,24 @@
           $tmp-delay: (0.25 + 0.25 * $i) * 1s;
 
           &::after {
-            animation-delay:  $tmp-delay;
+            animation-delay: $tmp-delay;
             // @include ps-animate(anim-home-offer-after, 1000ms, $tmp-delay);
           }
 
           .value {
-            animation-delay:  $tmp-delay;
+            animation-delay: $tmp-delay;
             // @include ps-animate(anim-home-offer, 500ms, $tmp-delay);
           }
         }
       }
     }
   }
+
   .choose {
-    animation-delay: 2500ms
+    animation-delay: 2500ms;
   }
+
   .social-bar {
-    animation-delay:  0s;
+    animation-delay: 0s;
   }
 }

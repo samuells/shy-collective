@@ -1,6 +1,8 @@
 const initHome = function() {
   $(document).foundation();
 
+  vhCheck('ios-gap');
+
   if (document.querySelector('.home-offer')) {
     var $homeOffer = $('.home-offer');
     $homeOffer.on('click', 'li:not(.choosed) a', function(event) {

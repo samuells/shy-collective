@@ -19,6 +19,7 @@ gulp.task("js:min", function() {
     "./node_modules/photoswipe/dist/photoswipe-ui-default.min.js",
     "./node_modules/photoswipe/dist/photoswipe.min.js",
     "./node_modules/lity/dist/lity.min.js",
+    "./js/vh-check.js",
     "./js/jquery.smoothState.min.js",
     "./js/navbar.script.js",
     "./js/photoswipe.script.js",

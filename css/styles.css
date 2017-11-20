@@ -2297,7 +2297,9 @@ footer {
     animation-delay: 0s; }
 
 .home-offer {
+  --ios-gap: 0px;
   height: 100vh;
+  height: calc(100vh - var(--ios-gap));
   display: flex;
   flex-wrap: wrap;
   align-items: center; }
