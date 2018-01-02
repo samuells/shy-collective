@@ -1931,6 +1931,9 @@ footer {
   .lity .lity-close:hover, .lity .lity-close:focus, .lity .lity-close:active {
     color: #FFE300; }
 
+.lity-iframe-container iframe {
+  background-color: rgba(255, 255, 255, 0); }
+
 .pswp__container {
   transition-property: transform;
   transition-duration: 400ms;
