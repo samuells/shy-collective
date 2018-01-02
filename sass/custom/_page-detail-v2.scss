@@ -280,7 +280,7 @@
       margin: 0;
       padding-bottom: rem(20);
       opacity: 0;
-      transform: translateY(50px);
+      transform: translateY(50px) translateZ(0px);
     }
 
     figcaption {
@@ -346,15 +346,15 @@
         transition-timing-function: linear;
 
         &:nth-child(1) {
-          transform: translateX(-12.5%);
+          transform: translateX(-12.5%) translateZ(0px);
         }
 
         &:nth-child(2) {
-          transform: translateX(-25%);
+          transform: translateX(-25%) translateZ(0px);
         }
 
         &:nth-child(3) {
-          transform: translateX(-12.5%);
+          transform: translateX(-12.5%) translateZ(0px);
         }
       }
 

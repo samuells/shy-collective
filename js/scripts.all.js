@@ -1134,7 +1134,7 @@ var initTraslatingGallery = function() {
     if (shouldTranslate(row, newTranslateX)) {
       var translateDuration = getTranslateDuration(row, newTranslateX);
 
-      row.style.transform = "translateX(" + newTranslateX + "% )";
+      row.style.transform = "translateX(" + newTranslateX + "% ) translateZ(0px)";
       row.style.transformDuration = translateDuration + "ms";
     }
   };
