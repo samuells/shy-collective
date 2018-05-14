@@ -2,9 +2,7 @@ mixin header(isHomepage)
   header(class=isHomepage ? 'nav-header on-home' : 'nav-header', style=isHomepage ? '' : 'background-color: #1A1A1A;')
     .header-row
       .logo-wrapper
-        a.js-smooth-link(href='./index.html')
-          a.js-smooth-link(href='./manifest.html', data-value='shy collective')
-            | shy collective
+        a.js-smooth-link(href='./manifest.html', data-value='shy collective') shy collective
       .menu-wrapper
         a#js-toggle-menu.menu-trigger(href='#', data-lightbox='')
           span toggle menu
